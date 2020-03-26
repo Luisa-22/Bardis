@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'Alata';
+    src: url('../fonts/Alata-Regular.ttf');
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Alata', sans-serif;
+}
+
+div#container {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+div#container div {
+    box-sizing: border-box;
+}
+
+div#header {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+    background: #010101;
+}
+
+nav {
+    padding: 20px 20px 10px 5px;
+    box-sizing: border-box;
+}
+
+nav img {
+    width: 150px;
+    height: 70px;
+    position: absolute;
+    top: -2px;
+    transition: 0.4s left;
+}
+
+nav ul {
+    display: flex;
+    color: white;
+    justify-content: flex-end;
+    list-style: none;
+    text-decoration: none;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0px 0px 10px 20px;
+    transition: 0.1s color;
+    font-size: 15px;
+}
+
+nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+    padding: 10px 0px 0px 0px;
+    border-radius: 0 10px 10px;
+}
+
+nav li:hover>ul {
+    display: block;
+    background: #010101;
+}
+
+nav li ul li {
+    position: relative;
+}
+
+nav li a:hover {
+    color: #0095FF;
+}
+
+div#formulario {
+    height: auto;
+    margin: 60px 0 0 0;
+    padding: 20px;
+}
+
+div.div-formulario-registro {
+    width: 30%;
+    height: auto;
+    margin: 20px auto auto auto;
+    padding: 30px 30px 20px 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form h3 {
+    font-size: 25px;
+}
+
+form#formulario-1 input,
+form#formulario-2 input {
+    display: block;
+    margin-top: 10px;
+    width: 95%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #b2bec3;
+    outline: none;
+}
+
+form#formulario-1 input:focus,
+form#formulario-2 input:focus {
+    border: 1px solid #0984e3;
+    box-shadow: 0 0 5px #74b9ff;
+}
+
+form#formulario-1 input[type="submit"],
+form#formulario-2 input[type="submit"] {
+    width: 98%;
+    padding: 7px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    background: #74b9ff;
+    outline: none;
+    transition: 0.1s background;
+}
+
+form#formulario-1 input[type="submit"]:hover,
+form#formulario-2 input[type="submit"]:hover {
+    background: #0984e3;
+    cursor: pointer;
+}
+
+form#formulario-1 a,
+form#formulario-2 a {
+    text-decoration: none;
+    font-size: 17px;
+}
+
+form#formulario-1 a:hover,
+form#formulario-2 a:hover {
+    text-decoration: underline;
+}
+
+form#formulario-2 {
+    display: none;
+}
+
+form#formulario-2 input[type="submit"] {
+    width: 100%;
+}
+
+@media only screen and (max-width:600px) {
+    nav {
+        padding: 20px 20px 50px 5px;
+        box-sizing: border-box;
+    }
+    nav li a {
+        display: none;
+    }
+    nav img {
+        position: absolute;
+        left: 180px;
+    }
+    div.div-formulario-registro {
+        width: 90%;
+        padding: 20px 20px 10px 20px;
+    }
+}

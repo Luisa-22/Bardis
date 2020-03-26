@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'Alata';
+    src: url('../fonts/Alata-Regular.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Alata'
+}
+
+div#container {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+div#perfiladmin {
+    background: #000;
+    padding: 0 0 10px 0;
+}
+
+img#img-1 {
+    width: 150px;
+    height: 70px;
+    position: absolute;
+    top: -2px;
+}
+
+div.perfil-admin {
+    width: 200px;
+    float: right;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+div.perfil-admin ion-icon {
+    position: relative;
+    top: 5px;
+    font-size: 20px;
+}
+
+#icon-1 {
+    position: relative;
+    right: -5px;
+    width: 11px;
+    height: auto;
+}
+
+#icon-2 {
+    position: relative;
+    right: -5px;
+    width: 11px;
+    height: auto;
+    display: none;
+}
+
+div.perfil-admin img:hover {
+    cursor: pointer;
+}
+
+div.perfil-admin #img-perfil {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    right: 5px;
+    margin-right: 10px;
+}
+
+section#section-perfil {
+    display: inline-flex;
+}
+
+section#section-perfil h3 {
+    margin-top: 20px;
+    color: #fff;
+}
+
+section#section-opc {
+    width: 130px;
+    padding: 0 5px 0 10px;
+    margin: 10px 0 0 55px;
+    display: none;
+    position: absolute;
+    background: #000;
+    border-radius: 0 0 0 10px;
+    z-index: 999;
+}
+
+section#section-opc li {
+    list-style: none;
+    padding: 10px 0 0 0;
+}
+
+section#section-opc li a {
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0 0 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+section#section-opc a:hover {
+    text-decoration: underline;
+}
+
+section#section-opc button {
+    background: #fd79a8;
+    width: 100%;
+    padding: 7px;
+    color: #fff;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    margin: 30px 0 10px 0;
+    font-size: 15px;
+    transition: 0.4s background;
+}
+
+img#arrow-left {
+    padding: 10px;
+    font-size: 3rem;
+    width: 70px;
+    height: 50px;
+    color: #fff;
+    background: #2ecc71;
+    position: absolute;
+    top: 85px;
+    left: 15px;
+    border-radius: 8px;
+}
+
+div#div-pedidos {
+    display: grid;
+    grid-template-columns: 33% 33%;
+    padding: 50px 0 0 40px;
+    column-gap: 20px;
+    row-gap: 30px;
+    justify-content: center;
+}
+
+div.contenedor-cartas {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-gap: 50px 30px;
+    padding: 50px 190px;
+}
+
+div.carta-pedido {
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: inline-flex;
+}
+
+div.img-pedido {
+    width: 200px;
+    background: #78e08f;
+    padding: 5px 15px 5px 15px;
+    box-sizing: border-box;
+    border-radius: 9px 0 0 9px;
+}
+
+div.img-pedido img {
+    width: 130px;
+}
+
+div.img-pedido h3 {
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+div.texto-pedido {
+    padding: 15px 10px;
+}
+
+div.texto-pedido p {
+    font-weight: bold;
+    opacity: 0.5;
+    font-size: 17px;
+}

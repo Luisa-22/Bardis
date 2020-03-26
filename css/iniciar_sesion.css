@@ -1,0 +1,283 @@
+@font-face {
+    font-family: 'Alata';
+    src: url('../fonts/Alata-Regular.ttf');
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Alata', sans-serif;
+}
+
+div#container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+}
+
+div#header {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+}
+
+nav {
+    background: #010101;
+    padding: 20px 20px 10px 5px;
+    box-sizing: border-box;
+}
+
+nav img {
+    width: 150px;
+    height: 70px;
+    position: absolute;
+    top: -2px;
+    transition: 0.4s left;
+}
+
+nav ul {
+    display: flex;
+    color: white;
+    justify-content: flex-end;
+    list-style: none;
+    text-decoration: none;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0px 0px 10px 20px;
+    transition: 0.1s color;
+    font-size: 15px;
+}
+
+nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+    padding: 10px 0px 0px 0px;
+    border-radius: 0 10px 10px;
+}
+
+nav li:hover>ul {
+    display: block;
+    background: #010101;
+}
+
+nav li ul li {
+    position: relative;
+}
+
+nav li a:hover {
+    color: #0095FF;
+}
+
+div#formulario {
+    height: 400px;
+    margin: 60px 0 0 0;
+    padding: 20px;
+}
+
+div.div-inicio-sesion {
+    width: 30%;
+    height: auto;
+    margin: 50px auto auto auto;
+    padding: 30px 30px 20px 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form h3 {
+    font-size: 25px;
+}
+
+form#formulario-1 input,
+select {
+    display: block;
+    margin-top: 15px;
+    width: 95%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #b2bec3;
+    outline: none;
+}
+
+form#formulario-1 input:focus {
+    border: 1px solid #0984e3;
+    box-shadow: 0 0 5px #74b9ff;
+}
+
+select {
+    width: 100%;
+}
+
+select:focus {
+    border: 1px solid #0984e3;
+    box-shadow: 0 0 5px #74b9ff;
+}
+
+form#formulario-1 input[type="submit"] {
+    width: 100%;
+    padding: 7px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    background: #74b9ff;
+    outline: none;
+    transition: 0.1s background;
+}
+
+form#formulario-1 input[type="submit"]:hover {
+    background: #0984e3;
+    cursor: pointer;
+}
+
+form#formulario-1 a,
+form#formulario-2 a {
+    text-decoration: none;
+    font-size: 17px;
+}
+
+form#formulario-1 a:hover {
+    text-decoration: underline;
+}
+
+form#formulario-2 {
+    display: none;
+}
+
+form#formulario-2 input[type="submit"] {
+    width: 100%;
+}
+
+form#formulario-1 button {
+    background: #fd79a8;
+    width: 100%;
+    padding: 7px;
+    color: #fff;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    margin: 15px 0 5px 0;
+    font-size: 14px;
+    transition: 0.4s background;
+}
+
+form#formulario-1 button a {
+    color: #fff;
+}
+
+form#formulario-1 button:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.overlay {
+    background: rgba(45, 52, 54, 0.8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlay.active {
+    visibility: visible;
+}
+
+.popup {
+    background: #fff;
+    border-radius: 5px;
+    width: 340px;
+    height: 250px;
+    padding: 10px 10px;
+    transform: scale(0.7);
+    margin-top: 150px;
+    margin-left: 0px;
+    box-sizing: border-box;
+}
+
+.btn-cerrar-popup {
+    float: right;
+    font-size: 23px;
+}
+
+.btn-cerrar-popup:hover {
+    color: #e74c3c;
+    cursor: pointer;
+}
+
+.popup.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+div.texto-popup {
+    padding: 10px 20px;
+}
+
+div.texto-popup h3 {
+    margin-top: 20px;
+}
+
+div.text-popup form {
+    display: block;
+}
+
+div.texto-popup form input {
+    width: 100%;
+    padding: 7px;
+    margin-top: 10px;
+}
+
+div.texto-popup form input[type="email"] {
+    width: 95%;
+    border-radius: 5px;
+    border: 1px solid #b2bec3;
+    outline: none;
+}
+
+div.texto-popup form input[type="email"]:focus {
+    box-shadow: 0 0 5px #3bb0ff;
+}
+
+input[type="submit"] {
+    background: rgba(52, 152, 219, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s background;
+}
+
+input[type="submit"]:hover {
+    background: rgba(52, 152, 219, 1);
+    cursor: pointer;
+}
+
+@media only screen and (max-width:600px) {
+    nav {
+        padding: 20px 20px 50px 5px;
+        box-sizing: border-box;
+    }
+    nav li a {
+        display: none;
+    }
+    nav img {
+        position: absolute;
+        left: 180px;
+    }
+    div.div-inicio-sesion {
+        width: 90%;
+        padding: 20px 20px 10px 20px;
+    }
+}

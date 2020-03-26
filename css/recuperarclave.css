@@ -1,0 +1,127 @@
+@font-face {
+    font-family: 'Alata';
+    src: url('../fonts/Alata-Regular.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Alata';
+}
+
+div#container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+}
+
+div#header {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+}
+
+nav {
+    background: #010101;
+    padding: 20px 20px 20px 5px;
+    box-sizing: border-box;
+}
+
+nav img {
+    width: 150px;
+    height: 70px;
+    position: absolute;
+    top: -2px;
+}
+
+nav ul {
+    display: flex;
+    color: white;
+    justify-content: flex-end;
+    list-style: none;
+    text-decoration: none;
+}
+
+nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 0px 0px 10px 20px;
+    transition: 0.1s color;
+    font-size: 15px;
+}
+
+nav li ul {
+    position: absolute;
+    min-width: 140px;
+    padding: 10px 0px 0px 0px;
+    border-radius: 0 10px 10px;
+}
+
+nav li:hover>ul {
+    display: block;
+    background: #010101;
+}
+
+nav li ul li {
+    position: relative;
+}
+
+nav li a:hover {
+    color: #0095FF;
+}
+
+#recuperarclave {
+    border: 1px solid #ccc;
+    margin: 150px auto;
+    padding: 30px;
+    width: 20%;
+}
+
+div#recuperarclave input {
+    display: block;
+    padding: 7px;
+    margin: 20px 0 0 0;
+    border-radius: 5px;
+    outline: none;
+}
+
+div#recuperarclave input[type="password"] {
+    border: 1px solid #b2bec3;
+    width: 95%;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 7px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    background: #74b9ff;
+    outline: none;
+    transition: 0.1s background;
+}
+
+input[type="submit"]:hover {
+    background: #0984e3;
+    cursor: pointer;
+}
+
+select {
+    display: block;
+    margin-top: 15px;
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #b2bec3;
+    outline: none;
+}
+
+select:focus {
+    border: 1px solid #0984e3;
+    box-shadow: 0 0 5px #74b9ff;
+}
