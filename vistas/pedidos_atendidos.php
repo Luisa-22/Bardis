@@ -51,7 +51,8 @@ if ($_SESSION['administrador']) {
             <div id="fecha">
                 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
                     <center><input type="date" name="fecha" id="fecha" value="<?php echo date("Y-m-d"); ?>">
-                        <input type="submit" name="submit" value="Buscar"></center>
+                    <input type="submit" name="submit" value="Buscar">
+                    </center>
                 </form>
             </div>
 

@@ -30,13 +30,12 @@ if ($_SESSION['administrador']) {
     $codigoProducto = $_POST['codigoProducto'];
     $nombreProducto = $_POST['nombreProducto'];
     $precioProducto = $_POST['precioProducto'];
-    $cantidadProducto = $_POST['cantidadProducto'];
     $descripcionProducto = $_POST['descripcionProducto'];
     $categoriaProducto = $_POST['categoriaProducto'];
 
 
     $actualizar = mysqli_query($conexion, "UPDATE `tbl_producto` SET  `nombre_producto` = '$nombreProducto',
-    `precio_producto` = '$precioProducto', `stock_producto` = '$cantidadProducto' , `descripcion_producto`= '$descripcionProducto'
+    `precio_producto` = '$precioProducto', `descripcion_producto`= '$descripcionProducto'
     WHERE `tbl_producto`.`id_producto` = '$id'");
     header('location: modificarproductos.php');
   }
@@ -92,7 +91,6 @@ if ($_SESSION['administrador']) {
             <h2>Modificar producto</h2>
             <input type="text" name="nombreProducto" onkeypress="return SoloLetras(event)" onpaste="return false" value="<?php echo $productos['nombre_producto']; ?>" placeholder="Nombre">
             <input type="text" name="precioProducto" onkeypress="return SoloNumeros(event)" onpaste="return false" value="<?php echo $productos['precio_producto']; ?>" placeholder="Precio">
-            <input type="number" name="cantidadProducto" onkeypress="return SoloNumeros(event)" onpaste="return false" value="<?php echo $productos['stock_producto']; ?>" placeholder="Cantidad de producto">
             <input type="text" name="descripcionProducto" onkeypress="return SoloLetras(event)" onpaste="return false" value="<?php echo $productos['descripcion_producto']; ?>" placeholder="Descripción">
             <input type="submit" name="submit" value="Actualizar">
           <?php

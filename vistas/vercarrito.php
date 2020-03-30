@@ -1,7 +1,11 @@
 <?php
 include '../php/conexion.php';
 session_start();
+//Si existe la sesion del mesero haga lo sgte.
 if ($_SESSION['mesero']) {
+  //Si la session del carrito existe entonces me va a traer unos datos, pero lo primero que se llena
+  // es si el carrito no existe porque se tiene que inicializar
+  //para poder inicializar se debe validar si trae algún dato por la url que es el id, si no trae no hace nada
   if (isset($_SESSION['carrito'])) {
     if (isset($_GET['id'])) {
       $arreglo = $_SESSION['carrito'];
@@ -112,19 +116,23 @@ if ($_SESSION['mesero']) {
               $total = 0;
               if (isset($_SESSION['carrito'])) {
                 $datos = $_SESSION['carrito'];
+                //Lo que se hace es que se hace un ciclo para i que inicia en 0 hasta que i sea menor a ese count.
+                //El count me sirve para mirar el # de resultados de ese arreglo(datos).
                 for ($i = 0; $i < count($datos); $i++) {
               ?>
                   <tr>
+                  <!-- Acá se dice que me muestre lo que hay en ese arreglo, en esa posicion asociado a ese campo -->
                     <td><?php echo $datos[$i]['Nombre'] ?></td>
                     <td><?php echo "$" . $datos[$i]['Precio'] ?></td>
                     <td><input type="number" value="<?php echo $datos[$i]['Cantidad'] ?>"></td>
                     <td><?php echo "$" . $datos[$i]['Precio'] * $datos[$i]['Cantidad'] ?></td>
                     <td>
-                      <a href="../php/eliminardecarrito.php?Id=<?php echo $datos[$i]['Id']; ?>">
+                      <a href="../php/eliminardecarrito.php?Id=<?php echo $datos[$i]['Id'];?>">
                         Eliminar</a>
                     </td>
                   </tr>
               <?php
+                  //Total += es igual a total mas el subtotal
                   $total += ($datos[$i]['Precio'] * $datos[$i]['Cantidad']);
                 }
               } else {

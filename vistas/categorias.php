@@ -56,7 +56,6 @@ if ($_SESSION['administrador']) {
 
             <input type="text" name="nombreProducto" onkeypress="return SoloLetras(event)" onpaste="return false" placeholder="Nombre" required>
             <input type="text" name="precioProducto" onkeypress="return SoloNumeros(event)" onpaste="return false" placeholder="Precio" required>
-            <input type="number" name="cantidadProducto" onkeypress="return SoloNumeros(event)" onpaste="return false" placeholder="Cantidad de producto">
             <textarea name="descripcionProducto" onkeypress="return SoloLetras(event)" onpaste="return false" placeholder="Descripción"></textarea>
 
             <select name="categoriaProducto">

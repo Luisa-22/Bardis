@@ -54,7 +54,7 @@ if ($_SESSION['administrador']) {
       <div id="btn" onclick="quitarsubmenu()">
         <button><a href="categorias.php"><img src="../image/products.png"><br>Productos</button></a>
         <button><a href="pedidos.php"><img src="../image/bar.png"><br>Pedidos</button></a>
-        <button><a href="pedidos_atendidos.php"><img src="../image/calendar.png"><br>Historial pedidos</button></a>
+        <button><a href="pedidos_atendidos.php"><img src="../image/history.png"><br>Historial pedidos</button></a>
         <button><a href="musica.php"><img src="../image/dj-mixer.png"><br>Música</button></a>
         <button><a href="categoriaeventos.php"><img src="../image/calendar.png"><br>Eventos</button></a>
 

@@ -56,7 +56,6 @@ if ($_SESSION['administrador']) {
                 <th>Código</th>
                 <th>Nombre</th>
                 <th>Precio</th>
-                <th>Cantidad</th>
                 <th>Descripción</th>
                 <th>Acción</th>
               </thead>
@@ -76,7 +75,6 @@ if ($_SESSION['administrador']) {
                       <td><?php echo $rowProducto['id_producto']; ?></td>
                       <td><?php echo $rowProducto['nombre_producto']; ?></td>
                       <td><?php echo $rowProducto['precio_producto']; ?></td>
-                      <td><?php echo $rowProducto['stock_producto']; ?></td>
                       <td><?php echo $rowProducto['descripcion_producto']; ?></td>
                       <td><a style="color:#fff;text-decoration: none;" class="enlace-btn" href="../vistas/modificarproductos.php?producto=<?php echo $rowProducto['id_producto']; ?>"><button class="btn-modificar">Modificar</a></button>
 
