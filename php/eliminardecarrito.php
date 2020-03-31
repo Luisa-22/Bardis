@@ -3,17 +3,17 @@ include '../php/conexion.php';
 include '../vistas/vercarrito.php';
 
 
-$id = $_GET['Id'];
-    
+$i = $_GET['Pos'];
+
 if (isset($_SESSION['carrito'])) {
     $datos = $_SESSION['carrito'];
-    
-        unset($datos[$id]);
-        $datos = array_values($datos);
-        $_SESSION['carrito']=$datos;
-        echo "<script>alert('Eliminado')</script>";
-        echo "<script>window.location='../vistas/vercarrito.php'</script>";
-    }
+    unset($datos[$i]);
+    $datos=array_values($datos);
+    $_SESSION['carrito']=$datos;
 
-    echo "error";
+    echo "<script>alert('Eliminado')</script>";
+    echo "<script>window.location='../vistas/vercarrito.php'</script>";
+}else {
+    echo "<script>alert('Error')</script>";
+    }
 ?>
