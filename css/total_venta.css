@@ -6,7 +6,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Alata'
+    font-family: 'Alata';
 }
 
 div#container {
@@ -58,13 +58,14 @@ div.perfil-admin ion-icon {
     display: none;
 }
 
-div.perfil-admin img:hover {
+div.perfil-admin ion-icon:hover {
     cursor: pointer;
 }
 
-div.perfil-admin #img-perfil {
+div.perfil-admin img {
     width: 45px;
     height: 45px;
+    background: none;
     position: relative;
     right: 5px;
     margin-right: 10px;
@@ -133,113 +134,107 @@ img#arrow-left {
     border-radius: 8px;
 }
 
-div#div-categorias {
+div#fecha {
     display: grid;
-    grid-template-columns: auto auto;
-    box-sizing: border-box;
+    grid-template-columns: 100%;
+    padding: 50px;
+    left: 50%;
 }
 
-table {
-    width: 100%;
-    font-size: 15px;
-    border-collapse: collapse;
-    font-size: 15px;
-}
-
-table thead th {
+div#fecha input[type="submit"] {
     padding: 5px;
-    text-align: center;
-}
-
-table thead th {
-    background: #74b9ff;
     color: #fff;
+    width: 100px;
+    font-size: 15px;
+    background: rgba(46, 204, 113, 0.7);
+    border: none;
+    border-radius: 5px;
 }
 
-table thead {
-    text-align: center;
-    background: #74b9ff;
-    color: #fff;
+div#div-pedidos {
+    display: block;
+    width: 50%;
 }
 
-tfoot {
-    background: none;
+.div-tablas {
+    box-sizing: border-box;
+    margin: 15px;
+}
+
+.table {
+    border-collapse: collapse;
+    font-size: 20px;
+    width: 85%;
+    margin: auto;
 }
 
 table tr {
-    text-align: center;
+    text-align: left;
 }
 
 table td {
-    padding: 13px 10px;
+    padding: 5px;
 }
 
-input[type="submit"] {
-    width: 80px;
-    padding: 3px;
+a.boton-factura {
+    padding: 5px;
+    padding-left: 5px;
     border-radius: 5px;
     border: none;
-}
-
-div.tabla-pedido {
-    display: flex;
-    justify-content: center;
-    padding: 50px;
-}
-
-div.pedido {
-    padding: 10px 10px;
-    width: 70%;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-div.pedido select {
-    width: 100px;
-    margin: 10px 0 10px 0;
-}
-
-div.pedido table {
-    font-size: 18px;
-}
-
-a#agregar-producto {
-    text-decoration: none;
-    background: rgba(46, 204, 113, 0.8);
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    transition: 0.3s background;
-}
-
-a#agregar-producto:hover {
-    background: rgba(46, 204, 113, 1.0);
-}
-
-input[value="Enviar"],
-input[value="Volver"] {
-    color: #fff;
-    transition: 0.3s background;
+    color: white;
     font-size: 15px;
-    margin: 0 0 0 20px;
-    width: 100px;
+    background: #74b9ff;
+    outline: none;
+    transition: 0.1s background;
+    width: 150px;
 }
 
-input[value="Enviar"] {
-    background: rgba(52, 152, 219, 0.7);
+a.boton-factura {
+    background: rgba(116, 185, 255, 0.8);
+    text-decoration: none;
 }
 
-input[value="Enviar"]:hover {
-    background: rgba(52, 152, 219, 1.0);
+input.boton-pedido {
+    padding: 5px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    margin: 10px 0 10px 150px;
+    font-size: 15px;
+    background: #55efc4;
+    outline: none;
+    transition: 0.1s background;
+    width: 150px;
+}
+
+input.boton-pedido:hover {
+    background: #74b9ff;
     cursor: pointer;
 }
 
-input[value="Volver"] {
-    background: rgba(231, 76, 60, 0.7);
+tr {
+    background: rgba(178, 190, 195, 0.2);
 }
 
-input[value="Volver"]:hover {
-    background: rgba(231, 76, 60, 1.0);
-    cursor: pointer;
+thead {
+    background: #74b9ff;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+.total{
+    width: 100%;
+    display: flex;
+    padding: 10px 20px;
+    margin-left: 480px;
+    overflow: hidden;
+}
+.table_total th{
+    margin: 15px;
+}
+.table_total th{
+    width: 100%;
+    font-size: 1.5rem;
+    overflow: hidden;
+ 
 }

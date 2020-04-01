@@ -84,7 +84,6 @@ if ($_SESSION['mesero']) {
                   <th>Código</th>
                   <th>Nombre</th>
                   <th>Precio</th>
-                  <th>Stock</th>
                   <th>Descripción</th>
                   <th>Acción</th>
                 </thead>
@@ -98,7 +97,6 @@ if ($_SESSION['mesero']) {
                         <td><?php echo $row['id_producto']; ?></td>
                         <td><?php echo $row['nombre_producto']; ?></td>
                         <td><?php echo $row['precio_producto']; ?></td>
-                        <td><?php echo $row['stock_producto']; ?></td>
                         <td><?php echo $row['descripcion_producto']; ?></td>
                         <td>
                           <a id="agregar-producto" href="vercarrito.php?id=<?php echo $row['id_producto']; ?>">Agregar</a>

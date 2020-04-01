@@ -53,8 +53,8 @@ if ($_SESSION['administrador']) {
       <div class="mesas">
         <form action="../php/registrarmesa.php" method="post">
           <h3>Registrar mesa</h3>
-          <input type="text" name="numeroMesa" placeholder="Número de mesa">
-          <input type="text" name="ubicacionMesa" placeholder="Ubicación de mesa">
+          <input type="text" name="numeroMesa" placeholder="Número de mesa" required>
+          <input type="text" name="ubicacionMesa" placeholder="Ubicación de mesa" required>
           <input type="submit" name="submit" value="Registrar">
         </form>
       </div>

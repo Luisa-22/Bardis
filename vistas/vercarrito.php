@@ -1,16 +1,13 @@
 <?php
 include '../php/conexion.php';
 session_start();
-//Si existe la sesion del mesero haga lo sgte.
 if ($_SESSION['mesero']) {
-  //Si la session del carrito existe entonces me va a traer unos datos, pero lo primero que se llena
-  // es si el carrito no existe porque se tiene que inicializar
-  //para poder inicializar se debe validar si trae algún dato por la url que es el id, si no trae no hace nada
   if (isset($_SESSION['carrito'])) {
     if (isset($_GET['id'])) {
       $arreglo = $_SESSION['carrito'];
-      $encontro = false;
-      $posicion = 0;
+      $encontro = false; 
+      $posicion = 0; 
+      
       for ($i = 0; $i < count($arreglo); $i++) {
         if ($arreglo[$i]['Id'] == $_GET['id']) {
           $encontro = true;
@@ -18,7 +15,9 @@ if ($_SESSION['mesero']) {
         }
       }
       if ($encontro == true) {
-        $arreglo[$posicion]['Cantidad'] += 1;
+        $arreglo[$posicion]['Cantidad'] =$arreglo[$posicion]['Cantidad']+1;
+        $_SESSION['carrito']=$arreglo;
+
       } else {
         $id = $_GET['id'];
         $nombre = "";
@@ -34,16 +33,21 @@ if ($_SESSION['mesero']) {
           'Precio' => $precio,
           'Cantidad' => 1
         );
+        
         array_push($arreglo, $arregloNuevo);
+        $_SESSION['carrito'] = $arreglo;
       }
-      $_SESSION['carrito'] = $arreglo;
+      
     }
   } else {
     if (isset($_GET['id'])) {
+      
       $id = $_GET['id'];
       $nombre = "";
       $precio = 0;
+      
       $productoC = mysqli_query($conexion, "SELECT * FROM tbl_producto WHERE id_producto = '$id'");
+    
       while ($rowC = mysqli_fetch_array($productoC)) {
         $nombre = $rowC['nombre_producto'];
         $precio = $rowC['precio_producto'];
@@ -116,24 +120,29 @@ if ($_SESSION['mesero']) {
               $total = 0;
               if (isset($_SESSION['carrito'])) {
                 $datos = $_SESSION['carrito'];
-                //Lo que se hace es que se hace un ciclo para i que inicia en 0 hasta que i sea menor a ese count.
-                //El count me sirve para mirar el # de resultados de ese arreglo(datos).
+                
+                $total=0;
                 for ($i = 0; $i < count($datos); $i++) {
               ?>
+              <div class="producto">
                   <tr>
-                  <!-- Acá se dice que me muestre lo que hay en ese arreglo, en esa posicion asociado a ese campo -->
-                    <td><?php echo $datos[$i]['Nombre'] ?></td>
-                    <td><?php echo "$" . $datos[$i]['Precio'] ?></td>
-                    <td><input type="number" value="<?php echo $datos[$i]['Cantidad'] ?>"></td>
-                    <td><?php echo "$" . $datos[$i]['Precio'] * $datos[$i]['Cantidad'] ?></td>
+                    <td><?php echo $datos[$i]['Nombre'];?></td>
+                    <td><?php echo "$" . $datos[$i]['Precio'];?></td>
                     <td>
-                      <a href="../php/eliminardecarrito.php?Id=<?php echo $datos[$i]['Id'];?>">
+                      <input type="text" value="<?php echo $datos[$i]['Cantidad'];?>" 
+                      data-precio="<?php echo $datos[$i]['Precio'];?>" 
+                      data-id="<?php echo $datos[$i]['Id'];?>" 
+                      class="cantidad">
+                    </td>
+                    <td class="subtotal">Subtotal: <?php echo "$" . $datos[$i]['Cantidad']*$datos[$i]['Precio'];?></td>
+                    <td>
+                      <a href="../php/eliminardecarrito.php?Pos=<?php echo $i; ?>">
                         Eliminar</a>
                     </td>
-                  </tr>
+                    </tr>
+                </div>
               <?php
-                  //Total += es igual a total mas el subtotal
-                  $total += ($datos[$i]['Precio'] * $datos[$i]['Cantidad']);
+                  $total=($datos[$i]['Cantidad']*$datos[$i]['Precio'])+$total;
                 }
               } else {
                 echo "El pedido está vacío";
@@ -144,7 +153,7 @@ if ($_SESSION['mesero']) {
               <tr>
                 <td><a href="categoriasnuevas.php"><input type="submit" value="Volver" /></a></td>
                 <form action="../php/enviarcarrito.php" method="post">
-                  <td>Total:<?php echo $total; ?></td>
+                  <td id="total">Total:<?php echo $total; ?></td>
                   <td><select name="mesa">
                       <option disabled selected>Mesa</option>
                       <?php
@@ -167,6 +176,10 @@ if ($_SESSION['mesero']) {
       </div>
       <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
       <script type="text/javascript" src="../js/perfilmesero.js"></script>
+      <script type="text/javascript"  src="../js/jquery.js"></script>
+      <script type="text/javascript"  src="../js/actualizarcarrito.js"></script>
+
+      
   </body>
 
   </html>
