@@ -119,20 +119,6 @@ section#section-opc button {
     font-size: 15px;
     transition: 0.4s background;
 }
-
-img#arrow-left {
-    padding: 10px;
-    font-size: 3rem;
-    width: 70px;
-    height: 50px;
-    color: #fff;
-    background: #2ecc71;
-    position: absolute;
-    top: 85px;
-    left: 15px;
-    border-radius: 8px;
-}
-
 div#div-categorias {
     display: grid;
     grid-template-columns: auto auto;
@@ -189,7 +175,7 @@ div.tabla-pedido {
 
 div.pedido {
     padding: 10px 10px;
-    width: 70%;
+    width: 54%;
     box-sizing: border-box;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -216,30 +202,51 @@ a#agregar-producto {
 a#agregar-producto:hover {
     background: rgba(46, 204, 113, 1.0);
 }
-
-input[value="Enviar"],
-input[value="Volver"] {
+a#eliminar-prod{
+    background:rgba(231, 76, 60,0.6);
+    padding:5px;
+    color:#fff;
+    text-decoration:none;
+    border-radius:5px;
+    transition:0.3s background;
+    font-size:15px;
+}
+a#eliminar-prod:hover{
+    background:rgba(231, 76, 60,0.9);
+    cursor:pointer;
+}
+input[value="Enviar"]{
     color: #fff;
     transition: 0.3s background;
     font-size: 15px;
-    margin: 0 0 0 20px;
-    width: 100px;
+    margin: 0 10px 0 0px;
+    width: 120px;
+    padding:5px;
 }
 
 input[value="Enviar"] {
     background: rgba(52, 152, 219, 0.7);
 }
-
 input[value="Enviar"]:hover {
     background: rgba(52, 152, 219, 1.0);
     cursor: pointer;
 }
-
-input[value="Volver"] {
-    background: rgba(231, 76, 60, 0.7);
+#total{
+    padding:0 0 0 340px;
 }
-
-input[value="Volver"]:hover {
-    background: rgba(231, 76, 60, 1.0);
+a#Volver{
+    width:120px;
+    background:none;
+    color:rgba(46, 204, 113,1.0);
+    border:1px solid rgba(46, 204, 113,1.0);
+    font-size:13px;
+    padding:5px;
+    border-radius:5px;
+    transition:0.3s background, 0.3s color;
+    text-decoration:none;
+}
+a#Volver:hover {
+    background: rgba(46, 204, 113,1.0);
+    color:#fff;
     cursor: pointer;
 }
