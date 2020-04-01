@@ -96,7 +96,7 @@ if ($_SESSION['administrador']) {
               <tfoot>
                 <form action="../php/pedidoatendido.php" method="POST">
                   <tr>
-                    <td colspan="4"><a href="../pdf/prueba.php?pedido=<?php echo $idPedido ?>" class="boton-factura">Generar factura</a>
+                    <td colspan="4"><a target="_blank" href="../pdf/prueba.php?pedido=<?php echo $idPedido ?>" class="boton-factura">Generar factura</a>
                       <input type="hidden" value="<?php echo $idPedido ?>" name="pedido-atendido">
                       <input name="submit" class="boton-pedido" type="submit" value="Pedido Atendido"></input></td>
                   </tr>
