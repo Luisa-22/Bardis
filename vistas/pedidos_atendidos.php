@@ -72,7 +72,7 @@ if ($_SESSION['administrador']) {
                                 <thead>
                                     <tr>
                                         <th colspan="3">
-                                            <center>Mesa <?php echo $row['numero_mesa']; ?></center>
+                                            <center>Mesa <?php echo $row['numero_mesa']; ?> <br> <?php echo $fecha;?></center>
                                         </th>
                                     </tr>
                                 </thead>
@@ -105,19 +105,10 @@ if ($_SESSION['administrador']) {
                                 ?>
                             <?php
                                         }
-                            ?>
-
+                            ?>         
                             <tr>
-                                <td colspan="2">Fecha:</td>
-                                <td><?php
-                                    echo $row['fecha_hora'];
-                                    ?>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td colspan="2">Total:</td>
-                                <td><?php echo "$" . $row['total'] ?></td>
+                                <td colspan="1"><b>Total:</b></td>
+                                <td colspan="2" style="padding:0 0 0 220px;"><?php echo "$" . $row['total'] ?></td>
                             </tr>
 
                             </tr>
