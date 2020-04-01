@@ -99,7 +99,6 @@ if ($_SESSION['mesero']) {
           </section>
         </div>
       </div>
-      <a href="categoriasnuevas.php"><img src="../icons/espalda.png" id="arrow-left" /></a>
       <div class="tabla-pedido">
         <div class="pedido">
           <center>
@@ -136,7 +135,7 @@ if ($_SESSION['mesero']) {
                     </td>
                     <td class="subtotal">Subtotal: <?php echo "$" . $datos[$i]['Cantidad']*$datos[$i]['Precio'];?></td>
                     <td>
-                      <a href="../php/eliminardecarrito.php?Pos=<?php echo $i; ?>">
+                      <a id="eliminar-prod"href="../php/eliminardecarrito.php?Pos=<?php echo $i; ?>">
                         Eliminar</a>
                     </td>
                     </tr>
@@ -151,10 +150,13 @@ if ($_SESSION['mesero']) {
             </tbody>
             <tfoot>
               <tr>
-                <td><a href="categoriasnuevas.php"><input type="submit" value="Volver" /></a></td>
                 <form action="../php/enviarcarrito.php" method="post">
-                  <td id="total">Total:<?php echo $total; ?></td>
-                  <td><select name="mesa">
+                  <input type="hidden" name="total_p" value="<?php echo $total; ?>">
+                  <input type="hidden" name="ced_mesero" value="<?php echo $_SESSION['mesero']; ?>">
+                  <td id="total" colspan="5">Total: <?php echo "$".$total; ?></td>
+                  <tr>
+                  <td colspan=""><a href="categoriasnuevas.php" id="Volver"/>Seguir pidiendo</a></td>
+                  <td colspan="2"><select name="mesa"  style="width:60%;">
                       <option disabled selected>Mesa</option>
                       <?php
                       $query = mysqli_query($conexion, "SELECT * FROM tbl_mesa");
@@ -165,9 +167,8 @@ if ($_SESSION['mesero']) {
                       }
                       ?>
                     </select></td>
-                  <input type="hidden" name="total_p" value="<?php echo $total; ?>">
-                  <input type="hidden" name="ced_mesero" value="<?php echo $_SESSION['mesero']; ?>">
-                  <td><input type="submit" name="enviar" value="Enviar"></td>
+                  <td colspan="2" style="padding:0 0 0 100px;"><input type="submit" name="enviar" value="Enviar"></td>
+                  </tr>
                 </form>
               </tr>
             </tfoot>
