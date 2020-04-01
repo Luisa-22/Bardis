@@ -205,7 +205,7 @@ input[type="checkbox"] {
     display: none;
     position: relative;
     top: 0px;
-    left: 50px;
+    left: 100px;
 }
 
 input[type="checkbox"]+label span {
@@ -218,7 +218,7 @@ input[type="checkbox"]+label span {
     cursor: pointer;
     position: relative;
     top: 0px;
-    left: 50px;
+    left: 100px;
 }
 
 input[type="checkbox"]:checked+label span {
