@@ -57,6 +57,7 @@ if ($_SESSION['administrador']) {
         <button><a href="pedidos_atendidos.php"><img src="../image/history.png"><br>Historial pedidos</button></a>
         <button><a href="musica.php"><img src="../image/dj-mixer.png"><br>Música</button></a>
         <button><a href="categoriaeventos.php"><img src="../image/calendar.png"><br>Eventos</button></a>
+        <button><a href="total_venta.php"><img src="../image/hand.png"><br>Total día</button></a>
 
       </div>
     </div>
