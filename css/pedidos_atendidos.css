@@ -140,7 +140,6 @@ div#fecha {
     padding: 50px;
     left: 50%;
 }
-
 div#fecha input[type="submit"] {
     padding: 5px;
     color: #fff;
@@ -157,18 +156,15 @@ div#div-pedidos {
     grid-gap: 20px;
     padding: 40px 40px 40px 100px;
 }
-
 .div-tablas {
     box-sizing: border-box;
 }
-
 .table {
     border-collapse: collapse;
     font-size: 20px;
     width: 85%;
     margin: auto;
-}
-
+}   
 table tr {
     text-align: left;
 }
@@ -176,48 +172,12 @@ table tr {
 table td {
     padding: 5px;
 }
-
-a.boton-factura {
-    padding: 5px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    font-size: 15px;
-    background: #74b9ff;
-    outline: none;
-    transition: 0.1s background;
-    width: 150px;
+th,td{
+    text-align: center;
 }
-
-a.boton-factura {
-    background: rgba(116, 185, 255, 0.8);
-    text-decoration: none;
-}
-
-input.boton-pedido {
-    padding: 5px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    margin: 10px 0 10px 150px;
-    font-size: 15px;
-    background: #55efc4;
-    outline: none;
-    transition: 0.1s background;
-    width: 150px;
-}
-
-input.boton-pedido:hover {
-    background: #74b9ff;
-    cursor: pointer;
-}
-
-tr {
+tr:nth-child(even){
     background: rgba(178, 190, 195, 0.2);
 }
-
 thead {
     background: #74b9ff;
     color: #fff;
