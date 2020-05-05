@@ -7,7 +7,7 @@ if ($_SESSION['administrador']) {
 
 ?>
   <!DOCTYPE html>
-  <html lang="en" dir="ltr">
+  <html lang="es" dir="ltr">
 
   <head>
     <meta charset="utf-8">
@@ -50,19 +50,19 @@ if ($_SESSION['administrador']) {
       <a href="perfiladministrador.php"><img src="../icons/espalda.png" id="arrow-left" /></a>
       <div id="div-cate" onclick="quitarsubmenu()">
         <div class="form-producto">
-          <form action="../php/registrarproducto.php" method="post">
+          <form action="../php/registrarproducto.php" method="post" onsubmit="return validarRegistroDeProductos()">
             <h2>Agregar producto</h2>
+            <h5 id="alert"></h5>
             <input type="hidden" name="ced_admin" value="<?php echo $_SESSION['administrador']; ?>">
-
-            <input type="text" name="nombreProducto" onkeypress="return SoloLetras(event)" onpaste="return false" placeholder="Nombre" required>
-            <input type="text" name="precioProducto" onkeypress="return SoloNumeros(event)" onpaste="return false" placeholder="Precio" required>
-            <textarea name="descripcionProducto" onkeypress="return SoloLetras(event)" onpaste="return false" placeholder="Descripción"></textarea>
-
-            <select name="categoriaProducto">
-              <option disabled selected>Categoria</option>
-
+            <input type="text" id="nombreProducto" name="nombreProducto" onkeypress="return SoloLetras(event)" onpaste="return false" placeholder="Nombre">
+            <h5 id="alertNombre"></h5>
+            <input type="text" id="precioProducto" name="precioProducto" onkeypress="return SoloNumeros(event)" onpaste="return false" placeholder="Precio">
+            <h5 id="alertPrecio"></h5>
+            <textarea id="descripcionProducto" name="descripcionProducto" onkeypress="return SoloLetras(event)" onpaste="return false" placeholder="Descripción"></textarea>
+            <h5 id="alertDescripcion"></h5>
+            <select id="categoriaProducto" name="categoriaProducto">
+              <option value="cate" disabled selected>Categoria</option>
               <?php
-
               include "../php/conexion.php";
 
               $query = mysqli_query($conexion, "SELECT * FROM tbl_categoria");
@@ -76,7 +76,7 @@ if ($_SESSION['administrador']) {
               ?>
 
             </select>
-
+            <h5 id="alertCategoria"></h5>
             <input type="submit" name="submit" value="Agregar producto">
           </form>
         </div>
