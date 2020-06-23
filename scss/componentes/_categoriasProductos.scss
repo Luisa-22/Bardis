@@ -1,0 +1,55 @@
+@import "headerPerfiles";
+@import "mixins";
+/**
+* Se obtiene el elemeto 'button' que tiene una clase llamada 'btn-modificar'
+*/
+button.btn-modificar {
+    @include boton-modificar;
+}
+/**
+* Se obtiene el elemeto 'button' que tiene una clase llamada 'btn-eliminar'
+*/
+button.btn-eliminar {
+    @include boton-eliminar;
+}
+/**
+* Se obtiene el elemeto 'button' que tiene una clase llamada 'btn-modificar' y se le agrega ':hover' para saber
+* cuando el usuario pone el mouse sobre el elemento 
+* se pone ',' para que los valores se aplique tambien al elemento 'button' que tiene una clase llamada 'btn-eliminar'
+* y también se le agrega ':hover' para saber
+* cuando el usuario pone el mouse sobre el elemento
+*/
+button.btn-modificar:hover,
+button.btn-eliminar:hover {
+    @include boton-tabla-hover;
+}
+/**
+ * Se seleciona el elemento 'img' que tiene un id 'arrow-left'
+ */
+img#arrow-left {
+   @include arrow-left;
+}
+/**
+* Se selecciona el elemento 'table' 
+*/
+table {
+    @include tabla-productos;
+}
+/**
+* Se selecciona el elemento 'th' que esta dentro del elemento 'thead' y, 'thead' esta dentro del elemento 'table'
+*/
+table thead th {
+    @include header-tabla;
+}
+/**
+* Se selecciona el elemento 'tr' que esta dentro del elemento 'table'
+*/
+table tr {
+    @include tr-tabla;
+}
+/**
+* Se selecciona el elemento 'tr' que esta dentro del elemento 'table'
+*/
+table td {
+   @include td-tabla;
+}

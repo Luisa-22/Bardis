@@ -1,0 +1,98 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+
+/**
+*Se selecciona el elemento 'div' que tiene un id llamado 'contenedor-empleados'
+*/
+div#contenedor-empleados {
+    /*
+     * Tienes las propiedades
+    * 'display: grid' Tiene grid para que los elementos dentro de el se acomoden en columnas
+    * 'grid-template-columns: 45% 45%' Tiene un tamaño de 45% la primera columna y la segunda de 45% 
+    */
+    display: grid;
+    grid-template-columns: 45% 45%;
+}
+/*
+*
+*Se selecciona el elemento 'div' que tiene un id llamado 'form-empleados'
+*/
+div.form-empleados{
+    /*
+    * Tiene las propiedades 
+    *
+    * 'padding:20px 0 0 100px' tiene una margen interna de 20 pixeles en el lado superior y 100 pixeles en el 
+    * lado izquierdo;
+    */
+    padding:20px 0 0 100px;
+}
+/**
+ * Se seleccina el elemento 'form' que esta dentro de un elemento 'div' que tiene un id 'form-empleados'
+*/
+div.form-empleados form {
+    @include formulario-empleados;
+}
+/**
+ * Se seleccina el elemento 'input'y 'select' que esta dentro de un elemento 'div' que tiene 
+ * un id 'form-empleados'
+ * se agrega una coma después de cada elemento para que las propiedades se le apliquen a todos los elementos
+*/
+div.form-empleados input,select {
+    @include input-formulario;
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro de un elemento 'div' que tiene un clase llamada 'form-empleados'
+* el elemento 'input' tiene agregado unas llaves'[]' para seleccionar un elemento en especifico
+* en este caso dentro de las llaves '[]' se escribe 'type="submit"' para definir que seleccione solo los elementos de tipo
+* 'submit'*/
+div.form-empleados input[type="submit"] {
+    @include input-formulario-submit;
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro de un elemento 'div' que tiene un clase llamada 'form-empleados'
+* el elemento 'input' tiene agregado unas llaves'[]' para seleccionar un elemento en especifico
+* en este caso dentro de las llaves '[]' se escribe 'type="submit"' para definir que seleccione solo los elementos de tipo
+* 'submit' y, después se le agrega ':hover' para saber cuando el usuario
+* ponga el cursor sobre el elemento
+* 'form-eventos'
+*/
+div.form-empleados input[type="submit"]:hover {
+    @include input-formulario-submit-hover;
+}
+
+/**
+* Se selecciona el elemento 'table' 
+*/
+table {
+    @include tabla-productos;
+}
+/**
+* Se selecciona el elemento 'th' que esta dentro del elemento 'thead' y, 'thead' esta dentro del elemento 'table'
+*/
+table thead th {
+    @include header-tabla;
+}
+/**
+* Se selecciona el elemento 'tr' que esta dentro del elemento 'table'
+*/
+table tr {
+    @include tr-tabla;
+}
+/**
+* Se selecciona el elemento 'tr' que esta dentro del elemento 'table'
+*/
+table td {
+   @include td-tabla;
+}
+button.btn-modificar {
+    @include boton-modificar;
+}
+
+button.btn-eliminar {
+    @include boton-eliminar;
+}
+
+button.btn-modificar:hover,
+button.btn-eliminar:hover {
+    @include boton-tabla-hover;
+}

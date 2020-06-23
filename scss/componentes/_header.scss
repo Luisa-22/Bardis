@@ -1,0 +1,134 @@
+/*@font-face es para definir la letra que va a llevar todo el documento
+*font-family es para definir el nombre del tipo de letra en este caso 'Alata'
+*src: url() se le pasa la ruta para la que encuentre el archivo de la letra.
+*/
+@font-face {
+    font-family: 'Alata';
+    src: url('../fonts/Alata-Regular.ttf');
+}
+/*
+* Con "*" se defines los valores que va a llevar todo el documento
+* En este caso se ponen 'margin:0' y 'padding:0' para que no tengan ningun tipo de margenes.
+* también se pone 'font-family:'Alata' para que todo lo que sea texto lleve este tipo de letra. y si llega a fallar algo
+* 'sans-serif' sera el tipo de letra como segundo opción
+*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Alata', sans-serif;
+}
+/*
+* Se difine 'html' para definir el documento 'scroll-behavior:smooth' es para que cuando se haga scroll en documento
+* html el scrool sea 'suave'
+*/
+html {
+    scroll-behavior: smooth;
+}
+/*
+* Se obtiene un div con id "container" se define que sea grid para que permita hacer columnas
+* 'grid-template-columns: 100%' para que las columnas sea del 100% para que ocupen todo el tamño de la pantalla
+*/
+div#container {
+    display: grid;
+    grid-template-columns: 100%;
+}
+/*
+* Se obtiene el div con id "header" que es el que contiene el menú
+* Se define 'position: fixed' para que cuando el usuario haga scroll el menú se quede fijo y siempre este visible,
+* tendra un "width: 100%" para que ocupe todo el ancho de la pagina,'height: auto' para que el alto se acomode al contenido
+* 'z-index: 999' para que cuando el usuario haga scroll el menú no quede por debajo del los demas elementos.
+*/
+div#header {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+}
+
+/*
+* 'nav' es la etiqueta que define el menú
+* 'background: #010101' sera para que tenga un fondo de color negro
+* 'padding: 20px 20px 20px 5px' son la margenes internas
+   - el primer valor es la margen superior
+   - El segundo valor es la margen de la derecha
+   - El tercer valor es la margen inferior
+   - El cuarto valor es la margin de la izquierda
+*/
+nav {
+    background: #010101;
+    padding: 20px 20px 20px 5px;
+    box-sizing: border-box;
+}
+
+/*
+* 'nav img' se hace para hacer un selector a las imagenes que estén dentro de nav
+* 'nav' es la etiqueta que define el menú 
+* 'img' es una imagen que esta dentro del nav
+*   'width: 150px' La imagen tendrá un ancho del 150 pixeles
+    'height: 70px' La imagen tendrá un alto de 70 pixeles
+    'position: absolute' la posición sera absoluta (que siempre estara en esa posición)
+    'top: -2px' y tendra -2 pixeles hacia arriba
+*/
+nav img {
+    width: 150px;
+    height: 70px;
+    position: absolute;
+    top: -2px;
+}
+/*
+* 'nav ul' se hace para hacer un selector a las listas que estén dentro de nav
+* 'nav' es la etiqueta que define el menú 
+* 'ul' es la lista que esta dentro del nav
+*   'display: flex' los elementos que esten desde del 'ul' seran flexibles a las propiedades que se le definan
+    'color: white' El color de los elementos dentro de 'ul' seran de color blanco 
+    'justify-content: flex-end' El contenido estará en al parte derecha
+    'list-style: none' lo estilos de lista (puntos, guiones,asteriscos) no seran visibles
+    'text-decoration: none' Los elementos dentro de ul no estarán subrayados
+*/
+nav ul {
+    display: flex;
+    color: white;
+    justify-content: flex-end;
+    list-style: none;
+    text-decoration: none;
+}
+/*
+* 'nav img' se hace para hacer un selector a las imagenes que estén dentro de nav
+* 'nav' Es la etiqueta que define el menú 
+* 'li' Es para definir  un elemento de la lista
+* 'a' Es para definir un enlace 
+*   'color: white' Es para definir que los elementos 'a' van a tener color blanco
+    'text-decoration: none' Es para definir que los elementos 'a' no van a estar subrayados
+    'padding: 0px 0px 10px 20px' Es para definir la margenes internas de los elementos 'a'
+        - el primer valor es la margen superior
+        - El segundo valor es la margen de la derecha
+        - El tercer valor es la margen inferior
+        - El cuarto valor es la margin de la izquierda
+    'transition: 0.1s color' Es para definir la transición de los elementos 'a' cada ves que tenga algun cambio sera lento
+    'font-size: 15px' Es para definir el tamaño de la letra de los elementos 'a'
+*/
+nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 0px 0px 10px 20px;
+    transition: 0.1s color;
+    font-size: 15px;
+}
+
+ /* 'a:hover' Es para definir que cuando se ponga el mouse sobre un enlace se ponga de color Azul */
+nav li a:hover {
+    color: #0095FF;
+}
+/**
+* Se selecciona el elemeton 'ion-icon' que es el icono del menú que sese muestra cuando la pantalla es muy pequeña
+* Pero cuando la pantalla es amplia se ecnuetra oculto
+*/
+#icon-menu{
+    /*
+    * Tiene las propiedades 
+    *
+    * 'display:none' Con display none se oculta el icono y no es visible para el usuario
+    */
+    display:none;
+  }
+

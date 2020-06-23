@@ -1,0 +1,55 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+/*
+* Se selecciona el elemento 'div' que tiene un id llamado 'div-modificar-perfil'
+*/
+div.div-modificar-perfil {
+    /*
+    * Tiene las propiedades 
+    'width: 25%' Tiene un ancho de 20%
+    'padding: 60px 0 0 0' Tiene margenes internas de 60 pixeles en el lado superior y 0 pixeles 
+    en la demas (derecho,inferior,izquierdo)
+    'margin: auto' Tiene margen automatica para que el elemento quede en el centro del documento
+    */
+    width: 25%;
+    padding: 60px 0 0 0;
+    margin: auto;
+}
+/*
+* Se selecciona el elemento 'form' que esta dentro del elemento 'div' que tiene un id llamado 'div-modificar-perfil'
+*/
+div.div-modificar-perfil form {
+    @include formulario-contacto;
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro del elemento 'form' 
+*/
+form input {
+    @include input-formulario;
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro del elemento 'form' y se le agrega ':focus' para saber cuando el usuario
+* selecciona el elemento
+*/
+form input:focus {
+    @include input-formulario-focus;
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro de un elemento 'div' que tiene un id llamado 'form-eventos'
+* el elemento 'input' tiene agregado unas llaves'[]' para seleccionar un elemento en especifico
+* en este caso dentro de las llaves '[]' se escribe 'type="submit"' para definir que seleccione solo los elementos de tipo
+* 'submit'*/
+form input[type="submit"] {
+    @include input-formulario-submit;
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro de un elemento 'div' que tiene un id llamado 'form-eventos'
+* el elemento 'input' tiene agregado unas llaves'[]' para seleccionar un elemento en especifico
+* en este caso dentro de las llaves '[]' se escribe 'type="submit"' para definir que seleccione solo los elementos de tipo
+* 'submit' y, después se le agrega ':hover' para saber cuando el usuario
+* ponga el cursor sobre el elemento
+* 'form-eventos'
+*/
+form input[type="submit"]:hover {
+    @include input-formulario-submit-hover;
+}

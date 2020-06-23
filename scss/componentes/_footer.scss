@@ -1,0 +1,149 @@
+/*
+* Se selecciona el elemeto footer
+*/
+footer {
+    /*
+    * Tiene las propiedades 
+    'width: 100%' Tiene un ancho de 100%
+    'height: 150px' Tiene un alto de 150 pixeles
+    'background: #010101' Tiene un fondo de color negro
+    'color: white' El color de la letra es blanco
+    'padding: 15px' Las margenes internas son de 15 pixeles
+    'display: grid' Se divide en columnas
+    'grid-template-columns: 50% 50%' El tamaño de las columnas son del 50%
+    */
+    width: 100%;
+    height: 150px;
+    background: #010101;
+    color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+/*
+* Se seleciona el div con una clase 'derechos'
+*/
+div.derechos{
+    /*
+    *Tiene las propiedades
+    'grid-column:1/3' La columna empieca en la 1 y termina en la 3
+    * 'text-align:center' El elemento tiene el text centrado
+    */
+    grid-column:1/3;
+    text-align:center;
+}
+/*
+* Se seleciona el elemento 'section' que esta dentro de un div con clase 'div-footer'
+*/
+div.div-footer section {
+    /*
+    * Tiene las propiedades 
+    'display: inline-flex' Tiene inline-flex para que los elementos que esten dentro de el se pongan uno al lado del otro
+    'margin-top: 10px' la margin superior tendra 10 pixeles
+    */
+    display: inline-flex;
+    margin-top: 10px;
+}
+/*
+* Se selecciona el elemento 'ion-icon' que esta dentro del div con clase 'div-footer'
+*/
+div.div-footer ion-icon {
+    /*
+    * Tiene las propiedades
+    'font-size: 25px' Tiene un tamaño de fuente de 25 pixeles
+    'border-radius: 5px' Tiene un borde de 5 pixeles en todas las esquinas
+    'margin-right: 10px' la margin superior tendra 10 pixeles
+    */
+    font-size: 25px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+/*
+* Se selcciona el elemento div que tiene una clase 'div-redes'
+*/
+div.div-redes {
+    /*
+    * Tiene las propiedades
+    'padding-left:40px' Tiene una margen interna en la derecha de 40 pixeles 
+    */
+    padding-left: 40px;
+}
+/*
+* Se selcciona el elemento 'ion-icon' que esta dentro de un div que tiene una clase 'div-redes'
+*/
+div.div-redes ion-icon {
+    /*
+    * Tiene las propiedades
+    'font-size: 35px' Tiene un tamaño de fuente de 35 pixeles
+    'margin-left: 10px'la margin de la izquierda tendrá 10 pixeles
+    'transition: 0.6s color' Tiene una transición de 0.6 al color 
+    para que cuando cambie no se tan brusco sino que cambie progesivamente
+    */
+    font-size: 35px;
+    margin-left: 10px;
+    transition: 0.6s color;
+}
+/*
+* Se selecciona el elemento ion-icon que tiene un id 'facebook'. se le agregar ':hover' 
+  para saber cuando el usuario pone el mouse sobre el elemento
+*/
+ion-icon#facebook:hover {
+    /*
+    *Tiene las propiedades
+    'color: #0984e3' Tiene un color azul
+    'cursor: pointer' Tiene un cursor del estilo de una mano
+    */
+    color: #0984e3;
+    cursor: pointer;
+}
+/*
+* Se selecciona el elemento ion-icon que tiene un id 'youtube'. se le agregar ':hover' 
+  para saber cuando el usuario pone el mouse sobre el elemento
+*/
+ion-icon#youtube:hover {
+    /*
+    *Tiene las propiedades
+    'color: #0984e3' Tiene un color rojo
+    'cursor: pointer' Tiene un cursor del estilo de una mano
+    */
+    color: #d63031;
+    cursor: pointer;
+}
+/*
+* Se selecciona el elemento ion-icon que tiene un id 'instagram'. se le agregar ':hover' 
+  para saber cuando el usuario pone el mouse sobre el elemento
+*/
+ion-icon#instagram:hover {
+    /*
+    *Tiene las propiedades
+    'color: #0984e3' Tiene un color rodado
+    'cursor: pointer' Tiene un cursor del estilo de una mano
+    */
+    color: #ff7675;
+    cursor: pointer;
+}
+/*
+* Se selecciona el elemento 'img' que tiene un id 'arrow-up'
+*/
+img#arrow-up {
+    /*
+    * Tiene las propiedades
+    'position: relative' Tiene una posición relativa
+    'left: 1250px' Esta movido 1250 pixeles a la izquierda
+    'top: 30px' Esta movido 30 pixeles hacia abajo
+    'width: 50px' Tiene un ancho de 50 pixeles
+    'height: auto' Tiene un alto automatico
+    'background: #fd79a8' Tiene un fondo rosado
+    'border-radius: 5px' Tiene bordes en las esquinas de 5 pixeles
+    'padding: 5px' Tiene margenes internas de 5 pixeles
+    */
+    position: relative;
+    left: 1250px;
+    top: 30px;
+    width: 50px;
+    height: auto;
+    background: #fd79a8;
+    border-radius: 5px;
+    padding: 5px;
+}

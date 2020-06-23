@@ -1,0 +1,93 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+img#arrow-left {
+   @include arrow-left;
+}
+/*
+* Se selecciona el elemento 'div' que tiene un id llamado 'div-pedidos'
+*/
+div#div-pedidos {
+    /*
+    * Tiene las propiedades 
+    * 
+    * 'display: grid' Tiene display grid para definir que el elemento se va dividir en columnas
+    * 'grid-template-columns: 50% 50%' se define el tamño de las columnas que seran de 50%  y, coomo hay dos valores, 
+    *  el elemento tendrá dos columnas
+    * 'grid-gap: 20px' las margenes externas de los elementos sera de 20 pixeles en todos los lados(superior,derecho,inferior,izquierdo)
+    * 'padding: 40px 100px' Las margen interna del elemento 'div' sera de 40 pixeles en los lados superior y inferior. y 100 pixeles
+    * en los lados derecho y izquierdo.
+    */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
+    padding: 40px 100px;
+}
+/*
+* Se selecciona el elemento 'table' que tiene una clase llamada 'table'
+*/
+.table {
+    @include tabla-productos;
+    width: 85%; // Tiene un ancho del 85
+}
+/*
+* Se selecciona el elemento 'thead' que esta dentro del elemento 'table'
+*/
+thead th{
+    @include header-tabla;
+}
+/*
+* Se selecciona el elemento 'tr' que esta dentro del elemento 'tfoot'
+*/
+tfoot tr{
+    /*
+    * Tiene las propiedades 
+    * 'background:none' No tiene un fondo
+    */
+    background:none;
+}
+/*
+* Se selecciona el elemento 'tr' que esta dentro del elemento 'table'
+*/
+table tr {
+    @include tr-tabla;
+}
+
+/*
+* Se selecciona el elemento 'td' que esta dentro del elemento 'table'
+*/
+table td {
+    @include td-tabla;
+}
+/*
+* Se selecion el elemento 'a' que tiene una clase llamada 'boton-factura'. Se pone ',' para que al elemento 'input'
+* con una clase llamada 'boton-pedido' tengam las mismas propiedades.
+*/
+a.boton-factura,input.boton-pedido  {
+    @include boton-pedidos;
+}
+/*
+* Se seleciona el elemento 'a' que tiene una clase llamada 'boton-factura' y se le agrega ':hover' para saber cuando
+* el usuario ponga el cursor sobre el elemento 
+*/
+a.boton-factura:hover{
+    @include boton-factura-hover;
+}
+/*
+* Se seleciona el elemento 'input' con una clase llamada 'boton-pedido'
+*/
+input.boton-pedido{
+    @include boton-pedido;
+}
+/*
+* Se seleciona el elemento 'input' que tiene una clase llamada 'boton-pedido' y se le agrega ':hover' para saber cuando
+* el usuario ponga el cursor sobre el elemento 
+*/
+input.boton-pedido:hover {
+    @include boton-pedido-hover;
+}
+/*
+* Se seleciona los elementos 'tr' y se le agrega 'nth-child(even)' para que seleccione los 'tr' que son impares.
+*/
+tr:nth-child(even) {
+    @include tr-even-tabla;
+}

@@ -1,0 +1,59 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+/**
+ * Se selcciona el elemento 'div'que tiene un id 'btn'
+ */ 
+div#btn {
+    /**
+     * Tiene las propiedades
+     * 
+     * 'display: flex' Tiene flex para que los elementos que estan dentro de el sea flexibles
+     * 'flex-wrap: wrap' Wrap para que lo elementos esten en una misma linea
+     * 'box-sizing: border-box' Tiene boder-box para que su tamaño no cambie cuando le agreguen margenes internas
+     * 'justify-content: center' El contenido esta centrado
+     * 'padding: 60px 0 0 0' Tiene un margen interna de 60 pixeles y en los otros lados esta en 0 
+     * 
+    */
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+    padding: 60px 0 0 0;
+}
+/**
+ * Se selecion el elemento 'button' que esta dentro del elemento 'div' que tiene un id 'btn'
+ */
+div#btn button {
+    @include button-perfiladmin;
+}
+/**
+ * Se selecion el elemento 'button' que esta dentro del elemento 'div' que tiene un id 'btn' se le agrega
+ *  ':hover' para saber cuando el mouse este sobre el elemento 'button'
+ */
+div#btn button:hover {
+    @include button-perfiladmin-hover;
+}
+/**
+ * Se selecion el elemento 'a' que esta dentro del elemento 'button'
+ */
+div#btn button a {
+    /**
+     * Tiene las propiedades
+     * 'color: #fff' Tiene el color de la letra blanco
+     * 'text-decoration: none' No tiene ningun tipo de decaoración (linea inferior)
+     * 
+     */ 
+    color: #fff;
+    text-decoration: none;
+}
+/**
+ * Se selecion el elemento 'img' que esta dentro del elemento 'div' que tiene un id 'btn'
+ */ 
+div#btn img {
+    /**
+     * Tiene las propiedades
+     * 
+     * 'width: 90px' Tiene un ancho de 90 pixeles
+     */ 
+    width: 90px;
+}

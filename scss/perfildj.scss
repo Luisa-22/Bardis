@@ -1,0 +1,59 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+/*
+* Se selcciona el elemento 'div' que tiene un id llamado 'btn' y es el que contendra los botones del menu del administrador
+*/
+div#btn {
+    /**
+    * Tiene las propiedades
+    * 
+    * 'display: grid' Tiene grid para que los elementos que estan dentro del 'div' se divida en columnas
+    * 'grid-template-columns: auto' El tamaño de las columnas sera automatica para que se acomode a los elementos
+    * 'grid-gap: 10px 20px' La separación de las columnas sera de 10 pixeles en la parte superior y inferior y 20
+    *  pixeles en el lado derecho y izquierdo
+    * 'padding: 60px' El elemento 'div' tiene margenes internas de 60 pixeles en todos sus lados
+    * 'justify-content: center' El contenido del elemento 'div' estara en el centro
+    * 
+    */
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px 20px;
+    justify-content: center;
+    padding: 60px 0 0 0;
+}
+/*
+* Se selecciona el elemento 'button' que esta dentro del elemento 'div' que tiene un id llamado 'btn'
+*/
+div#btn button {
+    @include button-perfiladmin;
+}
+/*
+* Se selecciona el elemento 'button' que esta dentro del elemento 'div' que tiene un id llamado 'btn'
+* se le agrega ':hover' para que cuando el usuario pponga el cursor sobre el elemento el elemento 'buutton' 
+* tenga otras porpiedades
+*/
+div#btn button:hover {
+   @include button-perfiladmin-hover;
+}
+/*
+* Se selecciona el elemento 'img' que esta dentro del elemento 'div' que tiene un id llamado 'btn'
+*/
+div#btn img {
+    /*
+    * Tiene las propiedades
+    *
+    * 'width:120px' el elemento 'img' tiene un ancho de 120 pixeles
+    */
+    width: 120px;
+}
+/*
+* Se selecciona el elemento 'a' que esta dentro del elemento 'div' que tiene un id llamado 'btn'
+*/
+div#btn a {
+    /*
+    * Tiene las propiedades
+    *
+    * 'color: #fff' El color de la letra es blanca
+    */
+    color: #fff;
+}

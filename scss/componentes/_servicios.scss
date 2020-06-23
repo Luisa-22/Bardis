@@ -1,0 +1,123 @@
+/*
+* 'div.div-titulo' E el div que tiene como id 'div-titulo'
+*/
+div.div-titulo {
+    /*
+    * Tiene la propiedades 
+    'width: 100%' Tiene un width del 100%
+    'height: 100px' Tiene un height de 100px
+    'text-align: center' La letra estará centrada
+    'padding: 65px 0 0 0' La margen interna tiene 65 pixeles en la parte superior y en la demás 0 
+    */
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding: 65px 0 0 0;
+}
+/*
+* 'div.div-titulo h3' Se selecciona el elemento 'h3' que esta dentro de 'div.div-titulo'
+*/
+div.div-titulo h3 {
+    /*
+    * Sus propiedades son 
+    'font-size: 50px' Tiene un tamaño de letra de 50 pixeles 
+    'color: #0095FF' El color de la letra es azul
+    */
+    font-size: 50px;
+    color: #0095FF;
+}
+/*
+* 'div.div-servicios' Se seleciona el div que tiene una clase de nombre 'div-servicios'
+*/
+div.div-servicios {
+    /*
+    * Sus propiedades son 
+    'display: inline-flex' Tiene 'inline-flex' Para que los elementos que esten dentro de el este uno al lado del otro
+    */
+    display: inline-flex;
+}
+/*
+* 'div.div-pedidos,div.div-canciones' Se selecciona los div que tienen como clase 'div.div-pedidos' y 'div.div-canciones'
+*/
+div.div-pedidos,
+div.div-canciones {
+    /*
+    * Ambos div tiene las propiedades
+    'width: 50%' Tiene un ancho de 50%
+    'padding: 70px' Tiene una margen internas de 70 pixeles en todos los lados
+    'box-sizing: border-box' Border-box para que su tamaño no cambie
+    */
+    width: 50%;
+    padding: 70px;
+    box-sizing: border-box;
+}
+/*
+* 'div.div-pedidos img,div.div-canciones img' Se selecciona los elementos 'img' que estan dentro del div 'div.div-pedidos'
+* y de 'div.div-canciones'
+*/
+div.div-pedidos img,
+div.div-canciones img {
+    /*
+    * Tiene las propiedades
+    'width: 150px' Tiene un ancho de 150 pixeles 
+    'height: auto' Tiene un alto automatico
+    'opacity: 0.4' Tiene una opacidad de 0.4
+    'position: relative' La posición es relativa con respecto a los otros elementos
+    'left: 150px' Esta posicionado 150 pixeles a la izquierda
+    'top: 10px' Esta posicionado 10 pixeles en la parte superior
+    */
+    width: 150px;
+    height: auto;
+    opacity: 0.4;
+    position: relative;
+    left: 150px;
+    top: 10px;
+}
+/*
+* 'div.div-pedidos h3,div.div-canciones h3' Se selecciona los elementos 'h3' que estan dentro del div 'div.div-pedidos'
+* y de 'div.div-canciones'
+*/
+div.div-pedidos h3,
+div.div-canciones h3 {
+    /*
+    * Tiene las propiedades 
+    'font-size: 1.9rem' El tamaño de letra es de 1.9 rem (26 pixeles)
+    'color: #0095FF' El color de la letra es azul
+    */
+    font-size: 1.9rem;
+    color: #0095FF;
+}
+/*
+* 'div.div-pedidos p,div.div-canciones p' Se selecciona los elementos 'p' que estan dentro del div 'div.div-pedidos'
+* y de 'div.div-canciones'
+*/
+div.div-pedidos p,
+div.div-canciones p {
+    /*
+    * Tienes las propiedades
+
+    'text-align: justify' El texto esta justificado
+    'font-size: 20px' El tamaño de la letra es de 20 pixeles 
+    'color: #636e72' El clor de la letra es gris
+    */
+    text-align: justify;
+    font-size: 20px;
+    color: #636e72;
+}
+/*
+* Se selecciona el elemeneto 'hr' que tiene como id 'hr-1'
+*/
+hr#hr-1 {
+    /*
+    * Tiene las propiedades 
+
+    'width: 80%' Tiene un ancho del 80%
+    'border: 1px solid #b2bec3' El boder es de 1 pixeles de grosor, el estilo es solido y el color es gris
+    'border-radius: 50px' El borde de las esquinas ed de 50 pixeles
+    'margin-left: 150px' La margen de la izquierda es de 150 pixeles 
+    */
+    width: 80%;
+    border: 1px solid #b2bec3;
+    border-radius: 50px;
+    margin-left: 150px;
+}

@@ -1,0 +1,122 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+/*
+* Se selecciona el elemento 'img' que tiene un id llamado 'arrow-left'
+*/
+img#arrow-left {
+    @include arrow-left;
+}
+/*
+* Se selecciona el elemento 'div' que tiene una id llamado 'div-music'
+*/
+div#div-music {
+    /*
+    * Tiene las propiedades
+    *
+    * 'margin: 20px auto' Tiene una margen de 20 pixeles en el lado superior y auto en los demas lados para que 
+    * el elemento quede centrado
+    */
+    margin: 20px auto;
+}
+/*
+* Se selecciona el elemento 'table' que tiene una clase llamda 'table-music'
+*/
+table.table-music {
+    @include tabla-productos;
+    width: 500px; // Tiene un ancho de 500 pixeles
+}
+
+/*
+* Se selecciona el elemento 'thead' que esta dentro del elemento 'table'
+*/
+table thead{
+    @include header-tabla;
+}
+
+/*
+* Se selecciona el elemento 'tr' que esta dentro del elemento 'table'
+*/
+table tr{
+    @include tr-tabla;
+}
+/**
+* Se seleciona el elemento 'td' que esta dentro del elemento 'table'
+*/
+td {
+    @include td-tabla;
+}
+/*
+* Se selecciona el elemento 'input' que tiene una clase llamda 'eliminar-cancion'
+*/
+input.eliminar-cancion {
+    @include boton-eliminar;
+    width:150px;// Tiene un ancho de 150 pixeles
+    float: right; // Esta posicionado a la derecha
+}
+/*
+* Se selecciona el elemento 'input' que tiene una clase llamda 'eliminar-cancion' y se le agrega ':hover' para 
+*  saber cuando el usuario poner el mouse sobre el elemento
+*/
+input.eliminar-cancion:hover {
+    @include boton-tabla-hover;
+}
+/**
+* Se selecciona el elemento 'input' de tipo 'checkbox' 
+*/
+input[type=checkbox] {
+    /**
+    *  Tiene las propiedades
+    * 'display: none' Tiene 'display none' para que no se visible para el usuario
+    * 'position: relative' La posición es relativa con respecto a los demas elementos.
+    * 'top: 0px' Tiene 0 pixeles en el lado superior
+    * 'left: 100px' Tiene 100 pixeles del lado izquierdo
+    */
+    display: none;
+    position: relative;
+    top: 0px;
+    left: 100px;
+  }
+  
+  /**
+  * Se selecciona el elemento 'span' que esta dentro del elemento label
+  */
+  input[type=checkbox] + label span {
+      /*
+      * Tiene las propiedades
+      * 'display: block' Tiene block para que el elemento de ponga uno debajo del otro
+      * 'width: 20px' Tiene un ancho de 20 pixeles
+      * 'height: 20px' Tiene una altura de 20 pixeles  
+      * 'margin: -1px 4px 0 0' Tiene un margen externa de -1 pixeles del lado superior 4px
+      *  en el lado derecho y 0 pixeles en el lado inferior y izquierdo
+      * 'background: url(../image/frame.png)' Se pone de fondo una imagen y dentro de los parentesis 'url()' 
+      * se pone la ruta de la imagen
+      * 'background-size: cover' Tiene background cover para que el fondo (que es una imagen) se acomode correctamente
+      * 'cursor: pointer' El cursor sera un puntero
+      * 'position: relative' La posición es relativa con respecto a los demas elementos.
+      * 'top: 0px' Tiene 0 pixeles en el lado superior
+      * 'left: 100px' Tiene 100 pixeles del lado izquierdo
+      */
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: -1px 4px 0 0;
+    background: url(../image/frame.png);
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+    top: 0px;
+    left: 100px;
+  }
+/**
+  * Se selecciona el elemento 'span' que esta dentro del elemento label
+  */
+input[type="checkbox"]:checked+label span {
+    /*
+    * Tiene las propiedades
+    *
+    * 'background: url(../image/frame.png)' Se pone de fondo una imagen y dentro de los parentesis 'url()' 
+    * 'background-size: cover' Tiene background cover para que el fondo (que es una imagen) se acomode correctamente
+    */
+    background: url(../image/check.png);
+    background-size: cover;
+}

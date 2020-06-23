@@ -1,0 +1,252 @@
+/**
+*@font-face es para define la letra que va a llevar todo el documento
+*font-family es para definir el nombre del tipo de letra en este caso 'Alata'
+*src: url() se le pasa la ruta para la que encuentre el archivo de la letra.
+*/
+@font-face {
+    font-family: 'Alata';
+    src: url('../fonts/Alata-Regular.ttf');
+}
+/*
+* Con "*" se define los valores que va a llevar todo el documento
+* En este caso se ponen 'margin:0' y  'padding:0' para que no tengan ningun tipo de margenes.
+* también se pone 'font-family:'Alata' para que todo lo que sea texto lleve este tipo de letra. y si llega a fallar algo
+* 'sans-serif' sera el tipo de letra como segundo opción
+* 'text-decoration:none' Para que los enlances no tengan una linea inferior y así, se vea solo el texto
+* 'color:#000' El color de la letra va ser de color negro
+*/
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Alata";
+    text-decoration:none;
+}
+/*
+* Se obtiene el elemento 'div' que tiene un id 'container' 
+*/
+div#container {
+    /*
+    * Tiene las propiedades que tiene
+    'display: grid' Tiene grid para que el contenido se divida en columnas
+    'grid-template-columns: 100%' El tamaño de las columnas seran del 100%
+
+    */
+    display: grid;
+    grid-template-columns: 100%;
+}
+/*
+* Se obtiene el elemento 'div' que tiene un id 'perfiladmin'
+*/
+div#perfiladmin {
+    /*
+    * Tiene las propiedades
+    'background: #000' Tiene un fondo de color negro
+    'padding: 0 0 10px 0' Tiene margenes internas 10 pixeles en la parte inferior y en las demás 0 
+
+    */
+    background: #000;
+    padding: 0 0 10px 0;
+}
+/*Se selecciona el elemento 'img' que tiene un id 'img-1'
+*/
+img#img-1 {
+    /*
+    *Tiene las propiedades 
+    'width: 150px' Tiene un ancho de 150 pixeles
+    'height: 70px' Tiene una altura de 70 pixeles
+    'position: absolute' Tiene una posición absoluta
+    'top: -2px' Tiene -2 pixeles hacia arriba
+    */
+    width: 150px;
+    height: 70px;
+    position: absolute;
+    top: -2px;
+}
+/*
+* Se selecciona el elemento 'div' que tiene una clase 'perdil-admin'
+*/
+div.perfil-admin {  
+    /*
+    * Tiene las propiedades 
+    'width: 200px' Tiene un ancho de 200 pixeles
+    'float: right' Esta flotando al lado derecho 
+   'text-align: center' Tiene el texto centrado
+    'padding: 10px 0 0 0' Las margenes de internas tiene 10 pixeles en la parte superior y las demas en 0
+    */
+    width: 200px; 
+    float: right;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+/*
+*Se selecciona el elemento 'ion-icon' que esta dentro del elemento 'div' que tiene una clase 'perfil-admin'
+*/
+div.perfil-admin ion-icon {
+    /*
+    Tiene las propiedades 
+    'position: relative' Tiene una posisción realtiva con respecto a los demas elemento 
+    'top: 5px' Tiene 5 pixeles hacia abajo
+    'font-size: 20px' El tamaño de fuente es de 20 pixeles 
+    */
+    position: relative;
+    top: 5px;
+    font-size: 20px;
+}
+/*
+* Se selecciona el elemento 'img' que tiene un id 'icon-1'
+*/
+img#icon-1 {
+    /*
+    * Tienes las propiedades
+    'position: relative' Tiene un posisción relativa
+    'right: -5px' Tiene -5 pixeles  a la derecha
+    'width: 11px' Tiene un ancho de 11 pixeles
+    'height: auto' Tiene una altura automatica
+    */
+    position: relative;
+    right: -4px;
+    width: 11px;
+    height: auto;
+}
+/*
+* Se selecciona el elemento 'img' que tiene un id 'icon-2'
+*/
+img#icon-2 {
+    /*
+    * Tienes las propiedades
+    'position: relative' Tiene un posisción relativa
+    'right: -5px' Tiene -5 pixeles  a la derecha
+    'width: 11px' Tiene un ancho de 11 pixeles
+    'height: auto' Tiene una altura automatica
+    'display: none' Tiene un display none para que este oculto
+    */
+    position: relative;
+    right: -5px;
+    width: 11px;
+    height: auto;
+    display: none;
+}
+/*
+* Se selecciona el 'div' que tiene una clase 'perfil-admin' Se le agrega ':hover' 
+* para saber cuando se pone el mouse sobre el elemento
+*/
+div.perfil-admin img:hover {
+    /*
+    * Tiene las propiedades
+
+    'cursor:pointer' Tiene un cursor con el estilo de una mano
+    */
+    cursor:pointer;
+}
+/*
+* Se selecciona el elemento 'img' que esta dentro de elemento 'div' que tiene una clase 'perfil-admin'
+*/
+div.perfil-admin img {
+    /*
+    * Tiene las propiedades
+    * 
+    * 'width: 45px' Tiene una ancho de 45 pixeles
+      'height: 45px' Tiene un alto de 45 pixeles
+      'background: none' No tiene un fondo
+      'position: relative' Tiene una posición relativa
+      'right: 5px' Esta corrido 5 pixeles con respecto a la derecha
+      'margin-right: 10px' Tiene una margen de la derecha de 10 pixeles
+    */
+    width: 45px; 
+    height: 45px; 
+    background: none; 
+    position: relative; 
+    right: -4px; 
+    margin-right: 10px; 
+}
+/*
+* Se selecciona el elemento 'section' que tiene un id 'section-perfil'
+*/
+section#section-perfil {
+    /**
+     * Tiene las propiedades
+    'display: inline-flex' Tiene inline-flex para que los elementos esten dentro el esten uno al lado del otro
+    */
+    display: inline-flex;
+}
+/**
+ * Se selecciona el elemento 'h3' que esta dentro de 'section' que tiene como id 'section-perfil'
+ */
+section#section-perfil h3 {
+    /**
+     * Tienes las propiedades
+     * 
+     * 'margin-top: 20px' Tiene margen de la parte superior de 20 pixeles
+     * 'color: #fff' Tiene un color de letra blanco
+    */
+    margin-top: 20px;
+    color: #fff;
+}
+/**
+ * Se selecciona el elemento 'section' que tiene un id 'section-opc' 
+ */
+section#section-opc {
+    /**
+     * Tiene las propiedades 
+     * 
+     * 'width: 130px' Tiene un ancho de 130 pixeles
+     * 'padding: 0 5px 0 10px' Tiene margen internas de 5px en al parte inferior y 10 pixeles en lado  izquierda
+     * 'margin: 10px 0 0 55px'Tiene una margen de 10 pixeles en el lado superior y 55 pixeles en el lado inferior
+     * 'display: none' Tiene un display none para que este oculto
+     * 'position: absolute' Tiene una posición absoluta
+     * 'background: #000' Tiene un fondo negro
+     * 'border-radius: 0 0 0 10px' Tiene un borde de 10 pixeles en el lado 
+     * 'z-index: 999' Tiene 999 para que este por encima de los demas elementos
+     */ 
+    width: 140px;
+    padding: 0 5px 0 10px;
+    margin: 10px 0 0 45px;
+    display: none;
+    position: absolute;
+    background: #000;
+    border-radius: 0 0 0 10px;
+    z-index: 999;
+}
+/**
+ * Se selecciona el elemento 'li' que esta dentro del elemento 'section'
+ */ 
+section#section-opc li {
+    /**
+     * Tienes las propiedades
+     * 
+     * 'list-style: none' La lista no tiene decoraciones (puntos,guiones..etc)
+     * 'padding: 10px 0 0 0' Tiene una margen interna de 10 pixeles en el lado superior y 0 en las demas
+     */ 
+    list-style: none;
+    padding: 10px 0 0 0;
+}
+/**
+ * Se selecciona el elemento 'a 'que esta dentro del elemento 'li'
+ */
+section#section-opc li a {
+    /**
+     * Tiene las propiedades
+     * 
+     * 'text-align: center' Tiene el texto alineado en el centro
+     * 'text-decoration: none' No tiene ningun tipo de decoración (underline)
+     * 'padding: 10px 0 0 0' Tiene margenenes internas. 10 pixeles en el lado superior y 0 en los demas 
+     * 'font-size: 18px' El tamaño de fuente es de 18 pixeles
+     * 'color: #fff' El color de la letra es blanco
+     */
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0 0 0;
+    font-size: 18px;
+    color: #fff;
+}
+/**
+ * Se selecciona el elemento 'a' que esta dentro del elemento 'li'. Se le agrega ':hover' para saber cuando ponen el 
+ * mouse sobre el elemento
+ */
+section#section-opc li a:hover {
+    /**
+     * Tiene las propiedades
+     * 'text-decoration: underline' Tiene una decaracion de underline (linea inferior)
+     */ 
+    text-decoration: underline;
+}

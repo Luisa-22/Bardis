@@ -1,0 +1,78 @@
+@import "mixins";
+div#contacto {
+    padding: 50px 50px 20px 50px;
+    display: inline-flex;
+}
+/*
+* Se obtiene el div que esta dentro de otro div con el id 'div#contacto'
+*/
+div#contacto div {
+    /*
+    * Tiene las propiedades
+
+    'box-sizing: border-box' border para que su tamaño no cambie al ponerle las margenes internas
+    'width: 60%' Tiene un ancho de 60%
+    'margin: 50px 50px 0px 0' la margenes externas son de 50 pixeles en la parte superior e inferior y 0 en las demás
+    */
+    box-sizing: border-box;
+    width: 60%;
+    margin: 50px 50px 0px 0;
+}
+/*
+* se seleciona el elemento form que esta dentro de un div con una clase 'div-contacto'
+*/
+div.div-contacto form {
+    @include formulario-contacto;
+}
+/*
+* Se selecciona el elemento 'h2' que esta dentro de un div con clase 'div-contacto' 
+*/
+div.div-contacto h2 {
+    /*
+    * Tiene las propiedades
+    'color: #8B8B8B' Tiene un color gris
+    */
+    color: #8B8B8B;
+}
+/*
+* Se selecciona el elemento 'img' que esta dentro de un div con clase 'div-contacto' 
+*/
+div.div-contacto img {
+    /*
+    * Tiene las propiedades
+    'width: 40px' Tiene un ancho de 40 pixeles
+    'opacity: 0.5' Tiene una opacidad de 0.5
+    'position: relative' Tiene una posición relativa 
+    'top: 15px' Tiene un top de 15px (Se moverá hacia abajo 15 pixeles)
+    'left:10px' Tiene left de 10px (Se moverá hacia la izquierda de 10 pixeles)
+    */
+    width: 40px;
+    opacity: 0.5;
+    position: relative;
+    top: 15px;
+    left:10px;
+}
+
+div.div-contacto input {
+    @include input-formulario;
+}
+
+div.div-contacto input:focus {
+    @include input-formulario-focus;
+}
+
+div.div-contacto textarea {
+    @include input-formulario;
+    @include textarea-formulario;
+    &:focus{   
+        @include input-formulario-focus;
+    }
+}
+
+div.div-contacto input[type="submit"] {
+    @include input-formulario-submit;
+}
+
+div.div-contacto input[type="submit"]:hover {
+    @include input-formulario-submit-hover;
+}

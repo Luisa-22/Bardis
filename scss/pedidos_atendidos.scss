@@ -1,0 +1,78 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+img#arrow-left {
+    @include arrow-left;
+}
+/*
+* Se selecciona el elemento 'div' que tiene un id llamado 'div-pedidos'
+*/
+div#div-pedidos {
+    /*
+    * Tiene las propiedades 
+    * 
+    * 'display: grid' Tiene display grid para definir que el elemento se va dividir en columnas
+    * 'grid-template-columns: 50% 50%' se define el tamño de las columnas que seran de 50%  y, coomo hay dos valores, 
+    *  el elemento tendrá dos columnas
+    * 'grid-gap: 20px' las margenes externas de los elementos sera de 20 pixeles en todos los lados(superior,derecho,inferior,izquierdo)
+    * 'padding: 40px 100px' Las margen interna del elemento 'div' sera de 40 pixeles en los lados superior y inferior. y 100 pixeles
+    * en los lados derecho y izquierdo.
+    */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
+    padding: 40px 100px;
+}
+/**
+* Se seleciona el elemento 'table' que tiene una clase llamada 'table'
+*/
+.table {
+    @include tabla-productos;
+}
+/**
+* Se seleciona el elemento 'td' que esta dentro del elemento 'table'
+*/
+table td {
+    @include td-tabla;
+}
+
+/*
+* Se seleciona los elementos 'th' y 'td' se pone ',' después de cada elemento para que los dos tengas las mismas propiedades
+*/
+th,td{
+    @include tr-tabla;
+}
+/*
+* Se seleciona los elementos 'tr' y se le agrega 'nth-child(even)' para que seleccione los 'tr' que son impares.
+*/
+tr:nth-child(even){
+    @include tr-even-tabla;
+}
+/**
+* Se seleciona el elemento 'table' que tiene una clase llamada 'table'
+*/
+thead {
+    @include header-tabla;
+}
+
+/*
+* Se selecciona el elemento 'div' con un id llamado 'fecha'
+*/
+div#fecha {
+    /*
+    * Tiene las propiedades 
+    * 
+    * 'display: grid' Tiene display grid para definir que el elemento se va dividir en columnas
+    * 'grid-template-columns: 100%' se define el tamño de las columnas que seran de 100%  y, coomo hay un solo valore, 
+    *  el elemento tendrá una columna
+    * 'padding: 50px' Las margen interna del elemento 'div' sera de 50 pixeles en todos sus lados
+    */
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 50px;
+}
+/*
+* Se selecciona el elemento 'input' de tipo 'submit' que esta dentro del elemento 'div' con un id llamado 'fecha'
+*/
+div#fecha input[type="submit"] {
+    @include boton-modificar;
+}

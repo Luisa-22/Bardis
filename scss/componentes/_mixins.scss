@@ -1,0 +1,477 @@
+@mixin formulario{
+    /*El formulario tendra las propiedades
+
+    'width: 30%' Tendra un ancho del 30% 
+    'height: auto' El alto sera automatico para que se acomode dependiendo los elementos que estén dentro de el
+    'margin: 50px auto auto auto'Es la margen del elemento 60 pixeles en la parte superior y el resto en 0
+        - el primer valor es la margen superior
+        - El segundo valor es la margen de la derecha
+        - El tercer valor es la margen inferior
+        - El cuarto valor es la margin de la izquierda
+
+    'padding: 30px 30px 20px 30px' Es la margen interna del div tiene 30 pixeles en la parte superior,inferior y a la derecha
+        - el primer valor es la margen interna superior
+        - El segundo valor es la margen internade la derecha
+        - El tercer valor es la margen interna inferior
+        - El cuarto valor es la margin interna de la izquierda
+    'border: 1px solid #ccc' Es el borde del elemento del div
+        - El primer valor es el ancho del borde
+        - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+        - El tercer valor es el color del borde
+    'border-radius: 5px' Tendra 5 pixeles en los bordes
+    'box-sizing: border-box ' Para cuando se definan las margenes internas su tamaño no cambie
+    
+    */
+    width: 30%;
+    height: auto;
+    margin: 50px auto auto auto;
+    padding: 30px 30px 20px 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+@mixin formulario-contacto{
+    /*
+    * Tiene las propiedades
+    'width: 95%' Tiene un ancho del 95%
+    'height: auto' Tiene un alto automatico
+    'border: 1px solid #ccc' Tiene un borde de 1 pixeles de ancho,solido y de color gris
+    'padding:0 40px 40px' Tiene margenes internas de 40 pixeles en la parte inferior y en la derecha
+    'border-radius: 5px' Tiene un border de 5 pixeles en todas las esquinas
+    'box-sizing: border-box' Para cuando se definan las margenes internas su tamaño no cambie
+    */
+    width: 95%;
+    height: auto;
+    border: 1px solid #ccc;
+    padding:0 40px 40px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+@mixin input-formulario{
+    /*
+    los inputs tendra las propiedades
+    * 
+    'display: block' Para que todos estén en bloque(Uno debajo del otro)
+    'margin-top: 10px' La margen que tendra 10 pixeles en todos los lados
+    'width: 95%' un ancho del 95%
+    'padding: 7px' la margen interna de 7 pixeles en todos los lados
+    'border-radius: 5px' los border de 5 pixeles en todos los lados
+    'border: 1px solid #b2bec3' Es el borde del input
+        - El primer valor es el ancho del borde
+        - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+        - El tercer valor es el color del borde
+    'outline: none' La linea exterior del input no sea visible
+    */
+    display: block;
+    margin-top: 10px;
+    width: 96%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #b2bec3;
+    outline: none;
+}
+@mixin input-formulario-focus{
+    /*
+    *  Los inputs tiene las propiedades
+    'border: 1px solid #0984e3' Es el borde del input
+        - El primer valor es el ancho del borde
+        - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+        - El tercer valor es el color del borde
+    'box-shadow: 0 0 5px #74b9ff' Es la sombra que tendra
+    - El primer valor del eje x
+    - El segundo valor del eje y
+    - El tercer valor es el color
+    */
+    border: 1px solid #0984e3;
+    box-shadow: 0 0 5px #74b9ff;
+}
+@mixin textarea-formulario{
+    /*
+    * Tiene las propiedades 
+    * 'width: 93%' Tiene un ancho de 96%
+    * 'max-width: 400px' El maximo de ancho que va a tener es de 400 pixeles
+    * 'min-width: 93% ' El minimo de ancho que va a tener es de 96%
+       - Se definen estos valores de ancho para que el usuario no pueda alterar su ancho y el elemento siempre permanezca igual
+    *' min-height: 100px' El minimo de alto que va a tener es de 100 pixeles 
+    * 'max-height: 100px' El maximo de alto que va a tener es de 100 pixeles
+       - Se definen estos valores de alto para que el usuario no pueda alterar su alto y el elemento siempre permanezca igual
+    * 'padding: 10px' Tiene margenes internas de 10 pixeles en todos su lados (superior,derecho,inferior,izquierdo)
+    * 'font-size: 14px' Tiene un tamaño de fuente de 14 pixeles 
+    * 'border-radius: 5px'
+    * 'margin-bottom: 20px' Tiene una margen externa de 20 pixeles en lado inferior
+    */
+    width: 93%;
+    max-width: 100px;
+    min-width: 93%;
+    min-height: 100px;
+    max-height: 100px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+@mixin input-formulario-submit{
+    /*
+    * El input de envio tiene las propiedades
+    'width: 100%' Tendra un ancho del 100% 
+    'padding: 7px 0 7px 0' las margenes internas son 7 pixeles en al parte superior y inferior
+    'border-radius: 5px' Los border de las esquinas son de 5 pixeles
+    'border: none' No tendrá un border
+    'color: white' El color de la letra sera Blanca
+    'margin: 15px 0 10px 0' Las margenes externas seran de 15 pixeles en la parte superior y 10 pixeles en la parte inferior
+    'font-size: 15px' El tamaño de la letra sera de 15 pixeles
+    'background: #74b9ff' El fondo del botón sera de color azul 
+   ' outline: none' No tendra un border externo
+    'transition: 0.1s background ' Y la transion de cualquier cambio sera de 1 milisegundo para que no sea tan brusco
+    */
+    width: 100%;
+    padding: 7px 0 7px 0;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    margin: 15px 0 10px 0;
+    font-size: 15px;
+    background: #74b9ff;
+    outline: none;
+    transition: 0.1s background;
+}
+@mixin input-formulario-submit-hover{
+    /*
+    * El input de envio tiene las propiedades
+      'background: #0984e3' El fondo de color azul
+      'cursor: pointer' El cursor sera una manito
+    */
+    background: #0984e3;
+    cursor: pointer;
+}
+@mixin button-bardis-sabermas{
+    /*
+    * Tendra las propiedades
+    'background: none' No tendra un fondo
+    'width: 200px' El ancho sera de 200 pixeles
+    'padding: 7px' la margen interna sera de 7 pixeles en todos los lados
+    'color: #fd79a8' El color de la letra sera rosado
+    'outline: none' La linea exterior no sera visible
+    'border-radius: 5px' el border de las esquinas sera de 5 pixeles 
+    'border: 1px solid #fd79a8' Tiene un border de 1 pixel, solido, y de color rosado
+    'margin: 30px 0 0 0' La margen es de 30 pixeles en la parte superior y 0 en las demás
+    'font-size: 20px' El tamaño de la letra es de 20 pixeles
+    'transition: 0.4s background' La transición es de 4 segundos para todos los cambios que pueda tener 
+    */
+    background: none;
+    width: 200px;
+    padding: 7px;
+    color: #fd79a8;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #fd79a8;
+    margin: 30px 0 0 0;
+    font-size: 20px;
+    transition: 0.4s background;
+}
+@mixin button-bardis-sabermas-hover{
+    /*
+    * Tiene las propiedades
+    'text-decoration: underline' La letra tendrá un underline (linea inferior)
+    'background: #fd79a8' El color del fondo sera rosado
+    'color: #fff' La letra sera de color rosado
+    */
+    cursor: pointer;
+    text-decoration: underline;
+    background: #fd79a8;
+    color: #fff;
+}
+@mixin formulario-productos{
+    /**
+     * Tiene las propiedades
+     * 
+     * 'width: 70%' Tiene un ancho de 70%
+     * 'height: auto' Tiene una altura automatica
+     * 'padding: 30px 30px 20px 30px' Tiene una margen interna de 30 pixeles en los lados superior,inferior,derecho y 20 pixeles en el inferior
+     * 'border: 1px solid #ccc' Tiene un borde solido de un 1px de ancho y de color gris
+     * 'border-radius: 5px' Tiene el borde de 5 pixeles en cada esquina
+     * 'box-sizing: border-box' Tiene border-box para que su tamaño no cambie cuando le agreguen las margenes internas
+     */
+    width: 70%;
+    height: auto;
+    padding: 30px 30px 20px 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+@mixin button-categoria{
+    /**
+     * Tiene las propiedades
+     * 
+     * 
+     * 'width: 200px' Tiene un ancho de 200 pixeles
+     * 'padding: 20px' Tiene una margen interna de 20 pixeles en todos los lados
+     * 'margin: 0 30px 40px 0' Tiene una margen el el lado superior de 30 pixeles, 40 pixeles en el inferior y 0 en los demas
+     * 'border-radius: 5px' Tiene un boder de 5 pixeles en todas las esquinas
+     * 'border: none' No tiene un borde
+     * 'color: white' El color de la letra es blanco
+     * 'font-size: 25px' Tiene un tamaño de fuente de 35 pixeles
+     * 'text-align: center' El text esta centrado
+     * 'background: #74b9ff' Tiene un fondo de color azul
+     * 'outline: none' La linea exterior no es visible
+     * 'opacity: 0.8' Tiene una opacidad de 0.8 
+     * 'transition: 0.1s background, 0.3s opacity' La transición es 0.1 segundos para que los cambios que tenga sean suaves
+     * float: right
+     */ 
+    width: 200px;
+    padding: 20px;
+    margin: 0 30px 40px 0;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    background: #74b9ff;
+    outline: none;
+    opacity: 0.8;
+    transition: 0.1s background, 0.3s opacity;
+    float: right;
+}
+@mixin button-categoria-hover{
+    /*
+    * 'opacity: 1' Tiene una opacidad de 1
+    * 'cursor: pointer' Tiene un cursor con el estilo de una manito
+    */
+    opacity: 1;
+    cursor: pointer;
+}
+@mixin button-perfiladmin{
+    /**
+     * Tiene las propiedades
+     * 
+     * 'width: 350px' Tiene un ancho de 350 pixeles
+     * 'margin: 10px' Tiene margenes externas de 10 pixeles en todos los lados
+     * 'padding: 30px' Tiene margenes internas de 30 pixeles en todos los lados
+     *' border-radius: 10px' Tiene un borde de 10 pixeles en todas las esquinas
+     * 'border: none' No tiene un borde
+     * 'color: white' El color de la letra es blacno
+     * 'font-size: 25px' Tiene un tamaño de fuente de 25 pixeles
+     * 'background: #74b9ff' tiene un fondo de color azul
+     * 'outline: none' No tiene un borde exterior
+     * 'opacity: 0.8' tiene una opacidad de 0.8
+     * 'transition: 0.1s background, 0.3s opacity' TIene un transition de 0.1s segundos para el fondo y 0.3s para la opcacidad
+     */
+    width: 325px;
+    margin: 10px;
+    padding: 30px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 25px;
+    background: #74b9ff;
+    outline: none;
+    opacity: 0.8;
+    transition: 0.1s background, 0.3s opacity;
+}
+@mixin button-perfiladmin-hover {
+    /**
+     * Tiene las propiedades
+     * 
+     * 'opacity: 1' Tiene un opacidad de 1 (visible)
+     * 'cursor: pointer' Tiene un cursor en forma de amno
+    */
+    opacity: 1;
+    cursor: pointer;
+}
+@mixin arrow-left{
+     /**
+     * Tiene las propiedades
+     * 
+     * 'padding: 10px' Tiene una margen interna de 10 pixeles en todos los lado
+     * 'font-size: 3rem' Tiene un tamaño de fuente de 3rem 
+     *  'width: 70px' Tiene un ancho de 70 pixeles 
+     * 'height: 50px' Tiene una altura de 50 pixeles
+     *' color: #fff' Tiene un color de letra blanco
+     * 'background: #2ecc71' Tiene un fondo de color verde
+     *  'position: absolute' La posición es abslouta para que siempre se quede ahí
+     * 'top: 85px' Tiene 85 pixeles hacia abajo
+     * 'left: 15px' Tiene 15 pixeles al lado izquierod
+     * 'border-radius: 8px' Tiene un borde de 8 pixeles en todas las esquinas
+     */ 
+    padding: 10px;
+    font-size: 3rem;
+    width: 70px;
+    height: 50px;
+    color: #fff;
+    background: #2ecc71;
+    position: absolute;
+    top: 85px;
+    left: 15px;
+    border-radius: 8px;
+}
+
+@mixin boton-modificar{
+    /**
+    *
+    * Tiene las propiedades
+    * 'width: 100px' Tiene un ancho de 100 pixeles 
+    * 'margin: 5px 5px 5px 30px' Tiene un margen de 5 pixeles en los lado superior,derecho y lado inferior
+      - el primer valor es la margen superior
+      - El segundo valor es la margen de la derecha
+      - El tercer valor es la margen inferior
+      - El cuarto valor es la margin de la izquierda
+    * 'padding: 7px' Tiene una margen interna de en todos sus lados (superior,derecho,inferior,izquierdo)
+    * 'font-size: 15px' Tiene un tamaño de fuente de 15 pixeles
+    * 'border-radius: 5px' Tiene un border de 5 pixeles en todas las esquinas (superior,derecho,inferior,izquierdo)
+    * 'border: none' No tiene un borde
+    * 'color: #fff' El color de la letra es de color blanco
+    * 'transition: 0.3s opacity;'  Cuando el elemento tenga un cambio de opacidad el cambio sera de 0.3 segundos
+    * 'background: #2ecc71' Tiene un fondo de color verde
+    * 'opacity: 0.8' Tiene una opacidad de 0.8 para que el elemento se tenga transparencia
+    */
+    width: 100px;
+    margin: 5px;
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    transition: 0.3s opacity;
+    background: #2ecc71;
+    opacity: 0.8;
+}
+@mixin boton-eliminar{
+    /**
+    *
+    * Tiene las propiedades
+    * 'width: 100px' Tiene un ancho de 100 pixeles 
+    * 'margin: 5px 5px 5px 30px' Tiene un margen de 5 pixeles en los lado superior,derecho y lado inferior
+      - el primer valor es la margen superior
+      - El segundo valor es la margen de la derecha
+      - El tercer valor es la margen inferior
+      - El cuarto valor es la margin de la izquierda
+    * 'padding: 7px' Tiene una margen interna de en todos sus lados (superior,derecho,inferior,izquierdo)
+    * 'font-size: 15px' Tiene un tamaño de fuente de 15 pixeles
+    * 'border-radius: 5px' Tiene un border de 5 pixeles en todas las esquinas (superior,derecho,inferior,izquierdo)
+    * 'border: none' No tiene un borde
+    * 'color: #fff' El color de la letra es de color blanco
+    * 'transition: 0.3s opacity;'  Cuando el elemento tenga un cambio de opacidad el cambio sera de 0.3 segundos
+    * 'background: #e74c3c' Tiene un fondo de color rojo
+    * 'opacity: 0.8' Tiene una opacidad de 0.8 para que el elemento se tenga transparencia
+    */
+    width: 100px;
+    margin: 5px;
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    transition: 0.3s opacity;
+    background: #e74c3c;
+    opacity: 0.8;
+}
+@mixin boton-tabla-hover{
+    /**
+    * Al pooner el mouse sobre el elemento tendra las propiedades
+    * 'opacity: 1' Tiene una opacidad de 1 para que el elemento no tenga nada de transparencia
+    * 'cursor: pointer' El cusor sera un puntero
+    */
+    opacity: 1;
+    cursor: pointer;
+}
+@mixin tabla-productos{
+    /**
+    * Las tablas tienen las propiedades
+    * 'margin: 20px auto' Tiene una margen de 20 pixeles en el lado superior y en los demas automatico para que el elemento
+    * quede centrado
+    * 'font-size: 20px' Tiene un tamaño de fuente de 20 pixeles
+    * 'border-collapse: collapse' Tiene el border 'collapse' para que la tabla no quede con un espaciado interno
+    */
+    margin: 20px auto;
+    font-size: 15px;
+    border-collapse: collapse;
+}
+@mixin header-tabla{
+    /**
+    * El header de la tabla (th) tiene las propiedades
+    * 'padding: 10px' Tiene margenes internas de 10 pixeles en todos sus lados (superior,derecho,inferior,izquierdo)
+    * 'text-align: center' El texto tiene una alineación centrado 
+    * 'background: #74b9ff' Tiene un fondo de color azul
+    * 'color: #fff' Tiene la letra de color azul
+    */
+    padding: 10px;
+    text-align: center;
+    background: #74b9ff;
+    color: #fff;
+}
+@mixin tr-tabla{
+    /*
+    * Tiene las propiedades 
+    * 'text-align: center' El texto tiene una alineación centrado 
+    */
+    text-align: center;
+}
+@mixin td-tabla{
+    /*
+    * Tiene las propiedades 
+    * 'padding: 5px' Tiene margenes internas de 5 pixeles en todos sus lados (superior,derecho,inferior,izquierdo)
+    */
+    padding: 5px;
+}
+@mixin boton-pedidos{
+    /*
+    * Tiene las propiedades 
+    * 'padding: 5px' Tiene una margen interna de 5 pixeles en todos sus lados (superior,derecho,inferior,izquierdo)
+    * 'border-radius: 5px' Tiene un borde de 5 pixeles en todos sus lados
+    * 'border: none' No tiene ningun borde
+    * 'color: #fff' Tiene la letra de color blanco
+    * 'font-size: 15px' Tiene un tamaño de letra de 5 pixeles
+    * 'transition: 0.1s background' Cuando el elemento tenga un cambio de fondo el cambio sera de 0.3 segundos 
+    * para que el cambio se lento.
+    * 'width: 150px' Tiene un ancho de 150 pixeles 
+    * 'margin:20px 50px' Tiene una margen de 20 pixeles en el lado superior e inferior y, tiene 50 pixeles el el lado
+    * derecho y izquierdo
+    * 'background: rgba(116, 185, 255, 0.8)' Tiene un fondo de color azul
+    * 'text-decoration: none' No tiene decoracion en la fuente (linea inferior)
+    */
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    transition: 0.1s background;
+    width: 130px;
+    margin:20px 50px;
+    background: rgba(116, 185, 255, 0.8);
+    text-decoration: none;
+}
+@mixin boton-factura-hover{
+    /*
+    * Tiene las propiedades
+    * 'background: rgba(116, 185, 255, 1.0)' Tiene un fondo azul 
+    * 'cursor: pointer' Tiene un cursor en forma de puntero
+    */
+    background: rgba(116, 185, 255, 1.0);
+    cursor: pointer;
+}
+@mixin boton-pedido{
+    /*
+    * Tiene las propiedades
+    * 'background: rgba(85, 239, 196,0.8)' Tiene un fondo verde con 0.8 de opacidad
+    */
+    background: rgba(85, 239, 196,0.8);
+}
+@mixin boton-pedido-hover{
+    /*
+    * Tiene las propiedades
+    * 'background: rgba(85, 239, 196,1.0)' Tiene un fondo verde
+    */
+    background: rgba(85, 239, 196,1.0);
+    cursor: pointer;
+}
+@mixin tr-even-tabla{
+    /*
+    * 'background: rgba(178, 190, 195, 0.2)' Tiene un color gris con 0.2 de opacidad
+    */
+    background: rgba(178, 190, 195, 0.2);
+}
+@mixin formulario-empleados{
+    width: 50%;
+    height: auto;
+    padding: 30px 30px 20px 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

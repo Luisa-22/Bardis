@@ -1,0 +1,9 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+@import "componentes/tablaMusica";
+/*
+* Se selecciona el elemento 'img' que tiene un id llamado 'arrow-left'
+*/
+img#arrow-left {
+    @include arrow-left;
+}

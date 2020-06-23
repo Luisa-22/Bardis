@@ -1,0 +1,105 @@
+@import "mixins";
+/*
+* 'div#div-bardis' Es el div que tiene como id 'div-bardis'
+    background-color: #010101;
+    height: 538px;
+    padding: 140px 50px 0 0;
+*/
+div#div-bardis {
+    background-color: #010101;
+    height: 538px;
+    padding: 140px 50px 0 0;
+}
+/*
+* 'img#img-pc' es la imagen que tiene un id 'img-pc'
+*/
+img#img-pc {
+    /*
+    * Tiene las propiedades
+    'width: 700px' Tiene un ancho de 700 pixeles 
+    'height: 350px' Tiene un alto de 350 pixeles
+    'float: right' Estará floatando (posicionado) a la derecha
+    'border-radius: 10px' Los border de las esquinas son de 10 pixeles
+    */
+    width: 700px;
+    height: 350px;
+    float: right;
+    border-radius: 10px;
+}
+/*
+'div#div-bar' Es el div con el id 'div-bar'
+*/
+div#div-bar {
+    /*
+    * Tiene las propiedades 
+    'position: relative' Tiene una posición relativa (Con respecto a los demas elementos)
+    'top: 70px' Tiene 70 pixeles en al parte superior
+    'left: 50px' Tiene 50 pixeles en la parte derecha
+    */
+    position: relative;
+    top: 70px;
+    left: 50px;
+}
+/* 'div#text-bardis' Es en div que tiene de id 'text-bardis'
+*/
+div#text-bardis {
+    /*
+    * Tiene las propiedades 
+    'width: 300px' Tiene un ancho de 300 pixeles
+    'height: auto' Su alto es automatico
+    'text-align: left' El texto que este dentro de el estará alineado a la izquierda
+    */
+    width: 300px;
+    height: auto;
+    text-align: left;
+}
+/*
+* 'div#text-bardis h1' Se selecciona el elemento 'h1' que esta dentro de 'div#text-bardis' 
+*/
+div#text-bardis h1 {
+    /*
+    * Las propiedades que tiene son
+    'font-size: 50px' El tamaño de letra es de 50 pixeles
+    'color: #fd79a8' El color de la letra es rosado
+
+    */
+    font-size: 50px;
+    color: #fd79a8;
+}
+/*
+* 'div#text-bardis p' Se selecciona el elemento 'p' que esta dentro de 'div#text-bardis' 
+*/
+div#text-bardis p {
+    /*
+    * La propiedades que tiene son 
+    'text-align: justify' El texto esta justificado
+    'color: #fff' Tiene el color blanco 
+    'font-size: 20px' El tamñao de la letra es de 20 pixeles
+    */
+    text-align: justify;
+    color: #fff;
+    font-size: 20px;
+}
+/*
+* 'div#text-bardis button' Se selecciona el 'button' que esta dentro de 'div#text-bardis'
+*/
+div#text-bardis button {
+    @include button-bardis-sabermas
+}
+
+div#text-bardis button:hover {
+    @include button-bardis-sabermas-hover;
+}
+/*
+* 'div#text-bardis button a ' Se selecciona el elemento 'a' que esta dentro ''div#text-bardis'  
+*/
+div#text-bardis button a {
+    /*
+    * Sus propiedades son 
+    *
+    'text-decoration: none' La letra no tendra ninguna decoracion (underline)
+    'color: #fff' El color de la letra es blanco
+    */
+    text-decoration: none;
+    color: #fff;
+}

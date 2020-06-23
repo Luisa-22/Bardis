@@ -1,0 +1,62 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+/*
+* Se selecciona el elemento 'img' que tiene un id llamado 'arrow-left'
+*/
+img#arrow-left {
+    @include arrow-left;
+}
+
+div#fecha {
+     /*
+    * Tiene las propiedades 
+    * 
+    * 'display: grid' Tiene display grid para definir que el elemento se va dividir en columnas
+    * 'grid-template-columns: 100%' se define el tamaño de las columna que sera de 100%
+    * 'grid-gap: 50px' las margenes externas de los elementos sera de 50 pixeles en todos los lados(superior,derecho,inferior,izquierdo)
+    * 'padding: 40px 100px' Las margen interna del elemento 'div' sera de 40 pixeles en los lados superior y inferior. y 100 pixeles
+    * en los lados derecho y izquierdo.
+    */
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 50px;
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro de un elemento 'div' que tiene un id llamado 'fecha'
+* el elemento 'input' tiene agregado unas llaves'[]' para seleccionar un elemento en especifico
+* en este caso dentro de las llaves '[]' se escribe 'type="submit"' para definir que seleccione solo los elementos de tipo
+* 'submit'*/
+div#fecha input[type="submit"] {
+    @include boton-modificar;
+}
+/*
+* Se selecciona los elemento 'td' y 'th' que estan dentro del elemento 'table'
+* se pone coma después de cada elemento para que las propiedades se le apliquen a los dos elementos
+*/
+table td,th {
+    @include td-tabla;
+}
+/*
+* Se selecciona los elemento 'tr' que estan dentro del elemento 'table'
+*/
+table tr {
+    /*
+    * Tiene las propieades
+    *
+    * 'background: rgba(178, 190, 195, 0.1)' Tiene un fondo de color gris
+    */
+    background: rgba(178, 190, 195, 0.1);
+}
+/*
+* Se selecciona los elemento 'thead' que estan dentro del elemento 'table'
+*/
+table thead {
+    @include header-tabla;
+}
+/*
+* Se selecciona los elemento 'table' que tiene una clase llamada 'table_total'
+*/
+table.table_total{
+    @include tabla-productos;
+    margin:auto; // El elemento se posiciona en el centro
+}

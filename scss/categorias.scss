@@ -1,0 +1,104 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+/**
+ * Se selecciona el elemento 'div' que tiene un id 'div-cate'
+ */ 
+div#div-cate {
+    /**
+     * Tienes las propiedades
+    * 'display: grid' Tiene grid para que los elementos dentro de el se acomoden en columnas
+    * 'grid-template-columns: 50% 50%' Tiene un tamañao de 50% cada columna
+    * 'padding: 20px 0 0 0' Tiene una margen interna de 20 pixeles y las demas en 0 
+    * 
+    */
+    display: grid;
+    grid-template-columns: 50% 50%; 
+    padding: 20px 0 0 0;
+}
+/**
+ * Se seleciona el elemento 'div' con un id 'div-categorias'
+ */ 
+div#div-categorias {
+    /*
+    * Tiene las propiedades
+    * 'padding-right: 100px' Tiene un margen interna de lado derecho de 100 pixeles
+    */
+    padding-right: 100px;
+}
+
+div#div-categorias button {
+    @include button-categoria;
+}
+
+div#div-categorias button:hover {
+    @include button-categoria-hover;
+}
+/**
+ * Se seleccina el elemento 'img' que esta dentro del elemento 'div' que tiene un id 'div-categorias'
+*/
+div#div-categorias img {
+    /**
+     * Tienes las propiedades
+     * 'width:60px' Tiene un ancho de 60 pixeles
+    */
+    width: 60px;
+}
+/**
+ * Se seleccina el elemento 'div' que tiene un id 'form-producto'
+*/
+div.form-producto {
+    /**
+     * Tienes las propiedades
+     * 'padding-left: 200px' Tiene una margen interna del lado izquierdo de 200 pixeles
+    */
+    padding-left: 200px;
+}
+/**
+ * Se seleccina el elemento 'form' que esta dentro de un elemento 'div' que tiene un id 'form-producto'
+*/
+div.form-producto form {
+    @include formulario-productos;
+}
+/**
+ * Se seleccina el elemento 'input','textarea' y 'select' que esta dentro de un elemento 'div' que tiene 
+ * un id 'form-producto'
+ * se agrega una coma después de cada elemento para que las propiedades se le apliquen a todos los elementos
+*/
+div.form-producto input,textarea,select {
+    @include input-formulario;
+}
+/**
+ * Se Selecciona todos los elementos 'select'
+*/
+select{
+    width:100%;
+}
+
+div.form-producto textarea {
+    @include textarea-formulario;
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro de un elemento 'div' que tiene un clase llamada 'form-producto'
+* el elemento 'input' tiene agregado unas llaves'[]' para seleccionar un elemento en especifico
+* en este caso dentro de las llaves '[]' se escribe 'type="submit"' para definir que seleccione solo los elementos de tipo
+* 'submit'*/
+div.form-producto input[type="submit"] {
+    @include input-formulario-submit;
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro de un elemento 'div' que tiene un clase llamada 'form-producto'
+* el elemento 'input' tiene agregado unas llaves'[]' para seleccionar un elemento en especifico
+* en este caso dentro de las llaves '[]' se escribe 'type="submit"' para definir que seleccione solo los elementos de tipo
+* 'submit' y, después se le agrega ':hover' para saber cuando el usuario
+* ponga el cursor sobre el elemento
+* 'form-eventos'
+*/
+div.form-producto input[type="submit"]:hover {
+    @include input-formulario-submit-hover;
+}
+/**
+ * Se seleciona el elemento 'img' que tiene un id 'arrow-left'
+ */ 
+img#arrow-left {
+   @include arrow-left;
+}

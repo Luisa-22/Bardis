@@ -1,0 +1,179 @@
+@import "componentes/header";
+@import "componentes/mixins";
+
+div#formulario {
+    height: 400px;
+    margin: 60px 0 0 0;
+    padding: 20px;
+}
+div.div-inicio-sesion {
+    @include formulario;
+}
+
+form h3 {
+    font-size: 25px;
+}
+
+form#formulario-1 input,select {
+    @include input-formulario;
+}
+
+form#formulario-1 input:focus,select:focus {
+    @include input-formulario-focus;
+}
+
+select {
+    width: 100%;
+}
+
+form#formulario-1 input[type="submit"] {
+    @include  input-formulario-submit;
+}
+
+form#formulario-1 input[type="submit"]:hover {
+    @include  input-formulario-submit-hover;
+}
+
+form#formulario-1 button {
+    @include input-formulario-submit;
+    background: rgba(253, 121, 168,0.9);
+}
+
+form#formulario-1 button:hover {
+    @include input-formulario-submit-hover;
+    background:rgba(253, 121, 168,1.0);
+}
+/*
+* Se seleciona el elemnto div que tiene una clase 'overlay'
+*/
+.overlay {
+    /*
+    * Tiene las propiedades 
+    'background: rgba(45, 52, 54, 0.8)' Tiene un fondo de color gris con 0.8 de opacidad
+    'position: fixed' Tiene una posición fixed para que se quede fijo
+    'top: 0','bottom: 0','left: 0','right: 0' Tiene 0 para que quede centrado
+    'display: flex' Tiene flex para que todo sus contenido sea flexible
+    'justify-content: center' Tiene el contenido centrado
+    'visibility: hidden' Tiene la visibilidad hidden para que no sea visible
+    */
+    background: rgba(45, 52, 54, 0.8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+}
+/*
+* Se seleciona el elemento div que tiene una clase 'active' que sts dentro del elemento div con una clase 'overlay'
+*/
+.overlay.active {
+    /*
+    * Tiene las propiedades
+    'visibility: visible' Tiene 'visible' para que sea visible
+    */
+    visibility: visible;
+}
+/*
+* Se seleciona el elemnto div que tiene una clase 'popup'
+*/
+.popup {
+    /*
+    * Tiene las propiedades 
+    'background: #fff' 
+    'border-radius: 5px'
+    'width: 340px'
+    'height: 250px'
+    'padding: 10px 10px'
+    'transform: scale(0.7)'
+    'margin-top: 150px'
+    'margin-left: 0px'
+    'box-sizing: border-box'
+    */
+    background: #fff;
+    border-radius: 5px;
+    width: 340px;
+    height: 250px;
+    padding: 10px 10px;
+    transform: scale(0.7);
+    margin-top: 150px;
+    margin-left: 0px;
+    box-sizing: border-box;
+}
+/*
+* Se seleciona el elemento button que tiene una clase 'btn-cerrar-popup'
+*/
+.btn-cerrar-popup {
+    /*
+    * Tiene las propiedades
+    'float: right' Tiene right para que este flotando a la derecha
+    'font-size: 23px' Tiene un tamaño de fuente de 23 pixeles 
+    */
+    float: right;
+    font-size: 23px;
+}
+/*
+* Se seleciona el elemento button que tiene una clase 'btn-cerrar-popup' se le agrega ':hover' para saber cuando pone el mouse sobre
+* el elemento
+*/
+.btn-cerrar-popup:hover {
+    /*
+    * Tiene las propiedades
+    'color: #e74c3c' Tiene un color rojo
+    'cursor: pointer' Tiene un cursor en forma de mano
+
+    */
+    color: #e74c3c;
+    cursor: pointer;
+}
+/*
+* Se seleciona el elemento div que tiene una clase '.active'
+*/
+.popup.active {
+    /*
+    * Tiene las propiedades
+    'opacity: 1' Tiene una opacidad de 1 (oculto
+    'transform: scale(1)' Una escala de 1
+    */
+    opacity: 1;
+    transform: scale(1);
+}
+
+div.texto-popup {
+    padding: 10px 20px;
+}
+
+div.texto-popup h3 {
+    margin-top: 20px;
+}
+/*
+* Se selecciona el elemento form que esta dentro de un div con clase 'text-poup'
+*/
+div.text-popup form {
+    /*
+    * Tiene las propiedades
+    'display: block' Tiene block par que todos los elementos esten uno debajo del otro
+
+    */
+    display: block;
+}
+
+
+div.texto-popup form input[type="email"]{
+    @include input-formulario;
+}
+
+div.texto-popup form input[type="email"]:focus {
+    @include input-formulario-focus;
+}
+
+input[type="submit"] {
+    @include input-formulario-submit;
+    margin:-40px 0;
+}
+
+input[type="submit"]:hover {
+    @include input-formulario-submit-hover;
+}

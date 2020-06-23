@@ -1,0 +1,78 @@
+@import "componentes/header";
+@import "componentes/mixins";
+/*
+* 'div#formulario' Es un div que tiene como id 'formulario'
+*/
+div#formulario {
+    /*
+    *   'height: auto' El alto del div sera automatico para que se acomode a los elementos
+        'margin: 60px 0 0 0' Es la margen del elemento 60 pixeles en la parte superior y el resto en 0
+            - el primer valor es la margen superior
+            - El segundo valor es la margen de la derecha
+            - El tercer valor es la margen inferior
+            - El cuarto valor es la margin de la izquierda
+
+        'padding: 20px' Es la margen interna 20 pixeles en todos los lados
+            - el primer valor es la margen interna superior
+            - El segundo valor es la margen internade la derecha
+            - El tercer valor es la margen interna inferior
+            - El cuarto valor es la margin interna de la izquierda
+    */
+    height: auto;
+    margin: 60px 0 0 0;
+    padding: 20px;
+}
+/* 
+* 'div.formulario' corresponde al div con clase 'formulario' que es el contiene el formulario
+*/
+div.formulario {
+    @include formulario;
+}
+/*
+  * 'font-size: 25px' El 'h3' tendra un tamaño de letra de 25 pixeles
+  */
+form h3 {
+    font-size: 25px;
+}
+
+form#formulario-1 input{
+    @include input-formulario;
+    
+    &:focus{
+        @include input-formulario-focus;
+    }
+}
+/* 'form#formulario-1 input[type="submit"]' Se selecciona el input que sea de tipo 'submit'
+ */
+form#formulario-1 input[type="submit"] {
+    @include input-formulario-submit;
+}
+/* 'form#formulario-1 input[type="submit"]:hover' Se selecciona el input que sea de tipo 'submit' para que cuando
+   * el mouse este sobre el cambie
+ */
+form#formulario-1 input[type="submit"]:hover{
+    @include input-formulario-submit-hover;
+}
+/*
+* 'form#formulario-1 a' Se seleciona los elementos 'a' que esten dentro del formulario
+*/
+form#formulario-1 a {
+    /*
+    * Las propiedades que tiene son 
+    
+    'text-decoration: none' No tendra decoraciones (underline)
+    'font-size: 17px' El tamaño de fuente sera de 17 pixeles
+    */
+    text-decoration: none;
+    font-size: 17px;
+}
+/*
+* 'form#formulario-1 a:hover' Se seleciona los elementos 'a' que esten dentro del formulario ':hover' Es la proeida que 
+* es cuando el ponen el mouse sobre el elemento 'a'
+*/
+form#formulario-1 a:hover {
+    /*Las proiedades que tiene son
+    *'text-decoration: underline' Tendra un decoración de underline (linea inferior)
+    */
+    text-decoration: underline;
+}

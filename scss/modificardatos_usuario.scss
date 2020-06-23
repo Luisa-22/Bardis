@@ -1,0 +1,47 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+/*
+* Se selecciona el elemento 'div' que tiene una clase llamdao 'actualizar-datos'
+*/
+div.actualizar-datos {
+    @include formulario;
+}
+/*
+* Se selecciona el elemento 'input'  que esta dentro del elemento 'form'
+*/
+form input {
+    @include input-formulario;
+}
+/*
+* Se selecciona el elemento 'input'  que esta dentro del elemento 'form'
+*/
+form input:focus {
+    @include input-formulario-focus;
+}
+  /*
+* Se selecciona el elemento 'input'  que esta dentro del elemento 'form'
+*/
+form input[type="submit"] {
+    @include input-formulario-submit;
+}
+/*
+* Se selecciona el elemento 'input'  que esta dentro del elemento 'form' 
+* al elemento 'input se le agrega '[type="submit"]' para saber que tipo de input es
+* en este caso queremos seleccionar el de tipo 'submit' que es el que hace el envio del formulario 
+*/
+form input[type="submit"]:hover {
+    @include input-formulario-submit-hover;
+}
+/*
+* Se selecciona el elemento 'a'  que esta dentro del elemento 'form' y al elemento 'a' se le agrega ':hover' para saber
+* cuando el usuario pone el cursor sobre el elemento y asi cambiarle de propiedades
+*/
+form a:hover {
+    /*
+    * Tiene las propiedades
+    *
+    * 'text-decoration:underline' cuando el usuario ponga el cursor sobre el elemento 'a' se pondra una linea en la parte
+    * inferior del texto
+    */
+    text-decoration:underline;
+}

@@ -1,0 +1,112 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+img#arrow-left {
+    @include arrow-left;
+}
+/*
+* Se selecciona el elemento 'div' que tiene una clase llamada 'contenedor-cartas'
+*/
+div.contenedor-cartas {
+    /**
+    * Tiene las propiedades 
+    * 'display: grid' El contenido del elemento 'div' se dividira en columnas
+    * 'grid-template-columns: 45% 45%' El tamaño de las columnas del elemento 'div' seran de 45% cada una
+    * 'grid-gap: 50px 30px' la separación de las columnas del elemento 'div' sera de 50px en la izquierda y 
+    *  30 pixeles en el lado superior
+    * 'padding: 50px 190px' la margen interna del elemento 'div' es de 50 pixeles en el lado superior  y inferior 
+    * y 190 pixeles en el lado derecho y izquierdo
+    */
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-gap: 50px 30px;
+    padding: 50px 190px;
+}
+/*
+* Se selecciona el elemento 'div' que tiene una clase llamada 'carta-pedido' y es el elemento que contiene todos los demas
+* elemento que conforman la carta del pedido
+*/
+div.carta-pedido {
+    /*
+    * Tiene las propiedades
+    *
+    * 'border: 1px solid #000' El elemento 'div' tendra un borde de 1 pixles de grueso, sera de un estilo solido para que se 
+    *  vea una linea alrededor del elemento y el borde sera de color negro
+    * 'border-radius: 10px' El elemento 'div' bordes en las esquinas de 5 pixeles
+    * 'display: inline-flex' Todo los elemento que esten dentro del elemnto 'div' estaran uno al lado del otro
+    */
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: inline-flex;
+}
+/*
+* Se selecciona el elemento 'div' que tiene una clase llamada 'img-pedido' y es el que contiene la imagen que represeta
+* el pedido
+*/
+div.img-pedido {
+    /*
+    * Tiene las propiedades
+    *
+    * 'width: 200px' Tiene un ancho de 200 pixeles 
+    * 'background: #78e08f' Tiene un fondo de color verde
+    * 'padding: 5px 15px' Tiene una margen interna de 5 pixeles en el lado superior y inferior
+    * y tiene 15 pixeles en el lado derecho y izquierdo
+    * 'border-radius: 9px 0 0 9px' Tiene un borde de 9 pizeles en los lados superior izquierdo y en el lado inferior izquierdo
+    */
+    width: 200px;
+    background: #78e08f;
+    padding: 5px 15px;
+    border-radius: 9px 0 0 9px;
+}
+/*
+* Se selecciona el elemento 'img' que es esta dentro del elemento 'div' que tiene una clase llamada 'img-pedido'
+*/
+div.img-pedido img {
+    /*
+    * Tiene las propiedades
+    *
+    * 'width:130px' Tiene un ancho de 130 pixeles
+    */
+    width: 130px;
+}
+/*
+* Se selecciona el elemento 'h3' que esta dentro del elemento 'div' que tiene una clase llamada 'img-pedido'
+*/
+div.img-pedido h3 {
+    /*
+    * Tiene las propiedades
+    *
+    * 'font-size: 1.6rem' Tiene un tamaño de fuente de 1.6 rem (25.6 pixeles)
+    * 'color: #fff' El color de la letra es blanco
+    */
+    font-size: 1.6rem;
+    color: #fff;
+}
+/*
+* Se selecciona el elemento 'div' que tiene una clase llamada 'text-pedido' y sera el contiene todo el texto de la carta
+* del pedido
+*/
+div.texto-pedido {
+    /*
+    * Tiene las propiedades
+    *
+    * 'padding: 15px 10px' Tiene margenes internass de 15 pixeles en el lado superior y inferior y 10 pixeles en el lado
+    * derecho y izquierdo
+    */
+    padding: 15px 10px;
+}
+/*
+* Se selecciona el elemento 'p' que esta dentro del elemento 'div' que tiene una clase llamada 'text-pedido'
+*/
+div.texto-pedido p {
+    /**
+    * Tiene las propiedades
+    *
+    * 
+    'font-weight: bold' La letra tiene el estilo de negrita
+    'opacity: 0.5' Tiene una opacidad de 0.5 para que tenga algo de transparencia
+    'font-size: 17px' El tamaño de la letra sera de 17 pixeles
+    */
+    font-weight: bold;
+    opacity: 0.5;
+    font-size: 17px;
+}

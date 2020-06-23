@@ -1,0 +1,214 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+
+/*Se selecciona el elemento 'table'*/
+
+table {
+    @include tabla-productos;
+}
+
+
+/*
+* Se selecciona el elemento 'th' que esta dentro del elemento 'thead' y estos dos elementos estan dentro del 
+* elemento 'table'*/
+
+table thead th {
+    @include header-tabla;
+}
+
+
+/*
+* Se selecciona el elemento 'tr' que esta dentro del elemento 'table' y estos dos elementos estan dentro del 
+*/
+
+table tr {
+    @include tr-tabla;
+}
+
+
+/*
+* Se selecciona el elemento 'td' que esta dentro del elemento 'table' y estos dos elementos estan dentro del 
+*/
+
+table td {
+    /*
+    * Tiene las propiedades
+    * 
+    * 'padding: 13px 10px' Tien margen interna de 13 pixeles en el lado superior y inferior
+    * y 10 pixeles en el lado derecho y izquierdo
+    */
+    padding: 13px 10px;
+}
+
+
+/*
+* Se selecciona el elemento 'div' que tiene una clase lla
+*/
+
+div.tabla-pedido {
+    /*
+    * Tiene las propiedades
+    *
+    * 'display: flex' Tiene display flex para que los elementos que esten dentro del 'div' tengan ciertas propiedades
+    que se le seran definidas
+    * 'justify-content: center' Los elemento ques están dentro del 'div' estaran en el centro 
+    * 'padding: 50px' las margenes interna es de 50 pixeles en todo sus lados (superior,derecho,derecho,izquierdo)
+    */
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+
+/*
+* Se selcciona el elemento 'div' que tiene una clase llamada 'pedido'
+*/
+
+div.pedido {
+    /*
+    * Tiene las propiedades
+    *
+    * 'padding: 10px' las margenes interna es de 10 pixeles en todo sus lados (superior,derecho,derecho,izquierdo)
+    * 'width: 54%' Tiene un ancho del 54%
+    * 'border-radius: 5px' Tiene un borde redondeado de 5 pixeles en todas las esquinas
+    * 'border: 1px solid #ccc' Tiene un borde de un 1 pixel de grosor solido para que sea una linea alredor de del elemento 'div
+    y es de color gris
+    */
+    padding: 10px;
+    width: 60%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+/*
+* Se selecciona el elemento 'select' que esta dentro de un 'div' que tiene una clase llamada 'pedido'
+*/
+
+div.pedido select {
+    /*
+    * Tiene las propiedades
+    *
+    'width: 100px' Tiene un ancho de 100 pixeles 
+    'margin: 10px 0 10px 0' Tiene una margen externa de 10 pixeles en los lados superiores y inferiores y en los demas lados 
+    * (derecho y izquierdo) tiene 0 pixeles
+    */
+    width: 100px;
+    margin: 10px 0 10px 0;
+}
+
+
+/*
+* Se selecciona el elemento 'a' que tiene un id llamado 'agregar-producto'
+*/
+
+a#agregar-producto {
+    /*
+    * Tiene las propiedades
+    *
+    * 'background: rgba(46, 204, 113, 0.8)' Tiene un fondo de color verde con 0.8 de opacidad
+    * 'color: #fff' El color de la letra es de color blanco
+    * 'padding: 5px' Tiene una margen interna de 5 pixeles en todos sus lados (superior,derecho,inferior,izquierdo)
+    * 'border-radius: 5px' Tiene bordes redondeados en todas las esquinas de 5 pixeles 
+    * 'transition: 0.3s background' Tiene una transición de 0.3 segundo para cualquier cambio que pueda tener el elemento
+    */
+    background: rgba(46, 204, 113, 0.8);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.3s background;
+}
+
+
+/*
+* Se selecciona el elemento 'a' que tiene un id llamado 'agregar-producto' se le agrega ':hover' para saber cuando el usuario 
+* pone el mouse cobre el elemento
+*/
+
+a#agregar-producto:hover {
+    /*
+    * Tiene las propiedades
+    *
+    * 'background: rgba(46, 204, 113, 1.0)' Tiene un fondo de color verde con 1.0 de opacidad
+    */
+    background: rgba(46, 204, 113, 1.0);
+}
+
+a#eliminar-prod {
+    @include boton-eliminar;
+}
+
+a#eliminar-prod:hover {
+    @include boton-tabla-hover;
+}
+
+input[value="Enviar"] {
+    @include boton-pedidos;
+}
+
+input[value="Enviar"]:hover {
+    @include boton-factura-hover;
+}
+
+
+/*
+* Se seleccion el elemento 'td' que tiene un id llamado 'total'
+*/
+
+td#total {
+    /*
+    * Tiene las propiedades
+    *
+    * 'padding:0 0 0 340px' Tien una magen interna de 340 pixeles en el lado izquierdo 7 0 en los demas (superio,derecho,inferior)
+    */
+    padding: 0 0 0 340px;
+}
+
+
+/*
+* se selecciona el elemento 'a' que tiene un id llamado 'Volver'
+*/
+
+a#Volver {
+    /*
+    * Tiene las propiedades
+    *
+    'width:120px' Tiene un ancho de 120 pixeles 
+    'background:none' No tiene un fondo para que solo la letra sea visible y el borde sea visible
+    'color:rgba(46, 204, 113,1.0)' El color de la letra es de color verde
+    'border:1px solid rgba(46, 204, 113,1.0)' El color del borde es de 1 pixeles de grosor el estilo es solido para que 
+    * se vea alrededor del boton y es de color verde
+    'font-size:13px' El tamño de la fuente es de 13 pixeles
+    'padding:5px' La margen interna es de 5 pixeles
+    'border-radius:5px' Tiene bordes redondeados en las esquinas de 5 pixeles
+    'transition:0.3s all' Tiene una transición de 0.3 segundos para que cuando tenga algun cambio de color,color de fondo, tamño de fuente etc
+    * esos cambios se vean suave y no se vena 'bruscos'
+    */
+    width: 120px;
+    background: none;
+    color: rgba(46, 204, 113, 1.0);
+    border: 1px solid rgba(46, 204, 113, 1.0);
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.3s all;
+}
+
+
+/*
+* se selecciona el elemento 'a' que tiene un id llamado 'Volver' y se le agrega ':hover' para saber cuando el usuario pone el mouse
+* sobre el elemento
+*/
+
+a#Volver:hover {
+    /*
+    * Si el usuario pone el cursor sobre el elemento iene las propiedades
+    *
+    'background: rgba(46, 204, 113,1.0)' Tiene un fondo de color verde
+    'color:#fff' El ccolor de letra es de color blacno
+    'cursor: pointer' El cursor cambia a una forma de manito
+    */
+    background: rgba(46, 204, 113, 1.0);
+    color: #fff;
+    cursor: pointer;
+}

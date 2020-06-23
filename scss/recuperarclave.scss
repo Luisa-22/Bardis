@@ -1,0 +1,54 @@
+@import "componentes/header";
+@import "componentes/mixins";
+
+/*
+* Se selecciona el elemento 'div' que tiene un id llamado 'recuperarclave'
+*/
+
+div#recuperarclave {
+    @include formulario;
+}
+
+
+/*
+* Se seleciona los elementos 'input' se le agrega '[type="password"]' para seleccionar el input que es de tipo
+* 'contraseña' y 'select' que estan dentro de 
+* 'div' que tiene un id llamado 'recuperarclave' 
+*/
+
+div#recuperarclave input[type="password"],
+select {
+    @include input-formulario;
+}
+
+
+/*
+* Se seleciona los elementos 'input' se le agrega '[type="password"]' para seleccionar el input que es de tipo
+* 'contraseña' y 'select' elemento 'div' que tiene un id llamado 'recuperarclave'
+* y se le agrega ':focus' para saber cuando el usuario selecciona el elemento 'input'
+*/
+
+div#recuperarclave input[type="password"]:focus,
+select:focus {
+    @include input-formulario-focus;
+}
+
+
+/*
+* Se seleciona el elemento 'input' y se le agrega '[type="submit"]' para seleccionar el input que es de tipo
+* 'submit'
+*/
+
+input[type="submit"] {
+    @include input-formulario-submit;
+}
+
+
+/*
+* Se seleciona el elemento 'input' y se le agrega '[type="submit"]' para seleccionar el input que es de tipo
+* 'submit' y se le agrega ':hover' para saber cuando el usuario poner el cursor sobre el elemento
+*/
+
+input[type="submit"]:hover {
+    @include input-formulario-submit-hover;
+}

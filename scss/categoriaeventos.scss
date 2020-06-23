@@ -1,0 +1,212 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+/*
+* Se selecciona el elemento 'img' que tiene un id llamado 'arrow-left'
+*/
+img#arrow-left {
+    @include arrow-left;
+}
+/**
+*Se selecciona el elemento div que tiene un id llamado 'eventos'
+*/
+div#eventos {
+    /**
+     * Tienes las propiedades
+    * 'display: grid' Tiene grid para que los elementos dentro de el se acomoden en columnas
+    * 'grid-template-columns: 30% 70%' Tiene un tamaño de 30% la primera columna y la segunda de 70% 
+    * 'padding: 20px 20px 0px 140px' Tiene una margen interna de 20 pixeles en los lados superior y derecho, en el lado
+    * izquierdo tiene 140 pixeles y en el lado inferior 0
+    * 'grid-column-gap: 20px' margen exterior de los elemento es de 20 pixeles
+    * 
+    */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 20px 20px 0px 140px;
+    grid-column-gap: 20px;
+}
+/**
+* Se selecciona el elemento div que tiene un id llamado 'nombre-eventos'
+*/
+div#nombre-eventos {
+    /**
+     * Tienes las propiedades
+    * 'display: grid' Tiene grid para que los elementos dentro de el se acomoden en columnas
+    * 'grid-template-columns: 30% 70%' Tiene un tamaño de 30% la primera columna y la segunda de 70% 
+    * 'padding: 20px 90px 0 20px' Tiene una margen interna de 20 pixeles en los lados superior y izquierdo,
+    *  90 pixeles en el lado derecho y 0 pixeles en el lado inferior
+    * - Los valores de padding son:
+        - El primero valor es la margen interna superior
+        - El segundo valor la margen interna derecha
+        - El tercer valor la margen interna inferior
+        - El cuarto valor la margen interna izquierda
+    * 'grid-gap: 20px' margen exterior de los elemento es de 20 pixeles
+    * 
+    */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 20px 80px 0 20px;
+    grid-gap: 20px;
+}
+/*
+*Se selecciona el elemento 'div' que tiene un id llamado 'form-eventos'
+*/
+div#form-eventos{
+    /**
+    * Tienes las propiedades
+    *  'padding:0px 80px' Tiene margenes internas de 80 pixeles en el lado derecho y izquierdo. y 0 pixeles en los lados 
+    * superior y inferior
+    * 
+    */
+    padding:0px 80px;
+}
+
+/*
+*Se selecciona el elemento 'form' que esta dentro de un elemento 'div' que tiene un id llamado 'form-eventos'
+*/
+div#form-eventos form {
+    @include formulario-productos;
+}
+
+/*
+* Se selecciona el elemento 'input' y 'textarea'que esta dentro de un elemento 'div' que tiene un id llamado 
+* 'form-eventos'
+*/
+div#form-eventos input,textarea {
+    @include input-formulario;
+}
+/*
+* Se selecciona el elemento 'textarea'que esta dentro de un elemento 'div' que tiene un id llamado 
+* 'form-eventos'
+*/
+div#form-eventos textarea {
+   @include textarea-formulario;
+}
+/*
+* Se selecciona el elemento 'input' y 'textarea'que esta dentro de un elemento 'div' que tiene un id llamado 
+* 'form-eventos' a los elementos 'input' y 'textarea' se les agrega ':focus' para saber cuando el usuario haga 
+* un click sobre los elementos
+*/
+div#form-eventos input:focus,
+div#form-eventos textarea:focus {
+    @include input-formulario-focus;
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro de un elemento 'div' que tiene un id llamado 'form-eventos'
+* el elemento 'input' tiene agregado unas llaves'[]' para seleccionar un elemento en especifico
+* en este caso dentro de las llaves '[]' se escribe 'type="submit"' para definir que seleccione solo los elementos de tipo
+* 'submit'*/
+div#form-eventos input[type="submit"] {
+    @include input-formulario-submit;
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro de un elemento 'div' que tiene un id llamado 'form-eventos'
+* el elemento 'input' tiene agregado unas llaves'[]' para seleccionar un elemento en especifico
+* en este caso dentro de las llaves '[]' se escribe 'type="submit"' para definir que seleccione solo los elementos de tipo
+* 'submit' y, después se le agrega ':hover' para saber cuando el usuario
+* ponga el cursor sobre el elemento
+* 'form-eventos'
+*/
+div#form-eventos input[type="submit"]:hover {
+    @include input-formulario-submit-hover;
+}
+/*
+* Se seleccina el elemento 'div' que tiene una clase llamada 'carta-evento'
+*/
+div.carta-evento {
+    /*
+    * Tiene las propiedades
+    * 
+    * 'border: 1px solid #ccc' Tiene un borde de 1 pixeles de grosor el estilo es solid para que sea una linea al rededor
+    * y el color del borde es de color gris
+    * 'border-radius: 5px' Tiene un borde de 5 px en todas las esquinas
+    */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/*
+* Se selecciona los elementos 'img' que esten dentro del elemento 'div' que tiene una clase llamada 'img-evento'
+*/
+div.img-evento img {
+    /*
+    * Tiene las propiedades 
+    *
+    *'width: 100%' Tiene un ancho de 100% 
+    *'height: 170px' TIene un alto de 170 pixeles 
+    * 'border-radius: 3px 3px 0 0' Tiene un borde de 3 pixeles en las esquina superior izquierda y superior derecha
+    * en las demas esquina tiene 0
+    * - Los valores de border radius son:
+        - El primero valor la esquina superior izquierda
+        - El segundo valor la esquina superior derecha
+        - El tercer valor la esquina inferior derecha
+        - El cuarto valor la esquina inferior izquierda
+    */
+    width: 100%;
+    height: 170px;
+    border-radius: 3px 3px 0 0;
+}
+/*
+* Se seleccina el elemento 'div' que tiene una clase llamada 'body-evento'
+*/
+div.body-evento {
+    /*
+    * Tiene las propiedades
+    * 'padding: 0 0 20px 10px' Tiene margenes internas de 20 pixeles en el lado derecho y 10 pixeles en el lado izquierdo
+    * - Los valores de padding son:
+        - El primero valor es la margen interna superior
+        - El segundo valor la margen interna derecha
+        - El tercer valor la margen interna inferior
+        - El cuarto valor la margen interna izquierda
+    */
+    padding: 0 0 20px 10px;
+}
+/*
+* Se selecciona el elemento 'h4' que esta dentro del elemento 'div' que tiene una clase llamada 'body-evento'
+*/
+div.body-evento h4 {
+    /*
+    * Tiene las propiedades
+    * 
+    * 'margin: 10px 0 0 0' Tiene una margen externa en el lado superior de 10 pixeles y los demas en 0
+    * - Los valores de margin son:
+        - El primero valor es la margen interna superior
+        - El segundo valor la margen interna derecha
+        - El tercer valor la margen interna inferior
+        - El cuarto valor la margen interna izquierda
+    */
+    margin: 10px 0 0 0;
+}
+/*
+* Se selcciona el elemento 'div' que tiene una clase llamada 'footer-evento'
+*/
+div.footer-evento {
+    /*
+    * Tiene las propiedades
+    * 'padding: 0 0 10px 10px' Tiene margenes internas de 10 pixeles en el lado derecho y 10 pixeles en el lado izquierdo
+    * - Los valores de padding son:
+        - El primero valor es la margen interna superior
+        - El segundo valor la margen interna derecha
+        - El tercer valor la margen interna inferior
+        - El cuarto valor la margen interna izquierda
+    */
+    padding: 0 0 10px 10px;
+}
+
+/*
+* Se selecciona el elemento 'button' que tiene una clase llamada 'btn-modificar' 
+*/
+button.btn-modificar {
+    @include boton-modificar;
+}
+/*
+* Se selecciona el elemento 'button' que tiene una clase llamada 'btn-eliminar' 
+*/
+button.btn-eliminar {
+    @include boton-eliminar;
+}
+/*
+* Se selecciona todos lo elementos 'button' y se le agrega ':hover'
+* para saber cuando el usuario ponga el cursor sobre el elemento
+*/
+button:hover {
+    @include boton-tabla-hover;
+}

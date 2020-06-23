@@ -1,0 +1,52 @@
+@import "componentes/headerPerfiles";
+@import "componentes/mixins";
+/*
+* Se selecciona el elemento 'img' que tiene una clase llamada 'arrow-left'
+*/
+img#arrow-left {
+    @include arrow-left;
+}
+/*
+* Se selecciona el elemento 'img' que tiene una clase llamada 'arrow-left'
+*/
+div.form-producto {
+    @include formulario;
+}
+/*
+* Se selecciona el elemento 'input' que tiene una clase llamada 'form-producto'
+*/
+div.form-producto input {
+    @include input-formulario;
+}
+/*
+* Se selecciona el elemento 'p' que tiene una clase llamada 'form-producto'
+*/
+div.form-producto p {
+    /*
+    * Tiene las propiedades
+    *
+    * 'font-size: 15px' Tiene un tamaño de fuente de 15 pixeles
+    * 'color: rgb(177, 168, 168)' Tiene un color de letra gris
+    */
+    font-size: 15px;
+    color: rgb(177, 168, 168);
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro de un elemento 'div' que tiene un clase llamada 'form-producto'
+* el elemento 'input' tiene agregado unas llaves'[]' para seleccionar un elemento en especifico
+* en este caso dentro de las llaves '[]' se escribe 'type="submit"' para definir que seleccione solo los elementos de tipo
+* 'submit'*/
+div.form-producto input[type="submit"] {
+    @include input-formulario-submit;
+}
+/*
+* Se selecciona el elemento 'input' que esta dentro de un elemento 'div' que tiene un clase llamada 'form-producto'
+* el elemento 'input' tiene agregado unas llaves'[]' para seleccionar un elemento en especifico
+* en este caso dentro de las llaves '[]' se escribe 'type="submit"' para definir que seleccione solo los elementos de tipo
+* 'submit' y, después se le agrega ':hover' para saber cuando el usuario
+* ponga el cursor sobre el elemento
+* 'form-eventos'
+*/
+div.form-producto input[type="submit"]:hover {
+    @include input-formulario-submit-hover;
+}

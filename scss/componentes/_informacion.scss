@@ -1,0 +1,121 @@
+/*
+* Se selecciona el div que tiene como id 'informacion' 
+*/
+div#informacion {
+    /*
+    * Tiene las propiedades 
+    'padding-top:40px' Tiene una margen superior interna de 40 pixeles
+    */
+    padding-top: 40px;
+}
+/*
+* Se selecciona el elemento div que tiene una clase 'div-titulo-informacion'
+*/
+div.div-titulo-informacion {
+    /*
+    * Tiene las propiedades 
+    'width: 100%' Un ancho del 100%
+    'height: 100px' Un alto de 100%
+    'text-align: center' El texto esta alineado en el centro 
+    'padding: 0px 80px 0 80px' Tiene las margenes internas de 80 pixeles en la parte inferior y 80 pixeles en la izquierda
+    'box-sizing: border-box;' Boder-box para que su tamaño no cambie cada que se agreguen modificaciones de margenes internas
+    
+    */
+    width: 100%; 
+    height: 100px;  
+    text-align: center; 
+    padding: 0px 80px 0 80px; 
+    box-sizing: border-box; 
+}
+/*
+* Se seleciona el elemento'h3' que esta dentro del div que tiene como clase 'div-titulo-informacion'
+*/
+div.div-titulo-informacion h3 {
+    /*
+    * Tiene las propiedades 
+
+    'font-size: 50px' Tiene tamaño de fuente de 50 pixeles 
+    'color: #fd79a8' Tiene un color de letra rosado
+    */
+    font-size: 50px;
+    color: #fd79a8;
+}
+/*
+* Se seleciona el elemento'p' que esta dentro del div que tiene como clase 'div-titulo-informacion'
+*/
+div.div-titulo-informacion p {
+    /*
+    * Tienes las propiedades 
+
+    'font-size: 1.2rem' Tiene un tamaño de letra de 1.2 rem (22 pixeles)
+    'color: #8B8B8B' Tiene un color de letra gris
+    'text-align: center' Tiene el texto esta centrado
+    */
+    font-size: 1.2rem;
+    color: #8B8B8B;
+    text-align: center;
+}
+/*
+* Se seleciona el el div que tiene como clase 'div-objetivos'
+*/
+div.div-objetivos {
+    /*
+    * Tiene las propiedades 
+
+    'width: 100%' Tiene un ancho del 100%
+    'display: inline-flex' Tiene 'inline-flex'  para que los elementos enten a un lado del otro
+    'margin-top: 70px' Tiene una margen superior de 70 pixeles
+    */
+    width: 100%;
+    display: inline-flex;
+    margin-top: 70px;
+}
+/*
+* Se seleccinan el div que tiene una clase 'div-mision' y el div que tiene como clase 'div-vision'
+*/
+div.div-mision,
+div.div-vision {
+    /*
+    * Tiene las propiedades 
+
+    'width: 50%' Tiene un ancho de 50%
+    'padding: 50px' Tiene margenes internas de 50 pixeles
+    'box-sizing: border-box'  Boder-box para que su tamaño no cambie cada que se agreguen modificaciones de margenes internas
+    */
+    width: 50%;
+    padding: 50px;
+    box-sizing: border-box;
+}
+/*
+* Se seleccinan los elementos 'h3' que estan dentro de los  
+* div que tiene una clase 'div-mision' y el div que tiene como clase 'div-vision'
+*/
+div.div-mision h3,
+div.div-vision h3 {
+    /*
+    *Tiene las propiedades 
+
+    'text-align: center' Tiene el text centrado
+    'font-size: 40px' Tiene un tamaño de fuente de 40 pixeles
+    'color: #fd79a8' TIene el color de la letra rosado
+    */
+    text-align: center;
+    font-size: 40px;
+    color: #fd79a8;
+}
+/*
+* Se seleccinan los elementos 'p' que estan dentro de los  
+* div que tiene una clase 'div-mision' y el div que tiene como clase 'div-vision'
+*/
+div.div-mision p,
+div.div-vision p {
+    /*
+    * Tiene las propiedades
+     'font-size: 1.2rem' Tiene un tamaño de fuente de 1.2 rem (22 pixeles)
+     'color: #8B8B8B' Tiene el color de la letra gris
+     'text-align: center' Tiene el texto centrado
+    */
+    font-size: 1.2rem;
+    color: #8B8B8B;
+    text-align: center;
+}
