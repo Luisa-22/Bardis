@@ -1,0 +1,374 @@
+@font-face {
+    font-family: 'Alata';
+    src: url('../fonts/Alata-Regular.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Alata';
+}
+
+div#container {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+div#perfiladmin {
+    background: #000;
+    padding: 0 0 10px 0;
+}
+
+img#img-1 {
+    width: 150px;
+    height: 70px;
+    position: absolute;
+    top: -2px;
+}
+
+div.perfil-admin {
+    width: 200px;
+    float: right;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+#icon-1 {
+    position: relative;
+    right: -5px;
+    width: 11px;
+    height: auto;
+}
+
+#icon-2 {
+    position: relative;
+    right: -5px;
+    width: 11px;
+    height: auto;
+    display: none;
+}
+
+div.perfil-admin img:hover {
+    cursor: pointer;
+}
+
+div.perfil-admin img {
+    width: 45px;
+    height: 45px;
+    background: none;
+    position: relative;
+    right: 5px;
+    margin-right: 10px;
+}
+
+section#section-perfil {
+    display: inline-flex;
+}
+
+section#section-perfil h3 {
+    margin-top: 20px;
+    color: #fff;
+}
+
+section#section-opc {
+    width: 130px;
+    padding: 0 5px 0 10px;
+    margin: 10px 0 0 55px;
+    display: none;
+    position: absolute;
+    background: #000;
+    border-radius: 0 0 0 10px;
+    z-index: 999;
+}
+
+section#section-opc li {
+    list-style: none;
+    padding: 10px 0 0 0;
+}
+
+section#section-opc li a {
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0 0 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+section#section-opc a:hover {
+    text-decoration: underline;
+}
+
+section#section-opc button {
+    background: #fd79a8;
+    width: 100%;
+    padding: 7px;
+    color: #fff;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    margin: 30px 0 10px 0;
+    font-size: 15px;
+    transition: 0.4s background;
+}
+
+div#btn {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: 20% 20%;
+    column-gap: 20px;
+    row-gap: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+    padding: 60px 0 0 0;
+}
+
+div#btn button {
+    width: 30%;
+    width: 350px;
+    margin: 10px 10px 10px 10px;
+    padding: 30px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 25px;
+    background: #74b9ff;
+    outline: none;
+    opacity: 0.8;
+    transition: 0.1s background, 0.3s opacity;
+}
+
+div#btn button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+div#btn button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+div#btn img {
+    width: 90px;
+}
+
+div#cate-cerveza {
+    display: grid;
+    grid-template-columns: 45% 55%;
+}
+
+div.form-producto {
+    padding: 30px 20px 20px 170px;
+    box-sizing: border-box;
+}
+
+div.tabla-producto {
+    padding: 30px 0 0 0;
+}
+
+div.tabla-producto table {
+    width: 700px;
+    font-size: 15px;
+}
+
+div.tabla-producto button {
+    width: 100px;
+    margin: 5px 5px 5px 30px;
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    transition: 0.3s opacity;
+}
+
+button.btn-modificar {
+    background: #2ecc71;
+    opacity: 0.8;
+}
+
+button.btn-eliminar {
+    background: #e74c3c;
+    opacity: 0.8;
+}
+
+button.btn-modificar:hover,
+button.btn-eliminar:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+div#div-categorias {
+    display: grid;
+    grid-template-columns: 16.6% 16.6% 16.6%;
+    column-gap: 20px;
+    row-gap: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    padding: 60px 0 0 0;
+}
+
+div#form-eventos form {
+    width: 30%;
+    height: auto;
+    margin: 50px auto auto auto;
+    padding: 30px 30px 20px 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+div.form-producto form {
+    width: 90%;
+    height: auto;
+    padding: 30px 30px 20px 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+div#form-eventos input,
+input[type="file"],
+div.form-producto input {
+    display: block;
+    margin-top: 15px;
+    width: 95%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #b2bec3;
+    outline: none;
+}
+
+div.form-producto select {
+    width: 100%;
+    margin-top: 15px;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #b2bec3;
+    outline: none;
+}
+
+div#form-eventos textarea,
+div.form-producto textarea {
+    width: 95%;
+    max-width: 95%;
+    min-width: 95%;
+    height: 120px;
+    max-height: 150px;
+    min-height: 120px;
+    margin-top: 15px;
+    width: 95%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #b2bec3;
+    outline: none;
+}
+
+div#form-eventos input:focus,
+div#form-eventos textarea:focus {
+    border: 1px solid #0984e3;
+    box-shadow: 0 0 5px #74b9ff;
+}
+
+div#form-eventos input[type="submit"],
+div.form-producto input[type="submit"] {
+    width: 100%;
+    padding: 7px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    background: #74b9ff;
+    outline: none;
+    transition: 0.1s background;
+}
+
+div#form-eventos input[type="submit"]:hover,
+div.form-producto input[type="submit"]:hover {
+    background: #0984e3;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:600px) {
+    div#btn {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 60px 30px 10px 30px;
+        column-gap: 5px;
+        grid-row-gap: 5px;
+    }
+    div#btn img,
+    div#div-categorias img {
+        width: 70px;
+    }
+    div#div-categorias {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 0px;
+        row-gap: 0px;
+        padding: 80px 50px 10px 50px;
+    }
+    div#cate-cerveza {
+        grid-template-columns: 100%;
+    }
+    div.form-producto {
+        padding: 80px 20px 20px 50px;
+        box-sizing: border-box;
+        font-size: 15px;
+    }
+    div.tabla-producto {
+        padding: 30px 30px 0 30px;
+    }
+    div.tabla-producto table {
+        width: 200px;
+        font-size: 15px;
+    }
+    div.tabla-producto button {
+        width: 80px;
+        margin: 5px 0px 5px 10px;
+    }
+    ion-icon#arrow-left {
+        padding: 4px;
+        font-size: 2rem;
+        width: 90px;
+        color: #fff;
+        background: #2ecc71;
+        position: absolute;
+        top: 80px;
+        left: 10px;
+        border-radius: 5px;
+    }
+    table.table {
+        font-size: 15px;
+        border-radius: 5px;
+    }
+    div#div-pedidos {
+        display: grid;
+        grid-template-columns: 100%;
+        padding: 100px 70px 0 20px;
+        column-gap: 10px;
+        row-gap: 30px;
+        margin: 0 0 0 40px;
+    }
+    button.boton-pedido {
+        margin: 10px 0 10px 80px;
+    }
+    div#musica {
+        padding: 40px 50px 0 50px;
+    }
+    table.table-music {
+        font-size: 18px;
+    }
+    div#form-eventos form {
+        width: 70%;
+        margin: 70px 0 0 90px;
+    }
+}
