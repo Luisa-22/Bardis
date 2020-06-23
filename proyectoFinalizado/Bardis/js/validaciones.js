@@ -598,7 +598,7 @@ function validar() {
     /**
      * Se crea un condicional para validar que el campo que corresponde al mensaje no este vacío.
      */
-    else if (mensaje.value == "") {
+    else if (mensaje.value == "" ) {
         /**
          * Sí el campo está vacío...
          */

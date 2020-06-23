@@ -1,482 +1,407 @@
-<<<<<<< HEAD
+@charset "UTF-8";
+/**
+*@font-face es para define la letra que va a llevar todo el documento
+*font-family es para definir el nombre del tipo de letra en este caso 'Alata'
+*src: url() se le pasa la ruta para la que encuentre el archivo de la letra.
+*/
 @font-face {
-    font-family: 'Alata';
-    src: url('../fonts/Alata-Regular.ttf');
+  font-family: "Alata";
+  src: url("../fonts/Alata-Regular.ttf");
 }
-
+/*
+* Con "*" se define los valores que va a llevar todo el documento
+* En este caso se ponen 'margin:0' y  'padding:0' para que no tengan ningun tipo de margenes.
+* también se pone 'font-family:'Alata' para que todo lo que sea texto lleve este tipo de letra. y si llega a fallar algo
+* 'sans-serif' sera el tipo de letra como segundo opción
+* 'text-decoration:none' Para que los enlances no tengan una linea inferior y así, se vea solo el texto
+* 'color:#000' El color de la letra va ser de color negro
+*/
 * {
-    padding: 0;
-    margin: 0;
-    font-family: 'Alata';
+  padding: 0;
+  margin: 0;
+  font-family: "Alata";
+  text-decoration: none;
 }
 
+/*
+* Se obtiene el elemento 'div' que tiene un id 'container' 
+*/
 div#container {
-    display: grid;
-    grid-template-columns: 100%;
+  /*
+  * Tiene las propiedades que tiene
+  'display: grid' Tiene grid para que el contenido se divida en columnas
+  'grid-template-columns: 100%' El tamaño de las columnas seran del 100%
+
+  */
+  display: grid;
+  grid-template-columns: 100%;
 }
 
-div {
-    box-sizing: border-box;
-}
-
+/*
+* Se obtiene el elemento 'div' que tiene un id 'perfiladmin'
+*/
 div#perfiladmin {
-    background: #000;
-    padding: 0 0 10px 0;
+  /*
+  * Tiene las propiedades
+  'background: #000' Tiene un fondo de color negro
+  'padding: 0 0 10px 0' Tiene margenes internas 10 pixeles en la parte inferior y en las demás 0 
+
+  */
+  background: #000;
+  padding: 0 0 10px 0;
 }
 
+/*Se selecciona el elemento 'img' que tiene un id 'img-1'
+*/
 img#img-1 {
-    width: 150px;
-    height: 70px;
-    position: absolute;
-    top: -2px;
+  /*
+  *Tiene las propiedades 
+  'width: 150px' Tiene un ancho de 150 pixeles
+  'height: 70px' Tiene una altura de 70 pixeles
+  'position: absolute' Tiene una posición absoluta
+  'top: -2px' Tiene -2 pixeles hacia arriba
+  */
+  width: 150px;
+  height: 70px;
+  position: absolute;
+  top: -2px;
 }
 
+/*
+* Se selecciona el elemento 'div' que tiene una clase 'perdil-admin'
+*/
 div.perfil-admin {
-    width: 200px;
-    float: right;
-    text-align: center;
-    padding: 10px 0 0 0;
+  /*
+   * Tiene las propiedades 
+   'width: 200px' Tiene un ancho de 200 pixeles
+   'float: right' Esta flotando al lado derecho 
+  'text-align: center' Tiene el texto centrado
+   'padding: 10px 0 0 0' Las margenes de internas tiene 10 pixeles en la parte superior y las demas en 0
+   */
+  width: 200px;
+  float: right;
+  text-align: center;
+  padding: 10px 0 0 0;
 }
 
+/*
+*Se selecciona el elemento 'ion-icon' que esta dentro del elemento 'div' que tiene una clase 'perfil-admin'
+*/
 div.perfil-admin ion-icon {
-    position: relative;
-    top: 5px;
-    font-size: 20px;
+  /*
+  Tiene las propiedades 
+  'position: relative' Tiene una posisción realtiva con respecto a los demas elemento 
+  'top: 5px' Tiene 5 pixeles hacia abajo
+  'font-size: 20px' El tamaño de fuente es de 20 pixeles 
+  */
+  position: relative;
+  top: 5px;
+  font-size: 20px;
 }
 
-#icon-1 {
-    position: relative;
-    right: -5px;
-    width: 11px;
-    height: auto;
+/*
+* Se selecciona el elemento 'img' que tiene un id 'icon-1'
+*/
+img#icon-1 {
+  /*
+  * Tienes las propiedades
+  'position: relative' Tiene un posisción relativa
+  'right: -5px' Tiene -5 pixeles  a la derecha
+  'width: 11px' Tiene un ancho de 11 pixeles
+  'height: auto' Tiene una altura automatica
+  */
+  position: relative;
+  right: -4px;
+  width: 11px;
+  height: auto;
 }
 
-#icon-2 {
-    position: relative;
-    right: -5px;
-    width: 11px;
-    height: auto;
-    display: none;
+/*
+* Se selecciona el elemento 'img' que tiene un id 'icon-2'
+*/
+img#icon-2 {
+  /*
+  * Tienes las propiedades
+  'position: relative' Tiene un posisción relativa
+  'right: -5px' Tiene -5 pixeles  a la derecha
+  'width: 11px' Tiene un ancho de 11 pixeles
+  'height: auto' Tiene una altura automatica
+  'display: none' Tiene un display none para que este oculto
+  */
+  position: relative;
+  right: -5px;
+  width: 11px;
+  height: auto;
+  display: none;
 }
 
-div.perfil-admin ion-icon:hover {
-    cursor: pointer;
+/*
+* Se selecciona el 'div' que tiene una clase 'perfil-admin' Se le agrega ':hover' 
+* para saber cuando se pone el mouse sobre el elemento
+*/
+div.perfil-admin img:hover {
+  /*
+  * Tiene las propiedades
+
+  'cursor:pointer' Tiene un cursor con el estilo de una mano
+  */
+  cursor: pointer;
 }
 
+/*
+* Se selecciona el elemento 'img' que esta dentro de elemento 'div' que tiene una clase 'perfil-admin'
+*/
 div.perfil-admin img {
-    width: 45px;
-    height: 45px;
-    background: none;
-    position: relative;
-    right: 5px;
-    margin-right: 10px;
+  /*
+  * Tiene las propiedades
+  * 
+  * 'width: 45px' Tiene una ancho de 45 pixeles
+    'height: 45px' Tiene un alto de 45 pixeles
+    'background: none' No tiene un fondo
+    'position: relative' Tiene una posición relativa
+    'right: 5px' Esta corrido 5 pixeles con respecto a la derecha
+    'margin-right: 10px' Tiene una margen de la derecha de 10 pixeles
+  */
+  width: 45px;
+  height: 45px;
+  background: none;
+  position: relative;
+  right: -4px;
+  margin-right: 10px;
 }
 
+/*
+* Se selecciona el elemento 'section' que tiene un id 'section-perfil'
+*/
 section#section-perfil {
-    display: inline-flex;
+  /**
+   * Tiene las propiedades
+  'display: inline-flex' Tiene inline-flex para que los elementos esten dentro el esten uno al lado del otro
+  */
+  display: inline-flex;
 }
 
+/**
+ * Se selecciona el elemento 'h3' que esta dentro de 'section' que tiene como id 'section-perfil'
+ */
 section#section-perfil h3 {
-    margin-top: 20px;
-    color: #fff;
+  /**
+   * Tienes las propiedades
+   * 
+   * 'margin-top: 20px' Tiene margen de la parte superior de 20 pixeles
+   * 'color: #fff' Tiene un color de letra blanco
+  */
+  margin-top: 20px;
+  color: #fff;
 }
 
+/**
+ * Se selecciona el elemento 'section' que tiene un id 'section-opc' 
+ */
 section#section-opc {
-    width: 130px;
-    padding: 0 5px 0 10px;
-    margin: 10px 0 0 55px;
-    display: none;
-    position: absolute;
-    background: #000;
-    border-radius: 0 0 0 10px;
-    z-index: 999;
+  /**
+   * Tiene las propiedades 
+   * 
+   * 'width: 130px' Tiene un ancho de 130 pixeles
+   * 'padding: 0 5px 0 10px' Tiene margen internas de 5px en al parte inferior y 10 pixeles en lado  izquierda
+   * 'margin: 10px 0 0 55px'Tiene una margen de 10 pixeles en el lado superior y 55 pixeles en el lado inferior
+   * 'display: none' Tiene un display none para que este oculto
+   * 'position: absolute' Tiene una posición absoluta
+   * 'background: #000' Tiene un fondo negro
+   * 'border-radius: 0 0 0 10px' Tiene un borde de 10 pixeles en el lado 
+   * 'z-index: 999' Tiene 999 para que este por encima de los demas elementos
+   */
+  width: 140px;
+  padding: 0 5px 0 10px;
+  margin: 10px 0 0 45px;
+  display: none;
+  position: absolute;
+  background: #000;
+  border-radius: 0 0 0 10px;
+  z-index: 999;
 }
 
+/**
+ * Se selecciona el elemento 'li' que esta dentro del elemento 'section'
+ */
 section#section-opc li {
-    list-style: none;
-    padding: 10px 0 0 0;
+  /**
+   * Tienes las propiedades
+   * 
+   * 'list-style: none' La lista no tiene decoraciones (puntos,guiones..etc)
+   * 'padding: 10px 0 0 0' Tiene una margen interna de 10 pixeles en el lado superior y 0 en las demas
+   */
+  list-style: none;
+  padding: 10px 0 0 0;
 }
 
+/**
+ * Se selecciona el elemento 'a 'que esta dentro del elemento 'li'
+ */
 section#section-opc li a {
-    text-align: center;
-    text-decoration: none;
-    padding: 10px 0 0 0;
-    font-size: 18px;
-    color: #fff;
+  /**
+   * Tiene las propiedades
+   * 
+   * 'text-align: center' Tiene el texto alineado en el centro
+   * 'text-decoration: none' No tiene ningun tipo de decoración (underline)
+   * 'padding: 10px 0 0 0' Tiene margenenes internas. 10 pixeles en el lado superior y 0 en los demas 
+   * 'font-size: 18px' El tamaño de fuente es de 18 pixeles
+   * 'color: #fff' El color de la letra es blanco
+   */
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 0 0 0;
+  font-size: 18px;
+  color: #fff;
 }
 
-section#section-opc a:hover {
-    text-decoration: underline;
+/**
+ * Se selecciona el elemento 'a' que esta dentro del elemento 'li'. Se le agrega ':hover' para saber cuando ponen el 
+ * mouse sobre el elemento
+ */
+section#section-opc li a:hover {
+  /**
+   * Tiene las propiedades
+   * 'text-decoration: underline' Tiene una decaracion de underline (linea inferior)
+   */
+  text-decoration: underline;
 }
 
-section#section-opc button {
-    background: #fd79a8;
-    width: 100%;
-    padding: 7px;
-    color: #fff;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    margin: 30px 0 10px 0;
-    font-size: 15px;
-    transition: 0.4s background;
-}
-
+/*
+* Se selecciona el elemento 'img' que tiene un id llamado 'arrow-left'
+*/
 img#arrow-left {
-    padding: 10px;
-    font-size: 3rem;
-    width: 70px;
-    height: 50px;
-    color: #fff;
-    background: #2ecc71;
-    position: absolute;
-    top: 85px;
-    left: 15px;
-    border-radius: 8px;
+  /**
+  * Tiene las propiedades
+  * 
+  * 'padding: 10px' Tiene una margen interna de 10 pixeles en todos los lado
+  * 'font-size: 3rem' Tiene un tamaño de fuente de 3rem 
+  *  'width: 70px' Tiene un ancho de 70 pixeles 
+  * 'height: 50px' Tiene una altura de 50 pixeles
+  *' color: #fff' Tiene un color de letra blanco
+  * 'background: #2ecc71' Tiene un fondo de color verde
+  *  'position: absolute' La posición es abslouta para que siempre se quede ahí
+  * 'top: 85px' Tiene 85 pixeles hacia abajo
+  * 'left: 15px' Tiene 15 pixeles al lado izquierod
+  * 'border-radius: 8px' Tiene un borde de 8 pixeles en todas las esquinas
+  */
+  padding: 10px;
+  font-size: 3rem;
+  width: 70px;
+  height: 50px;
+  color: #fff;
+  background: #2ecc71;
+  position: absolute;
+  top: 85px;
+  left: 15px;
+  border-radius: 8px;
 }
 
 div#fecha {
-    display: grid;
-    grid-template-columns: 100%;
-    padding: 50px;
-    left: 50%;
+  /*
+  * Tiene las propiedades 
+  * 
+  * 'display: grid' Tiene display grid para definir que el elemento se va dividir en columnas
+  * 'grid-template-columns: 100%' se define el tamaño de las columna que sera de 100%
+  * 'grid-gap: 50px' las margenes externas de los elementos sera de 50 pixeles en todos los lados(superior,derecho,inferior,izquierdo)
+  * 'padding: 40px 100px' Las margen interna del elemento 'div' sera de 40 pixeles en los lados superior y inferior. y 100 pixeles
+  * en los lados derecho y izquierdo.
+  */
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 50px;
 }
 
-div#fecha input[type="submit"] {
-    padding: 5px;
-    color: #fff;
-    width: 100px;
-    font-size: 15px;
-    background: rgba(46, 204, 113, 0.7);
-    border: none;
-    border-radius: 5px;
+/*
+* Se selecciona el elemento 'input' que esta dentro de un elemento 'div' que tiene un id llamado 'fecha'
+* el elemento 'input' tiene agregado unas llaves'[]' para seleccionar un elemento en especifico
+* en este caso dentro de las llaves '[]' se escribe 'type="submit"' para definir que seleccione solo los elementos de tipo
+* 'submit'*/
+div#fecha input[type=submit] {
+  /**
+  *
+  * Tiene las propiedades
+  * 'width: 100px' Tiene un ancho de 100 pixeles 
+  * 'margin: 5px 5px 5px 30px' Tiene un margen de 5 pixeles en los lado superior,derecho y lado inferior
+    - el primer valor es la margen superior
+    - El segundo valor es la margen de la derecha
+    - El tercer valor es la margen inferior
+    - El cuarto valor es la margin de la izquierda
+  * 'padding: 7px' Tiene una margen interna de en todos sus lados (superior,derecho,inferior,izquierdo)
+  * 'font-size: 15px' Tiene un tamaño de fuente de 15 pixeles
+  * 'border-radius: 5px' Tiene un border de 5 pixeles en todas las esquinas (superior,derecho,inferior,izquierdo)
+  * 'border: none' No tiene un borde
+  * 'color: #fff' El color de la letra es de color blanco
+  * 'transition: 0.3s opacity;'  Cuando el elemento tenga un cambio de opacidad el cambio sera de 0.3 segundos
+  * 'background: #2ecc71' Tiene un fondo de color verde
+  * 'opacity: 0.8' Tiene una opacidad de 0.8 para que el elemento se tenga transparencia
+  */
+  width: 100px;
+  margin: 5px;
+  padding: 7px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  transition: 0.3s opacity;
+  background: #2ecc71;
+  opacity: 0.8;
 }
 
-div#div-pedidos {
-    display: block;
-    width: 50%;
+/*
+* Se selecciona los elemento 'td' y 'th' que estan dentro del elemento 'table'
+* se pone coma después de cada elemento para que las propiedades se le apliquen a los dos elementos
+*/
+table td, th {
+  /*
+  * Tiene las propiedades 
+  * 'padding: 5px' Tiene margenes internas de 5 pixeles en todos sus lados (superior,derecho,inferior,izquierdo)
+  */
+  padding: 5px;
 }
 
-.div-tablas {
-    box-sizing: border-box;
-    margin: 15px;
-}
-
-.table {
-    border-collapse: collapse;
-    font-size: 20px;
-    width: 85%;
-    margin: auto;
-}
-
+/*
+* Se selecciona los elemento 'tr' que estan dentro del elemento 'table'
+*/
 table tr {
-    text-align: left;
+  /*
+  * Tiene las propieades
+  *
+  * 'background: rgba(178, 190, 195, 0.1)' Tiene un fondo de color gris
+  */
+  background: rgba(178, 190, 195, 0.1);
 }
 
-table td {
-    padding: 5px;
+/*
+* Se selecciona los elemento 'thead' que estan dentro del elemento 'table'
+*/
+table thead {
+  /**
+  * El header de la tabla (th) tiene las propiedades
+  * 'padding: 10px' Tiene margenes internas de 10 pixeles en todos sus lados (superior,derecho,inferior,izquierdo)
+  * 'text-align: center' El texto tiene una alineación centrado 
+  * 'background: #74b9ff' Tiene un fondo de color azul
+  * 'color: #fff' Tiene la letra de color azul
+  */
+  padding: 10px;
+  text-align: center;
+  background: #74b9ff;
+  color: #fff;
 }
 
-a.boton-factura {
-    padding: 5px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    font-size: 15px;
-    background: #74b9ff;
-    outline: none;
-    transition: 0.1s background;
-    width: 150px;
-}
-
-a.boton-factura {
-    background: rgba(116, 185, 255, 0.8);
-    text-decoration: none;
-}
-
-input.boton-pedido {
-    padding: 5px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    margin: 10px 0 10px 150px;
-    font-size: 15px;
-    background: #55efc4;
-    outline: none;
-    transition: 0.1s background;
-    width: 150px;
-}
-
-input.boton-pedido:hover {
-    background: #74b9ff;
-    cursor: pointer;
-}
-
-tr {
-    background: rgba(178, 190, 195, 0.2);
-}
-
-thead {
-    background: #74b9ff;
-    color: #fff;
-    border-radius: 5px 5px 0 0;
-}
-.total{
-    width: 100%;
-    display: flex;
-    padding: 10px 20px;
-    margin-left: 480px;
-    overflow: hidden;
-}
-.table_total th{
-    margin: 15px;
-}
-.table_total th{
-    width: 100%;
-    font-size: 1.5rem;
-    overflow: hidden;
- 
-=======
-@font-face {
-    font-family: 'Alata';
-    src: url('../fonts/Alata-Regular.ttf');
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    font-family: 'Alata';
-}
-
-div#container {
-    display: grid;
-    grid-template-columns: 100%;
-}
-
-div {
-    box-sizing: border-box;
-}
-
-div#perfiladmin {
-    background: #000;
-    padding: 0 0 10px 0;
-}
-
-img#img-1 {
-    width: 150px;
-    height: 70px;
-    position: absolute;
-    top: -2px;
-}
-
-div.perfil-admin {
-    width: 200px;
-    float: right;
-    text-align: center;
-    padding: 10px 0 0 0;
-}
-
-div.perfil-admin ion-icon {
-    position: relative;
-    top: 5px;
-    font-size: 20px;
-}
-
-#icon-1 {
-    position: relative;
-    right: -5px;
-    width: 11px;
-    height: auto;
-}
-
-#icon-2 {
-    position: relative;
-    right: -5px;
-    width: 11px;
-    height: auto;
-    display: none;
-}
-
-div.perfil-admin ion-icon:hover {
-    cursor: pointer;
-}
-
-div.perfil-admin img {
-    width: 45px;
-    height: 45px;
-    background: none;
-    position: relative;
-    right: 5px;
-    margin-right: 10px;
-}
-
-section#section-perfil {
-    display: inline-flex;
-}
-
-section#section-perfil h3 {
-    margin-top: 20px;
-    color: #fff;
-}
-
-section#section-opc {
-    width: 130px;
-    padding: 0 5px 0 10px;
-    margin: 10px 0 0 55px;
-    display: none;
-    position: absolute;
-    background: #000;
-    border-radius: 0 0 0 10px;
-    z-index: 999;
-}
-
-section#section-opc li {
-    list-style: none;
-    padding: 10px 0 0 0;
-}
-
-section#section-opc li a {
-    text-align: center;
-    text-decoration: none;
-    padding: 10px 0 0 0;
-    font-size: 18px;
-    color: #fff;
-}
-
-section#section-opc a:hover {
-    text-decoration: underline;
-}
-
-section#section-opc button {
-    background: #fd79a8;
-    width: 100%;
-    padding: 7px;
-    color: #fff;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    margin: 30px 0 10px 0;
-    font-size: 15px;
-    transition: 0.4s background;
-}
-
-img#arrow-left {
-    padding: 10px;
-    font-size: 3rem;
-    width: 70px;
-    height: 50px;
-    color: #fff;
-    background: #2ecc71;
-    position: absolute;
-    top: 85px;
-    left: 15px;
-    border-radius: 8px;
-}
-
-div#fecha {
-    display: grid;
-    grid-template-columns: 100%;
-    padding: 50px;
-    left: 50%;
-}
-
-div#fecha input[type="submit"] {
-    padding: 5px;
-    color: #fff;
-    width: 100px;
-    font-size: 15px;
-    background: rgba(46, 204, 113, 0.7);
-    border: none;
-    border-radius: 5px;
-}
-
-div#div-pedidos {
-    display: block;
-    width: 50%;
-}
-
-.div-tablas {
-    box-sizing: border-box;
-    margin: 15px;
-}
-
-.table {
-    border-collapse: collapse;
-    font-size: 20px;
-    width: 85%;
-    margin: auto;
-}
-
-table tr {
-    text-align: left;
-}
-
-table td {
-    padding: 5px;
-}
-
-a.boton-factura {
-    padding: 5px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    font-size: 15px;
-    background: #74b9ff;
-    outline: none;
-    transition: 0.1s background;
-    width: 150px;
-}
-
-a.boton-factura {
-    background: rgba(116, 185, 255, 0.8);
-    text-decoration: none;
-}
-
-input.boton-pedido {
-    padding: 5px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    margin: 10px 0 10px 150px;
-    font-size: 15px;
-    background: #55efc4;
-    outline: none;
-    transition: 0.1s background;
-    width: 150px;
-}
-
-input.boton-pedido:hover {
-    background: #74b9ff;
-    cursor: pointer;
-}
-
-tr {
-    background: rgba(178, 190, 195, 0.2);
-}
-
-thead {
-    background: #74b9ff;
-    color: #fff;
-    border-radius: 5px 5px 0 0;
-}
-.total{
-    width: 100%;
-    display: flex;
-    padding: 10px 20px;
-    margin-left: 480px;
-    overflow: hidden;
-}
-.table_total th{
-    margin: 15px;
-}
-.table_total th{
-    width: 100%;
-    font-size: 1.5rem;
-    overflow: hidden;
- 
->>>>>>> 06104456083fdc990eb8ef952b6f418797da95e3
+/*
+* Se selecciona los elemento 'table' que tiene una clase llamada 'table_total'
+*/
+table.table_total {
+  /**
+  * Las tablas tienen las propiedades
+  * 'margin: 20px auto' Tiene una margen de 20 pixeles en el lado superior y en los demas automatico para que el elemento
+  * quede centrado
+  * 'font-size: 20px' Tiene un tamaño de fuente de 20 pixeles
+  * 'border-collapse: collapse' Tiene el border 'collapse' para que la tabla no quede con un espaciado interno
+  */
+  margin: 20px auto;
+  font-size: 15px;
+  border-collapse: collapse;
+  margin: auto;
 }

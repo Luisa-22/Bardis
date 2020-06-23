@@ -1,174 +1,311 @@
+@charset "UTF-8";
+/*@font-face es para definir la letra que va a llevar todo el documento
+*font-family es para definir el nombre del tipo de letra en este caso 'Alata'
+*src: url() se le pasa la ruta para la que encuentre el archivo de la letra.
+*/
 @font-face {
-    font-family: 'Alata';
-    src: url('../fonts/Alata-Regular.ttf');
+  font-family: "Alata";
+  src: url("../fonts/Alata-Regular.ttf");
 }
-
+/*
+* Con "*" se defines los valores que va a llevar todo el documento
+* En este caso se ponen 'margin:0' y 'padding:0' para que no tengan ningun tipo de margenes.
+* también se pone 'font-family:'Alata' para que todo lo que sea texto lleve este tipo de letra. y si llega a fallar algo
+* 'sans-serif' sera el tipo de letra como segundo opción
+*/
 * {
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Alata', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Alata", sans-serif;
 }
 
+/*
+* Se difine 'html' para definir el documento 'scroll-behavior:smooth' es para que cuando se haga scroll en documento
+* html el scrool sea 'suave'
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+* Se obtiene un div con id "container" se define que sea grid para que permita hacer columnas
+* 'grid-template-columns: 100%' para que las columnas sea del 100% para que ocupen todo el tamño de la pantalla
+*/
 div#container {
-    display: grid;
-    grid-template-columns: 100%;
+  display: grid;
+  grid-template-columns: 100%;
 }
 
-div#container div {
-    box-sizing: border-box;
-}
-
+/*
+* Se obtiene el div con id "header" que es el que contiene el menú
+* Se define 'position: fixed' para que cuando el usuario haga scroll el menú se quede fijo y siempre este visible,
+* tendra un "width: 100%" para que ocupe todo el ancho de la pagina,'height: auto' para que el alto se acomode al contenido
+* 'z-index: 999' para que cuando el usuario haga scroll el menú no quede por debajo del los demas elementos.
+*/
 div#header {
-    position: fixed;
-    width: 100%;
-    height: auto;
-    z-index: 999;
-    background: #010101;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  z-index: 999;
 }
 
+/*
+* 'nav' es la etiqueta que define el menú
+* 'background: #010101' sera para que tenga un fondo de color negro
+* 'padding: 20px 20px 20px 5px' son la margenes internas
+   - el primer valor es la margen superior
+   - El segundo valor es la margen de la derecha
+   - El tercer valor es la margen inferior
+   - El cuarto valor es la margin de la izquierda
+*/
 nav {
-    padding: 20px 20px 10px 5px;
-    box-sizing: border-box;
+  background: #010101;
+  padding: 20px 20px 20px 5px;
+  box-sizing: border-box;
 }
 
+/*
+* 'nav img' se hace para hacer un selector a las imagenes que estén dentro de nav
+* 'nav' es la etiqueta que define el menú 
+* 'img' es una imagen que esta dentro del nav
+*   'width: 150px' La imagen tendrá un ancho del 150 pixeles
+    'height: 70px' La imagen tendrá un alto de 70 pixeles
+    'position: absolute' la posición sera absoluta (que siempre estara en esa posición)
+    'top: -2px' y tendra -2 pixeles hacia arriba
+*/
 nav img {
-    width: 150px;
-    height: 70px;
-    position: absolute;
-    top: -2px;
-    transition: 0.4s left;
+  width: 150px;
+  height: 70px;
+  position: absolute;
+  top: -2px;
 }
 
+/*
+* 'nav ul' se hace para hacer un selector a las listas que estén dentro de nav
+* 'nav' es la etiqueta que define el menú 
+* 'ul' es la lista que esta dentro del nav
+*   'display: flex' los elementos que esten desde del 'ul' seran flexibles a las propiedades que se le definan
+    'color: white' El color de los elementos dentro de 'ul' seran de color blanco 
+    'justify-content: flex-end' El contenido estará en al parte derecha
+    'list-style: none' lo estilos de lista (puntos, guiones,asteriscos) no seran visibles
+    'text-decoration: none' Los elementos dentro de ul no estarán subrayados
+*/
 nav ul {
-    display: flex;
-    color: white;
-    justify-content: flex-end;
-    list-style: none;
-    text-decoration: none;
+  display: flex;
+  color: white;
+  justify-content: flex-end;
+  list-style: none;
+  text-decoration: none;
 }
 
+/*
+* 'nav img' se hace para hacer un selector a las imagenes que estén dentro de nav
+* 'nav' Es la etiqueta que define el menú 
+* 'li' Es para definir  un elemento de la lista
+* 'a' Es para definir un enlace 
+*   'color: white' Es para definir que los elementos 'a' van a tener color blanco
+    'text-decoration: none' Es para definir que los elementos 'a' no van a estar subrayados
+    'padding: 0px 0px 10px 20px' Es para definir la margenes internas de los elementos 'a'
+        - el primer valor es la margen superior
+        - El segundo valor es la margen de la derecha
+        - El tercer valor es la margen inferior
+        - El cuarto valor es la margin de la izquierda
+    'transition: 0.1s color' Es para definir la transición de los elementos 'a' cada ves que tenga algun cambio sera lento
+    'font-size: 15px' Es para definir el tamaño de la letra de los elementos 'a'
+*/
 nav li a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 0px 0px 10px 20px;
-    transition: 0.1s color;
-    font-size: 15px;
+  color: white;
+  text-decoration: none;
+  padding: 0px 0px 10px 20px;
+  transition: 0.1s color;
+  font-size: 15px;
 }
 
-nav li ul {
-    display: none;
-    position: absolute;
-    min-width: 140px;
-    padding: 10px 0px 0px 0px;
-    border-radius: 0 10px 10px;
-}
-
-nav li:hover>ul {
-    display: block;
-    background: #010101;
-}
-
-nav li ul li {
-    position: relative;
-}
-
+/* 'a:hover' Es para definir que cuando se ponga el mouse sobre un enlace se ponga de color Azul */
 nav li a:hover {
-    color: #0095FF;
+  color: #0095FF;
 }
 
+/**
+* Se selecciona el elemeton 'ion-icon' que es el icono del menú que sese muestra cuando la pantalla es muy pequeña
+* Pero cuando la pantalla es amplia se ecnuetra oculto
+*/
+#icon-menu {
+  /*
+  * Tiene las propiedades 
+  *
+  * 'display:none' Con display none se oculta el icono y no es visible para el usuario
+  */
+  display: none;
+}
+
+/*
+* 'div#formulario' Es un div que tiene como id 'formulario'
+*/
 div#formulario {
-    height: auto;
-    margin: 60px 0 0 0;
-    padding: 20px;
+  /*
+  *   'height: auto' El alto del div sera automatico para que se acomode a los elementos
+      'margin: 60px 0 0 0' Es la margen del elemento 60 pixeles en la parte superior y el resto en 0
+          - el primer valor es la margen superior
+          - El segundo valor es la margen de la derecha
+          - El tercer valor es la margen inferior
+          - El cuarto valor es la margin de la izquierda
+
+      'padding: 20px' Es la margen interna 20 pixeles en todos los lados
+          - el primer valor es la margen interna superior
+          - El segundo valor es la margen internade la derecha
+          - El tercer valor es la margen interna inferior
+          - El cuarto valor es la margin interna de la izquierda
+  */
+  height: auto;
+  margin: 60px 0 0 0;
+  padding: 20px;
 }
 
-div.div-formulario-registro {
-    width: 30%;
-    height: auto;
-    margin: 20px auto auto auto;
-    padding: 30px 30px 20px 30px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+/* 
+* 'div.formulario' corresponde al div con clase 'formulario' que es el contiene el formulario
+*/
+div.formulario {
+  /*El formulario tendra las propiedades
+
+  'width: 30%' Tendra un ancho del 30% 
+  'height: auto' El alto sera automatico para que se acomode dependiendo los elementos que estén dentro de el
+  'margin: 50px auto auto auto'Es la margen del elemento 60 pixeles en la parte superior y el resto en 0
+      - el primer valor es la margen superior
+      - El segundo valor es la margen de la derecha
+      - El tercer valor es la margen inferior
+      - El cuarto valor es la margin de la izquierda
+
+  'padding: 30px 30px 20px 30px' Es la margen interna del div tiene 30 pixeles en la parte superior,inferior y a la derecha
+      - el primer valor es la margen interna superior
+      - El segundo valor es la margen internade la derecha
+      - El tercer valor es la margen interna inferior
+      - El cuarto valor es la margin interna de la izquierda
+  'border: 1px solid #ccc' Es el borde del elemento del div
+      - El primer valor es el ancho del borde
+      - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+      - El tercer valor es el color del borde
+  'border-radius: 5px' Tendra 5 pixeles en los bordes
+  'box-sizing: border-box ' Para cuando se definan las margenes internas su tamaño no cambie
+
+  */
+  width: 30%;
+  height: auto;
+  margin: 50px auto auto auto;
+  padding: 30px 30px 20px 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
+/*
+  * 'font-size: 25px' El 'h3' tendra un tamaño de letra de 25 pixeles
+  */
 form h3 {
-    font-size: 25px;
+  font-size: 25px;
 }
 
-form#formulario-1 input,
-form#formulario-2 input {
-    display: block;
-    margin-top: 10px;
-    width: 95%;
-    padding: 7px;
-    border-radius: 5px;
-    border: 1px solid #b2bec3;
-    outline: none;
+form#formulario-1 input {
+  /*
+  los inputs tendra las propiedades
+  * 
+  'display: block' Para que todos estén en bloque(Uno debajo del otro)
+  'margin-top: 10px' La margen que tendra 10 pixeles en todos los lados
+  'width: 95%' un ancho del 95%
+  'padding: 7px' la margen interna de 7 pixeles en todos los lados
+  'border-radius: 5px' los border de 5 pixeles en todos los lados
+  'border: 1px solid #b2bec3' Es el borde del input
+      - El primer valor es el ancho del borde
+      - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+      - El tercer valor es el color del borde
+  'outline: none' La linea exterior del input no sea visible
+  */
+  display: block;
+  margin-top: 10px;
+  width: 96%;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid #b2bec3;
+  outline: none;
+}
+form#formulario-1 input:focus {
+  /*
+  *  Los inputs tiene las propiedades
+  'border: 1px solid #0984e3' Es el borde del input
+      - El primer valor es el ancho del borde
+      - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+      - El tercer valor es el color del borde
+  'box-shadow: 0 0 5px #74b9ff' Es la sombra que tendra
+  - El primer valor del eje x
+  - El segundo valor del eje y
+  - El tercer valor es el color
+  */
+  border: 1px solid #0984e3;
+  box-shadow: 0 0 5px #74b9ff;
 }
 
-form#formulario-1 input:focus,
-form#formulario-2 input:focus {
-    border: 1px solid #0984e3;
-    box-shadow: 0 0 5px #74b9ff;
+/* 'form#formulario-1 input[type="submit"]' Se selecciona el input que sea de tipo 'submit'
+ */
+form#formulario-1 input[type=submit] {
+  /*
+   * El input de envio tiene las propiedades
+   'width: 100%' Tendra un ancho del 100% 
+   'padding: 7px 0 7px 0' las margenes internas son 7 pixeles en al parte superior y inferior
+   'border-radius: 5px' Los border de las esquinas son de 5 pixeles
+   'border: none' No tendrá un border
+   'color: white' El color de la letra sera Blanca
+   'margin: 15px 0 10px 0' Las margenes externas seran de 15 pixeles en la parte superior y 10 pixeles en la parte inferior
+   'font-size: 15px' El tamaño de la letra sera de 15 pixeles
+   'background: #74b9ff' El fondo del botón sera de color azul 
+  ' outline: none' No tendra un border externo
+   'transition: 0.1s background ' Y la transion de cualquier cambio sera de 1 milisegundo para que no sea tan brusco
+   */
+  width: 100%;
+  padding: 7px 0 7px 0;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  margin: 15px 0 10px 0;
+  font-size: 15px;
+  background: #74b9ff;
+  outline: none;
+  transition: 0.1s background;
 }
 
-form#formulario-1 input[type="submit"],
-form#formulario-2 input[type="submit"] {
-    width: 98%;
-    padding: 7px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 15px;
-    background: #74b9ff;
-    outline: none;
-    transition: 0.1s background;
+/* 'form#formulario-1 input[type="submit"]:hover' Se selecciona el input que sea de tipo 'submit' para que cuando
+   * el mouse este sobre el cambie
+ */
+form#formulario-1 input[type=submit]:hover {
+  /*
+  * El input de envio tiene las propiedades
+    'background: #0984e3' El fondo de color azul
+    'cursor: pointer' El cursor sera una manito
+  */
+  background: #0984e3;
+  cursor: pointer;
 }
 
-form#formulario-1 input[type="submit"]:hover,
-form#formulario-2 input[type="submit"]:hover {
-    background: #0984e3;
-    cursor: pointer;
+/*
+* 'form#formulario-1 a' Se seleciona los elementos 'a' que esten dentro del formulario
+*/
+form#formulario-1 a {
+  /*
+  * Las propiedades que tiene son 
+
+  'text-decoration: none' No tendra decoraciones (underline)
+  'font-size: 17px' El tamaño de fuente sera de 17 pixeles
+  */
+  text-decoration: none;
+  font-size: 17px;
 }
 
-form#formulario-1 a,
-form#formulario-2 a {
-    text-decoration: none;
-    font-size: 17px;
-}
-
-form#formulario-1 a:hover,
-form#formulario-2 a:hover {
-    text-decoration: underline;
-}
-
-form#formulario-2 {
-    display: none;
-}
-
-form#formulario-2 input[type="submit"] {
-    width: 100%;
-}
-
-@media only screen and (max-width:600px) {
-    nav {
-        padding: 20px 20px 50px 5px;
-        box-sizing: border-box;
-    }
-    nav li a {
-        display: none;
-    }
-    nav img {
-        position: absolute;
-        left: 180px;
-    }
-    div.div-formulario-registro {
-        width: 90%;
-        padding: 20px 20px 10px 20px;
-    }
+/*
+* 'form#formulario-1 a:hover' Se seleciona los elementos 'a' que esten dentro del formulario ':hover' Es la proeida que 
+* es cuando el ponen el mouse sobre el elemento 'a'
+*/
+form#formulario-1 a:hover {
+  /*Las proiedades que tiene son
+  *'text-decoration: underline' Tendra un decoración de underline (linea inferior)
+  */
+  text-decoration: underline;
 }

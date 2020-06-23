@@ -1,168 +1,408 @@
+@charset "UTF-8";
+/**
+*@font-face es para define la letra que va a llevar todo el documento
+*font-family es para definir el nombre del tipo de letra en este caso 'Alata'
+*src: url() se le pasa la ruta para la que encuentre el archivo de la letra.
+*/
 @font-face {
-    font-family: 'Alata';
-    src: url('../fonts/Alata-Regular.ttf');
+  font-family: "Alata";
+  src: url("../fonts/Alata-Regular.ttf");
 }
-
+/*
+* Con "*" se define los valores que va a llevar todo el documento
+* En este caso se ponen 'margin:0' y  'padding:0' para que no tengan ningun tipo de margenes.
+* también se pone 'font-family:'Alata' para que todo lo que sea texto lleve este tipo de letra. y si llega a fallar algo
+* 'sans-serif' sera el tipo de letra como segundo opción
+* 'text-decoration:none' Para que los enlances no tengan una linea inferior y así, se vea solo el texto
+* 'color:#000' El color de la letra va ser de color negro
+*/
 * {
-    padding: 0;
-    margin: 0;
-    font-family: 'Alata';
-    overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  font-family: "Alata";
+  text-decoration: none;
 }
 
+/*
+* Se obtiene el elemento 'div' que tiene un id 'container' 
+*/
 div#container {
-    display: grid;
-    grid-template-columns: 100%;
+  /*
+  * Tiene las propiedades que tiene
+  'display: grid' Tiene grid para que el contenido se divida en columnas
+  'grid-template-columns: 100%' El tamaño de las columnas seran del 100%
+
+  */
+  display: grid;
+  grid-template-columns: 100%;
 }
 
-div {
-    box-sizing: border-box;
-}
-
+/*
+* Se obtiene el elemento 'div' que tiene un id 'perfiladmin'
+*/
 div#perfiladmin {
-    background: #000;
-    padding: 0 0 10px 0;
+  /*
+  * Tiene las propiedades
+  'background: #000' Tiene un fondo de color negro
+  'padding: 0 0 10px 0' Tiene margenes internas 10 pixeles en la parte inferior y en las demás 0 
+
+  */
+  background: #000;
+  padding: 0 0 10px 0;
 }
 
+/*Se selecciona el elemento 'img' que tiene un id 'img-1'
+*/
 img#img-1 {
-    width: 150px;
-    height: 70px;
-    position: absolute;
-    top: -2px;
+  /*
+  *Tiene las propiedades 
+  'width: 150px' Tiene un ancho de 150 pixeles
+  'height: 70px' Tiene una altura de 70 pixeles
+  'position: absolute' Tiene una posición absoluta
+  'top: -2px' Tiene -2 pixeles hacia arriba
+  */
+  width: 150px;
+  height: 70px;
+  position: absolute;
+  top: -2px;
 }
 
+/*
+* Se selecciona el elemento 'div' que tiene una clase 'perdil-admin'
+*/
 div.perfil-admin {
-    width: 250px;
-    float: right;
-    text-align: center;
-    padding: 10px 0 0 0;
+  /*
+   * Tiene las propiedades 
+   'width: 200px' Tiene un ancho de 200 pixeles
+   'float: right' Esta flotando al lado derecho 
+  'text-align: center' Tiene el texto centrado
+   'padding: 10px 0 0 0' Las margenes de internas tiene 10 pixeles en la parte superior y las demas en 0
+   */
+  width: 200px;
+  float: right;
+  text-align: center;
+  padding: 10px 0 0 0;
 }
 
+/*
+*Se selecciona el elemento 'ion-icon' que esta dentro del elemento 'div' que tiene una clase 'perfil-admin'
+*/
 div.perfil-admin ion-icon {
-    position: relative;
-    top: 5px;
-    font-size: 20px;
+  /*
+  Tiene las propiedades 
+  'position: relative' Tiene una posisción realtiva con respecto a los demas elemento 
+  'top: 5px' Tiene 5 pixeles hacia abajo
+  'font-size: 20px' El tamaño de fuente es de 20 pixeles 
+  */
+  position: relative;
+  top: 5px;
+  font-size: 20px;
 }
 
-#icon-1 {
-    position: relative;
-    right: -5px;
-    width: 11px;
-    height: auto;
+/*
+* Se selecciona el elemento 'img' que tiene un id 'icon-1'
+*/
+img#icon-1 {
+  /*
+  * Tienes las propiedades
+  'position: relative' Tiene un posisción relativa
+  'right: -5px' Tiene -5 pixeles  a la derecha
+  'width: 11px' Tiene un ancho de 11 pixeles
+  'height: auto' Tiene una altura automatica
+  */
+  position: relative;
+  right: -4px;
+  width: 11px;
+  height: auto;
 }
 
-#icon-2 {
-    position: relative;
-    right: -5px;
-    width: 11px;
-    height: auto;
-    display: none;
+/*
+* Se selecciona el elemento 'img' que tiene un id 'icon-2'
+*/
+img#icon-2 {
+  /*
+  * Tienes las propiedades
+  'position: relative' Tiene un posisción relativa
+  'right: -5px' Tiene -5 pixeles  a la derecha
+  'width: 11px' Tiene un ancho de 11 pixeles
+  'height: auto' Tiene una altura automatica
+  'display: none' Tiene un display none para que este oculto
+  */
+  position: relative;
+  right: -5px;
+  width: 11px;
+  height: auto;
+  display: none;
 }
 
-div.perfil-admin ion-icon:hover {
-    cursor: pointer;
+/*
+* Se selecciona el 'div' que tiene una clase 'perfil-admin' Se le agrega ':hover' 
+* para saber cuando se pone el mouse sobre el elemento
+*/
+div.perfil-admin img:hover {
+  /*
+  * Tiene las propiedades
+
+  'cursor:pointer' Tiene un cursor con el estilo de una mano
+  */
+  cursor: pointer;
 }
 
+/*
+* Se selecciona el elemento 'img' que esta dentro de elemento 'div' que tiene una clase 'perfil-admin'
+*/
 div.perfil-admin img {
-    width: 45px;
-    height: 45px;
-    background: none;
-    position: relative;
-    margin-right: 10px;
+  /*
+  * Tiene las propiedades
+  * 
+  * 'width: 45px' Tiene una ancho de 45 pixeles
+    'height: 45px' Tiene un alto de 45 pixeles
+    'background: none' No tiene un fondo
+    'position: relative' Tiene una posición relativa
+    'right: 5px' Esta corrido 5 pixeles con respecto a la derecha
+    'margin-right: 10px' Tiene una margen de la derecha de 10 pixeles
+  */
+  width: 45px;
+  height: 45px;
+  background: none;
+  position: relative;
+  right: -4px;
+  margin-right: 10px;
 }
 
+/*
+* Se selecciona el elemento 'section' que tiene un id 'section-perfil'
+*/
 section#section-perfil {
-    display: inline-flex;
+  /**
+   * Tiene las propiedades
+  'display: inline-flex' Tiene inline-flex para que los elementos esten dentro el esten uno al lado del otro
+  */
+  display: inline-flex;
 }
 
+/**
+ * Se selecciona el elemento 'h3' que esta dentro de 'section' que tiene como id 'section-perfil'
+ */
 section#section-perfil h3 {
-    margin-top: 20px;
-    color: #fff;
+  /**
+   * Tienes las propiedades
+   * 
+   * 'margin-top: 20px' Tiene margen de la parte superior de 20 pixeles
+   * 'color: #fff' Tiene un color de letra blanco
+  */
+  margin-top: 20px;
+  color: #fff;
 }
 
+/**
+ * Se selecciona el elemento 'section' que tiene un id 'section-opc' 
+ */
 section#section-opc {
-    width: 130px;
-    padding: 0 10px 0 25px;
-    margin: 0 0 0 0;
-    display: none;
-    position: absolute;
-    right: -1px;
-    background: #000;
-    border-radius: 0 0 0 10px;
-    z-index: 999;
+  /**
+   * Tiene las propiedades 
+   * 
+   * 'width: 130px' Tiene un ancho de 130 pixeles
+   * 'padding: 0 5px 0 10px' Tiene margen internas de 5px en al parte inferior y 10 pixeles en lado  izquierda
+   * 'margin: 10px 0 0 55px'Tiene una margen de 10 pixeles en el lado superior y 55 pixeles en el lado inferior
+   * 'display: none' Tiene un display none para que este oculto
+   * 'position: absolute' Tiene una posición absoluta
+   * 'background: #000' Tiene un fondo negro
+   * 'border-radius: 0 0 0 10px' Tiene un borde de 10 pixeles en el lado 
+   * 'z-index: 999' Tiene 999 para que este por encima de los demas elementos
+   */
+  width: 140px;
+  padding: 0 5px 0 10px;
+  margin: 10px 0 0 45px;
+  display: none;
+  position: absolute;
+  background: #000;
+  border-radius: 0 0 0 10px;
+  z-index: 999;
 }
 
+/**
+ * Se selecciona el elemento 'li' que esta dentro del elemento 'section'
+ */
 section#section-opc li {
-    list-style: none;
-    padding: 10px 0 0 0;
+  /**
+   * Tienes las propiedades
+   * 
+   * 'list-style: none' La lista no tiene decoraciones (puntos,guiones..etc)
+   * 'padding: 10px 0 0 0' Tiene una margen interna de 10 pixeles en el lado superior y 0 en las demas
+   */
+  list-style: none;
+  padding: 10px 0 0 0;
 }
 
+/**
+ * Se selecciona el elemento 'a 'que esta dentro del elemento 'li'
+ */
 section#section-opc li a {
-    text-align: center;
-    text-decoration: none;
-    padding: 10px 0 0 0;
-    font-size: 18px;
-    color: #fff;
+  /**
+   * Tiene las propiedades
+   * 
+   * 'text-align: center' Tiene el texto alineado en el centro
+   * 'text-decoration: none' No tiene ningun tipo de decoración (underline)
+   * 'padding: 10px 0 0 0' Tiene margenenes internas. 10 pixeles en el lado superior y 0 en los demas 
+   * 'font-size: 18px' El tamaño de fuente es de 18 pixeles
+   * 'color: #fff' El color de la letra es blanco
+   */
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 0 0 0;
+  font-size: 18px;
+  color: #fff;
 }
 
-section#section-opc a:hover {
-    text-decoration: underline;
+/**
+ * Se selecciona el elemento 'a' que esta dentro del elemento 'li'. Se le agrega ':hover' para saber cuando ponen el 
+ * mouse sobre el elemento
+ */
+section#section-opc li a:hover {
+  /**
+   * Tiene las propiedades
+   * 'text-decoration: underline' Tiene una decaracion de underline (linea inferior)
+   */
+  text-decoration: underline;
 }
 
-section#section-opc button {
-    background: #fd79a8;
-    width: 100%;
-    padding: 7px;
-    color: #fff;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    margin: 30px 0 10px 0;
-    font-size: 15px;
-    transition: 0.4s background;
-}
-
+/*
+* Se selecciona el elemento 'div' que tiene una clase llamdao 'actualizar-datos'
+*/
 div.actualizar-datos {
-    width: 25%;
-    padding: 60px 0 0 0;
-    margin: auto;
+  /*El formulario tendra las propiedades
+
+  'width: 30%' Tendra un ancho del 30% 
+  'height: auto' El alto sera automatico para que se acomode dependiendo los elementos que estén dentro de el
+  'margin: 50px auto auto auto'Es la margen del elemento 60 pixeles en la parte superior y el resto en 0
+      - el primer valor es la margen superior
+      - El segundo valor es la margen de la derecha
+      - El tercer valor es la margen inferior
+      - El cuarto valor es la margin de la izquierda
+
+  'padding: 30px 30px 20px 30px' Es la margen interna del div tiene 30 pixeles en la parte superior,inferior y a la derecha
+      - el primer valor es la margen interna superior
+      - El segundo valor es la margen internade la derecha
+      - El tercer valor es la margen interna inferior
+      - El cuarto valor es la margin interna de la izquierda
+  'border: 1px solid #ccc' Es el borde del elemento del div
+      - El primer valor es el ancho del borde
+      - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+      - El tercer valor es el color del borde
+  'border-radius: 5px' Tendra 5 pixeles en los bordes
+  'box-sizing: border-box ' Para cuando se definan las margenes internas su tamaño no cambie
+
+  */
+  width: 30%;
+  height: auto;
+  margin: 50px auto auto auto;
+  padding: 30px 30px 20px 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-div.actualizar-datos form {
-    border: 1px solid #ccc;
-    margin: auto;
-    padding: 30px 30px;
-    border-radius: 5px;
+/*
+* Se selecciona el elemento 'input'  que esta dentro del elemento 'form'
+*/
+form input {
+  /*
+  los inputs tendra las propiedades
+  * 
+  'display: block' Para que todos estén en bloque(Uno debajo del otro)
+  'margin-top: 10px' La margen que tendra 10 pixeles en todos los lados
+  'width: 95%' un ancho del 95%
+  'padding: 7px' la margen interna de 7 pixeles en todos los lados
+  'border-radius: 5px' los border de 5 pixeles en todos los lados
+  'border: 1px solid #b2bec3' Es el borde del input
+      - El primer valor es el ancho del borde
+      - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+      - El tercer valor es el color del borde
+  'outline: none' La linea exterior del input no sea visible
+  */
+  display: block;
+  margin-top: 10px;
+  width: 96%;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid #b2bec3;
+  outline: none;
 }
 
-div.actualizar-datos form input {
-    display: block;
-    width: 95%;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    margin-top: 13px;
-    transition: 0.3s box-shadow, 0.2s background;
-    outline: none;
+/*
+* Se selecciona el elemento 'input'  que esta dentro del elemento 'form'
+*/
+form input:focus {
+  /*
+  *  Los inputs tiene las propiedades
+  'border: 1px solid #0984e3' Es el borde del input
+      - El primer valor es el ancho del borde
+      - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+      - El tercer valor es el color del borde
+  'box-shadow: 0 0 5px #74b9ff' Es la sombra que tendra
+  - El primer valor del eje x
+  - El segundo valor del eje y
+  - El tercer valor es el color
+  */
+  border: 1px solid #0984e3;
+  box-shadow: 0 0 5px #74b9ff;
 }
 
-div.actualizar-datos form input[type="text"] {
-    border: 1px solid #3498db;
+/*
+* Se selecciona el elemento 'input'  que esta dentro del elemento 'form'
+*/
+form input[type=submit] {
+  /*
+   * El input de envio tiene las propiedades
+   'width: 100%' Tendra un ancho del 100% 
+   'padding: 7px 0 7px 0' las margenes internas son 7 pixeles en al parte superior y inferior
+   'border-radius: 5px' Los border de las esquinas son de 5 pixeles
+   'border: none' No tendrá un border
+   'color: white' El color de la letra sera Blanca
+   'margin: 15px 0 10px 0' Las margenes externas seran de 15 pixeles en la parte superior y 10 pixeles en la parte inferior
+   'font-size: 15px' El tamaño de la letra sera de 15 pixeles
+   'background: #74b9ff' El fondo del botón sera de color azul 
+  ' outline: none' No tendra un border externo
+   'transition: 0.1s background ' Y la transion de cualquier cambio sera de 1 milisegundo para que no sea tan brusco
+   */
+  width: 100%;
+  padding: 7px 0 7px 0;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  margin: 15px 0 10px 0;
+  font-size: 15px;
+  background: #74b9ff;
+  outline: none;
+  transition: 0.1s background;
 }
 
-div.actualizar-datos form input[type="text"]:focus {
-    box-shadow: 0 0 5px #0984e3;
+/*
+* Se selecciona el elemento 'input'  que esta dentro del elemento 'form' 
+* al elemento 'input se le agrega '[type="submit"]' para saber que tipo de input es
+* en este caso queremos seleccionar el de tipo 'submit' que es el que hace el envio del formulario 
+*/
+form input[type=submit]:hover {
+  /*
+  * El input de envio tiene las propiedades
+    'background: #0984e3' El fondo de color azul
+    'cursor: pointer' El cursor sera una manito
+  */
+  background: #0984e3;
+  cursor: pointer;
 }
 
-div.actualizar-datos form input[type="submit"] {
-    width: 100%;
-    padding: 5px;
-    background: rgba(9, 132, 227, 0.7);
-    color: #fff;
-    font-size: 15px;
-}
-
-div.actualizar-datos form input[type="submit"]:hover {
-    cursor: pointer;
-    background: rgba(9, 132, 227, 1.0);
+/*
+* Se selecciona el elemento 'a'  que esta dentro del elemento 'form' y al elemento 'a' se le agrega ':hover' para saber
+* cuando el usuario pone el cursor sobre el elemento y asi cambiarle de propiedades
+*/
+form a:hover {
+  /*
+  * Tiene las propiedades
+  *
+  * 'text-decoration:underline' cuando el usuario ponga el cursor sobre el elemento 'a' se pondra una linea en la parte
+  * inferior del texto
+  */
+  text-decoration: underline;
 }

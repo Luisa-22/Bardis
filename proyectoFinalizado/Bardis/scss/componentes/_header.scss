@@ -37,14 +37,14 @@ div#container {
 * Se define 'position: fixed' para que cuando el usuario haga scroll el menú se quede fijo y siempre este visible,
 * tendra un "width: 100%" para que ocupe todo el ancho de la pagina,'height: auto' para que el alto se acomode al contenido
 * 'z-index: 999' para que cuando el usuario haga scroll el menú no quede por debajo del los demas elementos.
-*/
+*/ 
 div#header {
     position: fixed;
     width: 100%;
     height: auto;
     z-index: 999;
 }
-
+ 
 /*
 * 'nav' es la etiqueta que define el menú
 * 'background: #010101' sera para que tenga un fondo de color negro

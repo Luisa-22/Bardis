@@ -1,576 +1,910 @@
+@charset "UTF-8";
+/*@font-face es para definir la letra que va a llevar todo el documento
+*font-family es para definir el nombre del tipo de letra en este caso 'Alata'
+*src: url() se le pasa la ruta para la que encuentre el archivo de la letra.
+*/
 @font-face {
-    font-family: 'Alata';
-    src: url('../fonts/Alata-Regular.ttf');
+  font-family: "Alata";
+  src: url("../fonts/Alata-Regular.ttf");
 }
-
+/*
+* Con "*" se defines los valores que va a llevar todo el documento
+* En este caso se ponen 'margin:0' y 'padding:0' para que no tengan ningun tipo de margenes.
+* también se pone 'font-family:'Alata' para que todo lo que sea texto lleve este tipo de letra. y si llega a fallar algo
+* 'sans-serif' sera el tipo de letra como segundo opción
+*/
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Alata', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Alata", sans-serif;
 }
 
+/*
+* Se difine 'html' para definir el documento 'scroll-behavior:smooth' es para que cuando se haga scroll en documento
+* html el scrool sea 'suave'
+*/
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
+/*
+* Se obtiene un div con id "container" se define que sea grid para que permita hacer columnas
+* 'grid-template-columns: 100%' para que las columnas sea del 100% para que ocupen todo el tamño de la pantalla
+*/
 div#container {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
+  display: grid;
+  grid-template-columns: 100%;
 }
 
+/*
+* Se obtiene el div con id "header" que es el que contiene el menú
+* Se define 'position: fixed' para que cuando el usuario haga scroll el menú se quede fijo y siempre este visible,
+* tendra un "width: 100%" para que ocupe todo el ancho de la pagina,'height: auto' para que el alto se acomode al contenido
+* 'z-index: 999' para que cuando el usuario haga scroll el menú no quede por debajo del los demas elementos.
+*/
 div#header {
-    position: fixed;
-    width: 100%;
-    height: auto;
-    z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  z-index: 999;
 }
 
+/*
+* 'nav' es la etiqueta que define el menú
+* 'background: #010101' sera para que tenga un fondo de color negro
+* 'padding: 20px 20px 20px 5px' son la margenes internas
+   - el primer valor es la margen superior
+   - El segundo valor es la margen de la derecha
+   - El tercer valor es la margen inferior
+   - El cuarto valor es la margin de la izquierda
+*/
 nav {
-    background: #010101;
-    padding: 20px 20px 20px 5px;
-    box-sizing: border-box;
+  background: #010101;
+  padding: 20px 20px 20px 5px;
+  box-sizing: border-box;
 }
 
+/*
+* 'nav img' se hace para hacer un selector a las imagenes que estén dentro de nav
+* 'nav' es la etiqueta que define el menú 
+* 'img' es una imagen que esta dentro del nav
+*   'width: 150px' La imagen tendrá un ancho del 150 pixeles
+    'height: 70px' La imagen tendrá un alto de 70 pixeles
+    'position: absolute' la posición sera absoluta (que siempre estara en esa posición)
+    'top: -2px' y tendra -2 pixeles hacia arriba
+*/
 nav img {
-    width: 150px;
-    height: 70px;
-    position: absolute;
-    top: -2px;
+  width: 150px;
+  height: 70px;
+  position: absolute;
+  top: -2px;
 }
 
+/*
+* 'nav ul' se hace para hacer un selector a las listas que estén dentro de nav
+* 'nav' es la etiqueta que define el menú 
+* 'ul' es la lista que esta dentro del nav
+*   'display: flex' los elementos que esten desde del 'ul' seran flexibles a las propiedades que se le definan
+    'color: white' El color de los elementos dentro de 'ul' seran de color blanco 
+    'justify-content: flex-end' El contenido estará en al parte derecha
+    'list-style: none' lo estilos de lista (puntos, guiones,asteriscos) no seran visibles
+    'text-decoration: none' Los elementos dentro de ul no estarán subrayados
+*/
 nav ul {
-    display: flex;
-    color: white;
-    justify-content: flex-end;
-    list-style: none;
-    text-decoration: none;
+  display: flex;
+  color: white;
+  justify-content: flex-end;
+  list-style: none;
+  text-decoration: none;
 }
 
+/*
+* 'nav img' se hace para hacer un selector a las imagenes que estén dentro de nav
+* 'nav' Es la etiqueta que define el menú 
+* 'li' Es para definir  un elemento de la lista
+* 'a' Es para definir un enlace 
+*   'color: white' Es para definir que los elementos 'a' van a tener color blanco
+    'text-decoration: none' Es para definir que los elementos 'a' no van a estar subrayados
+    'padding: 0px 0px 10px 20px' Es para definir la margenes internas de los elementos 'a'
+        - el primer valor es la margen superior
+        - El segundo valor es la margen de la derecha
+        - El tercer valor es la margen inferior
+        - El cuarto valor es la margin de la izquierda
+    'transition: 0.1s color' Es para definir la transición de los elementos 'a' cada ves que tenga algun cambio sera lento
+    'font-size: 15px' Es para definir el tamaño de la letra de los elementos 'a'
+*/
 nav li a {
-    color: white;
-    text-decoration: none;
-    padding: 0px 0px 10px 20px;
-    transition: 0.1s color;
-    font-size: 15px;
+  color: white;
+  text-decoration: none;
+  padding: 0px 0px 10px 20px;
+  transition: 0.1s color;
+  font-size: 15px;
 }
 
-nav li ul {
-    position: absolute;
-    min-width: 140px;
-    padding: 10px 0px 0px 0px;
-    border-radius: 0 10px 10px;
-}
-
-nav li:hover>ul {
-    display: block;
-    background: #010101;
-}
-
-nav li ul li {
-    position: relative;
-}
-
+/* 'a:hover' Es para definir que cuando se ponga el mouse sobre un enlace se ponga de color Azul */
 nav li a:hover {
-    color: #0095FF;
+  color: #0095FF;
 }
 
-img#img-pc {
-    width: 700px;
-    height: 350px;
-    float: right;
-    border-radius: 10px;
+/**
+* Se selecciona el elemeton 'ion-icon' que es el icono del menú que sese muestra cuando la pantalla es muy pequeña
+* Pero cuando la pantalla es amplia se ecnuetra oculto
+*/
+#icon-menu {
+  /*
+  * Tiene las propiedades 
+  *
+  * 'display:none' Con display none se oculta el icono y no es visible para el usuario
+  */
+  display: none;
 }
 
-div#div-bardis {
+/*
+* 'div#div-bardis' Es el div que tiene como id 'div-bardis'
     background-color: #010101;
     height: 538px;
     padding: 140px 50px 0 0;
+*/
+div#div-bardis {
+  background-color: #010101;
+  height: 538px;
+  padding: 140px 50px 0 0;
 }
 
+/*
+* 'img#img-pc' es la imagen que tiene un id 'img-pc'
+*/
+img#img-pc {
+  /*
+  * Tiene las propiedades
+  'width: 700px' Tiene un ancho de 700 pixeles 
+  'height: 350px' Tiene un alto de 350 pixeles
+  'float: right' Estará floatando (posicionado) a la derecha
+  'border-radius: 10px' Los border de las esquinas son de 10 pixeles
+  */
+  width: 700px;
+  height: 350px;
+  float: right;
+  border-radius: 10px;
+}
+
+/*
+'div#div-bar' Es el div con el id 'div-bar'
+*/
 div#div-bar {
-    position: relative;
-    top: 70px;
-    left: 50px;
+  /*
+  * Tiene las propiedades 
+  'position: relative' Tiene una posición relativa (Con respecto a los demas elementos)
+  'top: 70px' Tiene 70 pixeles en al parte superior
+  'left: 50px' Tiene 50 pixeles en la parte derecha
+  */
+  position: relative;
+  top: 70px;
+  left: 50px;
 }
 
+/* 'div#text-bardis' Es en div que tiene de id 'text-bardis'
+*/
 div#text-bardis {
-    width: 300px;
-    height: auto;
-    text-align: left;
+  /*
+  * Tiene las propiedades 
+  'width: 300px' Tiene un ancho de 300 pixeles
+  'height: auto' Su alto es automatico
+  'text-align: left' El texto que este dentro de el estará alineado a la izquierda
+  */
+  width: 300px;
+  height: auto;
+  text-align: left;
 }
 
+/*
+* 'div#text-bardis h1' Se selecciona el elemento 'h1' que esta dentro de 'div#text-bardis' 
+*/
 div#text-bardis h1 {
-    font-size: 50px;
-    color: #fd79a8;
+  /*
+  * Las propiedades que tiene son
+  'font-size: 50px' El tamaño de letra es de 50 pixeles
+  'color: #fd79a8' El color de la letra es rosado
+
+  */
+  font-size: 50px;
+  color: #fd79a8;
 }
 
+/*
+* 'div#text-bardis p' Se selecciona el elemento 'p' que esta dentro de 'div#text-bardis' 
+*/
 div#text-bardis p {
-    text-align: justify;
-    color: #fff;
-    font-size: 20px;
+  /*
+  * La propiedades que tiene son 
+  'text-align: justify' El texto esta justificado
+  'color: #fff' Tiene el color blanco 
+  'font-size: 20px' El tamñao de la letra es de 20 pixeles
+  */
+  text-align: justify;
+  color: #fff;
+  font-size: 20px;
 }
 
+/*
+* 'div#text-bardis button' Se selecciona el 'button' que esta dentro de 'div#text-bardis'
+*/
 div#text-bardis button {
-    background: none;
-    width: 200px;
-    padding: 7px;
-    color: #fd79a8;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid #fd79a8;
-    margin: 30px 0 0 0;
-    font-size: 20px;
-    transition: 0.4s background;
-}
-
-div#text-bardis button a {
-    text-decoration: none;
-    color: #fff;
+  /*
+  * Tendra las propiedades
+  'background: none' No tendra un fondo
+  'width: 200px' El ancho sera de 200 pixeles
+  'padding: 7px' la margen interna sera de 7 pixeles en todos los lados
+  'color: #fd79a8' El color de la letra sera rosado
+  'outline: none' La linea exterior no sera visible
+  'border-radius: 5px' el border de las esquinas sera de 5 pixeles 
+  'border: 1px solid #fd79a8' Tiene un border de 1 pixel, solido, y de color rosado
+  'margin: 30px 0 0 0' La margen es de 30 pixeles en la parte superior y 0 en las demás
+  'font-size: 20px' El tamaño de la letra es de 20 pixeles
+  'transition: 0.4s background' La transición es de 4 segundos para todos los cambios que pueda tener 
+  */
+  background: none;
+  width: 200px;
+  padding: 7px;
+  color: #fd79a8;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #fd79a8;
+  margin: 30px 0 0 0;
+  font-size: 20px;
+  transition: 0.4s background;
 }
 
 div#text-bardis button:hover {
-    cursor: pointer;
-    text-decoration: underline;
-    background: #fd79a8;
-    color: #fff;
+  /*
+  * Tiene las propiedades
+  'text-decoration: underline' La letra tendrá un underline (linea inferior)
+  'background: #fd79a8' El color del fondo sera rosado
+  'color: #fff' La letra sera de color rosado
+  */
+  cursor: pointer;
+  text-decoration: underline;
+  background: #fd79a8;
+  color: #fff;
 }
 
+/*
+* 'div#text-bardis button a ' Se selecciona el elemento 'a' que esta dentro ''div#text-bardis'  
+*/
+div#text-bardis button a {
+  /*
+  * Sus propiedades son 
+  *
+  'text-decoration: none' La letra no tendra ninguna decoracion (underline)
+  'color: #fff' El color de la letra es blanco
+  */
+  text-decoration: none;
+  color: #fff;
+}
+
+/*
+* 'div.div-titulo' E el div que tiene como id 'div-titulo'
+*/
 div.div-titulo {
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    padding: 65px 0 0 0;
+  /*
+  * Tiene la propiedades 
+  'width: 100%' Tiene un width del 100%
+  'height: 100px' Tiene un height de 100px
+  'text-align: center' La letra estará centrada
+  'padding: 65px 0 0 0' La margen interna tiene 65 pixeles en la parte superior y en la demás 0 
+  */
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  padding: 65px 0 0 0;
 }
 
+/*
+* 'div.div-titulo h3' Se selecciona el elemento 'h3' que esta dentro de 'div.div-titulo'
+*/
 div.div-titulo h3 {
-    font-size: 50px;
-    color: #0095FF;
+  /*
+  * Sus propiedades son 
+  'font-size: 50px' Tiene un tamaño de letra de 50 pixeles 
+  'color: #0095FF' El color de la letra es azul
+  */
+  font-size: 50px;
+  color: #0095FF;
 }
 
+/*
+* 'div.div-servicios' Se seleciona el div que tiene una clase de nombre 'div-servicios'
+*/
 div.div-servicios {
-    display: inline-flex;
+  /*
+  * Sus propiedades son 
+  'display: inline-flex' Tiene 'inline-flex' Para que los elementos que esten dentro de el este uno al lado del otro
+  */
+  display: inline-flex;
 }
 
+/*
+* 'div.div-pedidos,div.div-canciones' Se selecciona los div que tienen como clase 'div.div-pedidos' y 'div.div-canciones'
+*/
 div.div-pedidos,
 div.div-canciones {
-    width: 50%;
-    padding: 70px;
-    box-sizing: border-box;
+  /*
+  * Ambos div tiene las propiedades
+  'width: 50%' Tiene un ancho de 50%
+  'padding: 70px' Tiene una margen internas de 70 pixeles en todos los lados
+  'box-sizing: border-box' Border-box para que su tamaño no cambie
+  */
+  width: 50%;
+  padding: 70px;
+  box-sizing: border-box;
 }
 
+/*
+* 'div.div-pedidos img,div.div-canciones img' Se selecciona los elementos 'img' que estan dentro del div 'div.div-pedidos'
+* y de 'div.div-canciones'
+*/
 div.div-pedidos img,
 div.div-canciones img {
-    width: 150px;
-    height: auto;
-    opacity: 0.4;
-    position: relative;
-    left: 150px;
-    top: 10px;
+  /*
+  * Tiene las propiedades
+  'width: 150px' Tiene un ancho de 150 pixeles 
+  'height: auto' Tiene un alto automatico
+  'opacity: 0.4' Tiene una opacidad de 0.4
+  'position: relative' La posición es relativa con respecto a los otros elementos
+  'left: 150px' Esta posicionado 150 pixeles a la izquierda
+  'top: 10px' Esta posicionado 10 pixeles en la parte superior
+  */
+  width: 150px;
+  height: auto;
+  opacity: 0.4;
+  position: relative;
+  left: 150px;
+  top: 10px;
 }
 
+/*
+* 'div.div-pedidos h3,div.div-canciones h3' Se selecciona los elementos 'h3' que estan dentro del div 'div.div-pedidos'
+* y de 'div.div-canciones'
+*/
 div.div-pedidos h3,
 div.div-canciones h3 {
-    font-size: 1.9rem;
-    color: #0095FF;
+  /*
+  * Tiene las propiedades 
+  'font-size: 1.9rem' El tamaño de letra es de 1.9 rem (26 pixeles)
+  'color: #0095FF' El color de la letra es azul
+  */
+  font-size: 1.9rem;
+  color: #0095FF;
 }
 
+/*
+* 'div.div-pedidos p,div.div-canciones p' Se selecciona los elementos 'p' que estan dentro del div 'div.div-pedidos'
+* y de 'div.div-canciones'
+*/
 div.div-pedidos p,
 div.div-canciones p {
-    text-align: justify;
-    font-size: 20px;
-    color: #636e72;
+  /*
+  * Tienes las propiedades
+
+  'text-align: justify' El texto esta justificado
+  'font-size: 20px' El tamaño de la letra es de 20 pixeles 
+  'color: #636e72' El clor de la letra es gris
+  */
+  text-align: justify;
+  font-size: 20px;
+  color: #636e72;
 }
 
+/*
+* Se selecciona el elemeneto 'hr' que tiene como id 'hr-1'
+*/
 hr#hr-1 {
-    width: 80%;
-    border: 1px solid #b2bec3;
-    border-radius: 50px;
-    margin-left: 150px;
+  /*
+  * Tiene las propiedades 
+
+  'width: 80%' Tiene un ancho del 80%
+  'border: 1px solid #b2bec3' El boder es de 1 pixeles de grosor, el estilo es solido y el color es gris
+  'border-radius: 50px' El borde de las esquinas ed de 50 pixeles
+  'margin-left: 150px' La margen de la izquierda es de 150 pixeles 
+  */
+  width: 80%;
+  border: 1px solid #b2bec3;
+  border-radius: 50px;
+  margin-left: 150px;
 }
 
+/*
+* Se selecciona el div que tiene como id 'informacion' 
+*/
 div#informacion {
-    padding-top: 40px;
+  /*
+  * Tiene las propiedades 
+  'padding-top:40px' Tiene una margen superior interna de 40 pixeles
+  */
+  padding-top: 40px;
 }
 
+/*
+* Se selecciona el elemento div que tiene una clase 'div-titulo-informacion'
+*/
 div.div-titulo-informacion {
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    padding: 0px 80px 0 80px;
-    box-sizing: border-box;
+  /*
+  * Tiene las propiedades 
+  'width: 100%' Un ancho del 100%
+  'height: 100px' Un alto de 100%
+  'text-align: center' El texto esta alineado en el centro 
+  'padding: 0px 80px 0 80px' Tiene las margenes internas de 80 pixeles en la parte inferior y 80 pixeles en la izquierda
+  'box-sizing: border-box;' Boder-box para que su tamaño no cambie cada que se agreguen modificaciones de margenes internas
+
+  */
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  padding: 0px 80px 0 80px;
+  box-sizing: border-box;
 }
 
+/*
+* Se seleciona el elemento'h3' que esta dentro del div que tiene como clase 'div-titulo-informacion'
+*/
 div.div-titulo-informacion h3 {
-    font-size: 50px;
-    color: #fd79a8;
+  /*
+  * Tiene las propiedades 
+
+  'font-size: 50px' Tiene tamaño de fuente de 50 pixeles 
+  'color: #fd79a8' Tiene un color de letra rosado
+  */
+  font-size: 50px;
+  color: #fd79a8;
 }
 
+/*
+* Se seleciona el elemento'p' que esta dentro del div que tiene como clase 'div-titulo-informacion'
+*/
 div.div-titulo-informacion p {
-    font-size: 1.2rem;
-    color: #8B8B8B;
-    text-align: center;
+  /*
+  * Tienes las propiedades 
+
+  'font-size: 1.2rem' Tiene un tamaño de letra de 1.2 rem (22 pixeles)
+  'color: #8B8B8B' Tiene un color de letra gris
+  'text-align: center' Tiene el texto esta centrado
+  */
+  font-size: 1.2rem;
+  color: #8B8B8B;
+  text-align: center;
 }
 
+/*
+* Se seleciona el el div que tiene como clase 'div-objetivos'
+*/
 div.div-objetivos {
-    width: 100%;
-    display: inline-flex;
-    margin-top: 70px;
+  /*
+  * Tiene las propiedades 
+
+  'width: 100%' Tiene un ancho del 100%
+  'display: inline-flex' Tiene 'inline-flex'  para que los elementos enten a un lado del otro
+  'margin-top: 70px' Tiene una margen superior de 70 pixeles
+  */
+  width: 100%;
+  display: inline-flex;
+  margin-top: 70px;
 }
 
+/*
+* Se seleccinan el div que tiene una clase 'div-mision' y el div que tiene como clase 'div-vision'
+*/
 div.div-mision,
 div.div-vision {
-    width: 50%;
-    padding: 50px;
-    box-sizing: border-box;
+  /*
+  * Tiene las propiedades 
+
+  'width: 50%' Tiene un ancho de 50%
+  'padding: 50px' Tiene margenes internas de 50 pixeles
+  'box-sizing: border-box'  Boder-box para que su tamaño no cambie cada que se agreguen modificaciones de margenes internas
+  */
+  width: 50%;
+  padding: 50px;
+  box-sizing: border-box;
 }
 
+/*
+* Se seleccinan los elementos 'h3' que estan dentro de los  
+* div que tiene una clase 'div-mision' y el div que tiene como clase 'div-vision'
+*/
 div.div-mision h3,
 div.div-vision h3 {
-    text-align: center;
-    font-size: 40px;
-    color: #fd79a8;
+  /*
+  *Tiene las propiedades 
+
+  'text-align: center' Tiene el text centrado
+  'font-size: 40px' Tiene un tamaño de fuente de 40 pixeles
+  'color: #fd79a8' TIene el color de la letra rosado
+  */
+  text-align: center;
+  font-size: 40px;
+  color: #fd79a8;
 }
 
+/*
+* Se seleccinan los elementos 'p' que estan dentro de los  
+* div que tiene una clase 'div-mision' y el div que tiene como clase 'div-vision'
+*/
 div.div-mision p,
 div.div-vision p {
-    font-size: 1.2rem;
-    color: #8B8B8B;
-    text-align: center;
+  /*
+  * Tiene las propiedades
+   'font-size: 1.2rem' Tiene un tamaño de fuente de 1.2 rem (22 pixeles)
+   'color: #8B8B8B' Tiene el color de la letra gris
+   'text-align: center' Tiene el texto centrado
+  */
+  font-size: 1.2rem;
+  color: #8B8B8B;
+  text-align: center;
 }
 
 div#contacto {
-    padding: 50px 50px 20px 50px;
-    display: inline-flex;
+  padding: 50px 50px 20px 50px;
+  display: inline-flex;
 }
 
+/*
+* Se obtiene el div que esta dentro de otro div con el id 'div#contacto'
+*/
 div#contacto div {
-    box-sizing: border-box;
-    width: 60%;
-    margin: 50px 40px 0px 0;
+  /*
+  * Tiene las propiedades
+
+  'box-sizing: border-box' border para que su tamaño no cambie al ponerle las margenes internas
+  'width: 60%' Tiene un ancho de 60%
+  'margin: 50px 50px 0px 0' la margenes externas son de 50 pixeles en la parte superior e inferior y 0 en las demás
+  */
+  box-sizing: border-box;
+  width: 60%;
+  margin: 50px 50px 0px 0;
 }
 
-div.div-contacto {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding-top: 20px;
-    padding: 0 30px 0 30px;
-    margin-right: 40px;
+/*
+* se seleciona el elemento form que esta dentro de un div con una clase 'div-contacto'
+*/
+div.div-contacto form {
+  /*
+  * Tiene las propiedades
+  'width: 95%' Tiene un ancho del 95%
+  'height: auto' Tiene un alto automatico
+  'border: 1px solid #ccc' Tiene un borde de 1 pixeles de ancho,solido y de color gris
+  'padding:0 40px 40px' Tiene margenes internas de 40 pixeles en la parte inferior y en la derecha
+  'border-radius: 5px' Tiene un border de 5 pixeles en todas las esquinas
+  'box-sizing: border-box' Para cuando se definan las margenes internas su tamaño no cambie
+  */
+  width: 95%;
+  height: auto;
+  border: 1px solid #ccc;
+  padding: 0 40px 40px;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
+/*
+* Se selecciona el elemento 'h2' que esta dentro de un div con clase 'div-contacto' 
+*/
 div.div-contacto h2 {
-    color: #8B8B8B;
+  /*
+  * Tiene las propiedades
+  'color: #8B8B8B' Tiene un color gris
+  */
+  color: #8B8B8B;
 }
 
+/*
+* Se selecciona el elemento 'img' que esta dentro de un div con clase 'div-contacto' 
+*/
 div.div-contacto img {
-    width: 40px;
-    opacity: 0.5;
-    position: relative;
-    top: 15px;
+  /*
+  * Tiene las propiedades
+  'width: 40px' Tiene un ancho de 40 pixeles
+  'opacity: 0.5' Tiene una opacidad de 0.5
+  'position: relative' Tiene una posición relativa 
+  'top: 15px' Tiene un top de 15px (Se moverá hacia abajo 15 pixeles)
+  'left:10px' Tiene left de 10px (Se moverá hacia la izquierda de 10 pixeles)
+  */
+  width: 40px;
+  opacity: 0.5;
+  position: relative;
+  top: 15px;
+  left: 10px;
 }
 
 div.div-contacto input {
-    width: 95%;
-    padding: 10px;
-    font-size: 15px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: 1px solid #3498db;
-    margin-bottom: 20px;
-    outline: none;
+  /*
+  los inputs tendra las propiedades
+  * 
+  'display: block' Para que todos estén en bloque(Uno debajo del otro)
+  'margin-top: 10px' La margen que tendra 10 pixeles en todos los lados
+  'width: 95%' un ancho del 95%
+  'padding: 7px' la margen interna de 7 pixeles en todos los lados
+  'border-radius: 5px' los border de 5 pixeles en todos los lados
+  'border: 1px solid #b2bec3' Es el borde del input
+      - El primer valor es el ancho del borde
+      - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+      - El tercer valor es el color del borde
+  'outline: none' La linea exterior del input no sea visible
+  */
+  display: block;
+  margin-top: 10px;
+  width: 96%;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid #b2bec3;
+  outline: none;
 }
 
 div.div-contacto input:focus {
-    box-shadow: 0 0 5px #3498db;
+  /*
+  *  Los inputs tiene las propiedades
+  'border: 1px solid #0984e3' Es el borde del input
+      - El primer valor es el ancho del borde
+      - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+      - El tercer valor es el color del borde
+  'box-shadow: 0 0 5px #74b9ff' Es la sombra que tendra
+  - El primer valor del eje x
+  - El segundo valor del eje y
+  - El tercer valor es el color
+  */
+  border: 1px solid #0984e3;
+  box-shadow: 0 0 5px #74b9ff;
 }
 
 div.div-contacto textarea {
-    width: 95%;
-    max-width: 400px;
-    min-width: 95%;
-    min-height: 100px;
-    max-height: 150px;
-    padding: 10px;
-    font-size: 15px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: 1px solid #3498db;
-    margin-bottom: 20px;
-    outline: none;
+  /*
+  los inputs tendra las propiedades
+  * 
+  'display: block' Para que todos estén en bloque(Uno debajo del otro)
+  'margin-top: 10px' La margen que tendra 10 pixeles en todos los lados
+  'width: 95%' un ancho del 95%
+  'padding: 7px' la margen interna de 7 pixeles en todos los lados
+  'border-radius: 5px' los border de 5 pixeles en todos los lados
+  'border: 1px solid #b2bec3' Es el borde del input
+      - El primer valor es el ancho del borde
+      - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+      - El tercer valor es el color del borde
+  'outline: none' La linea exterior del input no sea visible
+  */
+  display: block;
+  margin-top: 10px;
+  width: 96%;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid #b2bec3;
+  outline: none;
+  /*
+  * Tiene las propiedades 
+  * 'width: 93%' Tiene un ancho de 96%
+  * 'max-width: 400px' El maximo de ancho que va a tener es de 400 pixeles
+  * 'min-width: 93% ' El minimo de ancho que va a tener es de 96%
+     - Se definen estos valores de ancho para que el usuario no pueda alterar su ancho y el elemento siempre permanezca igual
+  *' min-height: 100px' El minimo de alto que va a tener es de 100 pixeles 
+  * 'max-height: 100px' El maximo de alto que va a tener es de 100 pixeles
+     - Se definen estos valores de alto para que el usuario no pueda alterar su alto y el elemento siempre permanezca igual
+  * 'padding: 10px' Tiene margenes internas de 10 pixeles en todos su lados (superior,derecho,inferior,izquierdo)
+  * 'font-size: 14px' Tiene un tamaño de fuente de 14 pixeles 
+  * 'border-radius: 5px'
+  * 'margin-bottom: 20px' Tiene una margen externa de 20 pixeles en lado inferior
+  */
+  width: 93%;
+  max-width: 100px;
+  min-width: 93%;
+  min-height: 100px;
+  max-height: 100px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+div.div-contacto textarea:focus {
+  /*
+  *  Los inputs tiene las propiedades
+  'border: 1px solid #0984e3' Es el borde del input
+      - El primer valor es el ancho del borde
+      - El segundo es el estilo del borde (solid,dotted,dashed,double,groove,...)
+      - El tercer valor es el color del borde
+  'box-shadow: 0 0 5px #74b9ff' Es la sombra que tendra
+  - El primer valor del eje x
+  - El segundo valor del eje y
+  - El tercer valor es el color
+  */
+  border: 1px solid #0984e3;
+  box-shadow: 0 0 5px #74b9ff;
 }
 
-div.div-contacto button {
-    width: 98%;
-    padding: 7px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    margin-bottom: 20px;
-    font-size: 15px;
-    background: #74b9ff;
-    outline: none;
-    transition: 0.1s background;
+div.div-contacto input[type=submit] {
+  /*
+   * El input de envio tiene las propiedades
+   'width: 100%' Tendra un ancho del 100% 
+   'padding: 7px 0 7px 0' las margenes internas son 7 pixeles en al parte superior y inferior
+   'border-radius: 5px' Los border de las esquinas son de 5 pixeles
+   'border: none' No tendrá un border
+   'color: white' El color de la letra sera Blanca
+   'margin: 15px 0 10px 0' Las margenes externas seran de 15 pixeles en la parte superior y 10 pixeles en la parte inferior
+   'font-size: 15px' El tamaño de la letra sera de 15 pixeles
+   'background: #74b9ff' El fondo del botón sera de color azul 
+  ' outline: none' No tendra un border externo
+   'transition: 0.1s background ' Y la transion de cualquier cambio sera de 1 milisegundo para que no sea tan brusco
+   */
+  width: 100%;
+  padding: 7px 0 7px 0;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  margin: 15px 0 10px 0;
+  font-size: 15px;
+  background: #74b9ff;
+  outline: none;
+  transition: 0.1s background;
 }
 
-div.div-contacto button:hover {
-    background: #0984e3;
-    cursor: pointer;
+div.div-contacto input[type=submit]:hover {
+  /*
+  * El input de envio tiene las propiedades
+    'background: #0984e3' El fondo de color azul
+    'cursor: pointer' El cursor sera una manito
+  */
+  background: #0984e3;
+  cursor: pointer;
 }
 
-div.div-contacto img {
-    width: 45px;
-    opacity: 0.5;
-    margin-top: 15px;
-    margin-left: 10px;
-}
-
+/*
+* Se selecciona el elemeto footer
+*/
 footer {
-    width: 100%;
-    height: 150px;
-    background: #010101;
-    color: white;
-    padding: 15px;
-    box-sizing: border-box;
-    display: inline-flex;
+  /*
+  * Tiene las propiedades 
+  'width: 100%' Tiene un ancho de 100%
+  'height: 150px' Tiene un alto de 150 pixeles
+  'background: #010101' Tiene un fondo de color negro
+  'color: white' El color de la letra es blanco
+  'padding: 15px' Las margenes internas son de 15 pixeles
+  'display: grid' Se divide en columnas
+  'grid-template-columns: 50% 50%' El tamaño de las columnas son del 50%
+  */
+  width: 100%;
+  height: 150px;
+  background: #010101;
+  color: white;
+  padding: 15px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
-footer div {
-    width: 50%;
+/*
+* Se seleciona el div con una clase 'derechos'
+*/
+div.derechos {
+  /*
+  *Tiene las propiedades
+  'grid-column:1/3' La columna empieca en la 1 y termina en la 3
+  * 'text-align:center' El elemento tiene el text centrado
+  */
+  grid-column: 1/3;
+  text-align: center;
 }
 
-div.div-footer {
-    padding: 10px 0 0 20px;
-}
-
+/*
+* Se seleciona el elemento 'section' que esta dentro de un div con clase 'div-footer'
+*/
 div.div-footer section {
-    display: inline-flex;
-    margin-top: 10px;
+  /*
+  * Tiene las propiedades 
+  'display: inline-flex' Tiene inline-flex para que los elementos que esten dentro de el se pongan uno al lado del otro
+  'margin-top: 10px' la margin superior tendra 10 pixeles
+  */
+  display: inline-flex;
+  margin-top: 10px;
 }
 
+/*
+* Se selecciona el elemento 'ion-icon' que esta dentro del div con clase 'div-footer'
+*/
 div.div-footer ion-icon {
-    font-size: 25px;
-    border-radius: 5px;
-    margin-right: 10px;
+  /*
+  * Tiene las propiedades
+  'font-size: 25px' Tiene un tamaño de fuente de 25 pixeles
+  'border-radius: 5px' Tiene un borde de 5 pixeles en todas las esquinas
+  'margin-right: 10px' la margin superior tendra 10 pixeles
+  */
+  font-size: 25px;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
-div.div-footer h5 {
-    position: relative;
-    top: 25px;
-    left: 300px;
-}
-
+/*
+* Se selcciona el elemento div que tiene una clase 'div-redes'
+*/
 div.div-redes {
-    padding-left: 40px;
+  /*
+  * Tiene las propiedades
+  'padding-left:40px' Tiene una margen interna en la derecha de 40 pixeles 
+  */
+  padding-left: 40px;
 }
 
+/*
+* Se selcciona el elemento 'ion-icon' que esta dentro de un div que tiene una clase 'div-redes'
+*/
 div.div-redes ion-icon {
-    font-size: 35px;
-    margin-left: 10px;
-    transition: 0.6s color;
+  /*
+  * Tiene las propiedades
+  'font-size: 35px' Tiene un tamaño de fuente de 35 pixeles
+  'margin-left: 10px'la margin de la izquierda tendrá 10 pixeles
+  'transition: 0.6s color' Tiene una transición de 0.6 al color 
+  para que cuando cambie no se tan brusco sino que cambie progesivamente
+  */
+  font-size: 35px;
+  margin-left: 10px;
+  transition: 0.6s color;
 }
 
+/*
+* Se selecciona el elemento ion-icon que tiene un id 'facebook'. se le agregar ':hover' 
+  para saber cuando el usuario pone el mouse sobre el elemento
+*/
 ion-icon#facebook:hover {
-    color: #0984e3;
-    cursor: pointer;
+  /*
+  *Tiene las propiedades
+  'color: #0984e3' Tiene un color azul
+  'cursor: pointer' Tiene un cursor del estilo de una mano
+  */
+  color: #0984e3;
+  cursor: pointer;
 }
 
+/*
+* Se selecciona el elemento ion-icon que tiene un id 'youtube'. se le agregar ':hover' 
+  para saber cuando el usuario pone el mouse sobre el elemento
+*/
 ion-icon#youtube:hover {
-    color: #d63031;
-    cursor: pointer;
+  /*
+  *Tiene las propiedades
+  'color: #0984e3' Tiene un color rojo
+  'cursor: pointer' Tiene un cursor del estilo de una mano
+  */
+  color: #d63031;
+  cursor: pointer;
 }
 
+/*
+* Se selecciona el elemento ion-icon que tiene un id 'instagram'. se le agregar ':hover' 
+  para saber cuando el usuario pone el mouse sobre el elemento
+*/
 ion-icon#instagram:hover {
-    color: #ff7675;
-    cursor: pointer;
+  /*
+  *Tiene las propiedades
+  'color: #0984e3' Tiene un color rodado
+  'cursor: pointer' Tiene un cursor del estilo de una mano
+  */
+  color: #ff7675;
+  cursor: pointer;
 }
 
-ion-icon#icon-menu {
-    font-size: 30px;
-    color: #fff;
-    display: none;
-}
-
+/*
+* Se selecciona el elemento 'img' que tiene un id 'arrow-up'
+*/
 img#arrow-up {
-    position: relative;
-    left: 1250px;
-    right: 0;
-    top: 30px;
-    width: 50px;
-    height: auto;
-    background: #fd79a8;
-    border-radius: 5px;
-    padding: 5px 5px;
-}
-
-@media only screen and (max-width:600px) {
-    nav {
-        background: #010101;
-        padding: 20px 20px 50px 5px;
-        box-sizing: border-box;
-    }
-    nav ul {
-        text-align: center;
-    }
-    nav ul {
-        display: none;
-        float: right;
-        text-align: right;
-    }
-    nav ul li {
-        padding: 5px 0 0 0;
-    }
-    nav img {
-        position: absolute;
-    }
-    ion-icon#icon-menu {
-        font-size: 40px;
-        color: #fff;
-        position: absolute;
-        left: 430px;
-        display: block;
-        margin: 10px 15px 0 0;
-    }
-    img#img-pc {
-        width: 400px;
-        height: 200px;
-        border-radius: 10px;
-    }
-    div#div-bar {
-        position: relative;
-        top: 30px;
-        left: 50px;
-    }
-    div#text-bardis h1 {
-        font-size: 23px;
-    }
-    div#text-bardis p {
-        text-align: justify;
-        color: #fff;
-        font-size: 15px;
-    }
-    div#text-bardis button {
-        width: 150px;
-        font-size: 15px;
-    }
-    div.div-servicios {
-        display: block;
-    }
-    div.div-pedidos,
-    div.div-canciones {
-        width: 100%;
-        padding: 30px;
-        box-sizing: border-box;
-    }
-    div.div-titulo h3 {
-        font-size: 1.9rem;
-        padding-top: 30px;
-    }
-    div.div-pedidos h3,
-    div.div-canciones h3 {
-        font-size: 1.4rem;
-    }
-    div.div-pedidos p,
-    div.div-canciones p {
-        font-size: 15px;
-    }
-    hr#hr-1 {
-        margin-left: 50px;
-    }
-    div.div-pedidos img,
-    div.div-canciones img {
-        width: 100px;
-        height: auto;
-        opacity: 0.4;
-        position: relative;
-        left: 130px;
-        top: 10px;
-    }
-    div.div-titulo-informacion {
-        width: 100%;
-        height: 100px;
-        text-align: center;
-        padding: 0px 40px 0 40px;
-        box-sizing: border-box;
-    }
-    div.div-titulo-informacion h3 {
-        font-size: 30px;
-        color: #fd79a8;
-    }
-    div.div-titulo-informacion p {
-        font-size: 1rem;
-        text-align: center;
-    }
-    div.div-objetivos {
-        width: 100%;
-        display: block;
-        margin-top: 70px;
-    }
-    div.div-mision,
-    div.div-vision {
-        width: 100%;
-        padding: 30px;
-        box-sizing: border-box;
-    }
-    div.div-mision h3,
-    div.div-vision h3 {
-        text-align: center;
-        font-size: 30px;
-    }
-    div.div-mision p,
-    div.div-vision p {
-        font-size: 1rem;
-        text-align: center;
-    }
-    div#contacto {
-        padding: 30px 30px 20px 30px;
-        display: block;
-    }
-    div#contacto div {
-        width: 100%;
-        margin-top: 30px;
-    }
-    footer {
-        padding: 10px;
-        display: block;
-        width: 100%;
-        height: 250px;
-    }
-    footer div {
-        width: 100%;
-        text-align: center;
-    }
-    div.div-footer {
-        padding: 5px 0 0 0;
-    }
-    div.div-footer section {
-        display: inline-flex;
-        margin-top: 5px;
-    }
-    div.div-footer ion-icon {
-        font-size: 20px;
-        border-radius: 5px;
-        margin-right: 5px;
-    }
-    div.div-redes {
-        padding-left: 5px;
-        font-size: 15px;
-    }
-    div.div-footer h5 {
-        position: relative;
-        top: 150px;
-        left: 0px;
-    }
-    img#arrow-up {
-        position: relative;
-        left: 410px;
-        right: 0;
-        top: 30px;
-        width: 50px;
-        height: auto;
-        background: #fd79a8;
-        ;
-        border-radius: 5px;
-        padding: 5px 5px;
-    }
+  /*
+  * Tiene las propiedades
+  'position: relative' Tiene una posición relativa
+  'left: 1250px' Esta movido 1250 pixeles a la izquierda
+  'top: 30px' Esta movido 30 pixeles hacia abajo
+  'width: 50px' Tiene un ancho de 50 pixeles
+  'height: auto' Tiene un alto automatico
+  'background: #fd79a8' Tiene un fondo rosado
+  'border-radius: 5px' Tiene bordes en las esquinas de 5 pixeles
+  'padding: 5px' Tiene margenes internas de 5 pixeles
+  */
+  position: relative;
+  left: 1250px;
+  top: 30px;
+  width: 50px;
+  height: auto;
+  background: #fd79a8;
+  border-radius: 5px;
+  padding: 5px;
 }

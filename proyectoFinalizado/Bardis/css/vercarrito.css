@@ -1,56 +1,152 @@
+@charset "UTF-8";
+
+/**
+*@font-face es para define la letra que va a llevar todo el documento
+*font-family es para definir el nombre del tipo de letra en este caso 'Alata'
+*src: url() se le pasa la ruta para la que encuentre el archivo de la letra.
+*/
+
 @font-face {
-    font-family: 'Alata';
-    src: url('../fonts/Alata-Regular.ttf');
+    font-family: "Alata";
+    src: url("../fonts/Alata-Regular.ttf");
 }
+
+
+/*
+* Con "*" se define los valores que va a llevar todo el documento
+* En este caso se ponen 'margin:0' y  'padding:0' para que no tengan ningun tipo de margenes.
+* también se pone 'font-family:'Alata' para que todo lo que sea texto lleve este tipo de letra. y si llega a fallar algo
+* 'sans-serif' sera el tipo de letra como segundo opción
+* 'text-decoration:none' Para que los enlances no tengan una linea inferior y así, se vea solo el texto
+* 'color:#000' El color de la letra va ser de color negro
+*/
 
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Alata'
+    font-family: "Alata";
+    text-decoration: none;
 }
 
+
+/*
+* Se obtiene el elemento 'div' que tiene un id 'container' 
+*/
+
 div#container {
+    /*
+  * Tiene las propiedades que tiene
+  'display: grid' Tiene grid para que el contenido se divida en columnas
+  'grid-template-columns: 100%' El tamaño de las columnas seran del 100%
+
+  */
     display: grid;
     grid-template-columns: 100%;
 }
 
-div {
-    box-sizing: border-box;
-}
+
+/*
+* Se obtiene el elemento 'div' que tiene un id 'perfiladmin'
+*/
 
 div#perfiladmin {
+    /*
+  * Tiene las propiedades
+  'background: #000' Tiene un fondo de color negro
+  'padding: 0 0 10px 0' Tiene margenes internas 10 pixeles en la parte inferior y en las demás 0 
+
+  */
     background: #000;
     padding: 0 0 10px 0;
 }
 
+
+/*Se selecciona el elemento 'img' que tiene un id 'img-1'
+*/
+
 img#img-1 {
+    /*
+  *Tiene las propiedades 
+  'width: 150px' Tiene un ancho de 150 pixeles
+  'height: 70px' Tiene una altura de 70 pixeles
+  'position: absolute' Tiene una posición absoluta
+  'top: -2px' Tiene -2 pixeles hacia arriba
+  */
     width: 150px;
     height: 70px;
     position: absolute;
     top: -2px;
 }
 
+
+/*
+* Se selecciona el elemento 'div' que tiene una clase 'perdil-admin'
+*/
+
 div.perfil-admin {
+    /*
+   * Tiene las propiedades 
+   'width: 200px' Tiene un ancho de 200 pixeles
+   'float: right' Esta flotando al lado derecho 
+  'text-align: center' Tiene el texto centrado
+   'padding: 10px 0 0 0' Las margenes de internas tiene 10 pixeles en la parte superior y las demas en 0
+   */
     width: 200px;
     float: right;
     text-align: center;
     padding: 10px 0 0 0;
 }
 
+
+/*
+*Se selecciona el elemento 'ion-icon' que esta dentro del elemento 'div' que tiene una clase 'perfil-admin'
+*/
+
 div.perfil-admin ion-icon {
+    /*
+  Tiene las propiedades 
+  'position: relative' Tiene una posisción realtiva con respecto a los demas elemento 
+  'top: 5px' Tiene 5 pixeles hacia abajo
+  'font-size: 20px' El tamaño de fuente es de 20 pixeles 
+  */
     position: relative;
     top: 5px;
     font-size: 20px;
 }
 
-#icon-1 {
+
+/*
+* Se selecciona el elemento 'img' que tiene un id 'icon-1'
+*/
+
+img#icon-1 {
+    /*
+  * Tienes las propiedades
+  'position: relative' Tiene un posisción relativa
+  'right: -5px' Tiene -5 pixeles  a la derecha
+  'width: 11px' Tiene un ancho de 11 pixeles
+  'height: auto' Tiene una altura automatica
+  */
     position: relative;
-    right: -5px;
+    right: -4px;
     width: 11px;
     height: auto;
 }
 
-#icon-2 {
+
+/*
+* Se selecciona el elemento 'img' que tiene un id 'icon-2'
+*/
+
+img#icon-2 {
+    /*
+  * Tienes las propiedades
+  'position: relative' Tiene un posisción relativa
+  'right: -5px' Tiene -5 pixeles  a la derecha
+  'width: 11px' Tiene un ancho de 11 pixeles
+  'height: auto' Tiene una altura automatica
+  'display: none' Tiene un display none para que este oculto
+  */
     position: relative;
     right: -5px;
     width: 11px;
@@ -58,31 +154,95 @@ div.perfil-admin ion-icon {
     display: none;
 }
 
+
+/*
+* Se selecciona el 'div' que tiene una clase 'perfil-admin' Se le agrega ':hover' 
+* para saber cuando se pone el mouse sobre el elemento
+*/
+
 div.perfil-admin img:hover {
+    /*
+  * Tiene las propiedades
+
+  'cursor:pointer' Tiene un cursor con el estilo de una mano
+  */
     cursor: pointer;
 }
 
-div.perfil-admin #img-perfil {
+
+/*
+* Se selecciona el elemento 'img' que esta dentro de elemento 'div' que tiene una clase 'perfil-admin'
+*/
+
+div.perfil-admin img {
+    /*
+  * Tiene las propiedades
+  * 
+  * 'width: 45px' Tiene una ancho de 45 pixeles
+    'height: 45px' Tiene un alto de 45 pixeles
+    'background: none' No tiene un fondo
+    'position: relative' Tiene una posición relativa
+    'right: 5px' Esta corrido 5 pixeles con respecto a la derecha
+    'margin-right: 10px' Tiene una margen de la derecha de 10 pixeles
+  */
     width: 45px;
     height: 45px;
+    background: none;
     position: relative;
-    right: 5px;
+    right: -4px;
     margin-right: 10px;
 }
 
+
+/*
+* Se selecciona el elemento 'section' que tiene un id 'section-perfil'
+*/
+
 section#section-perfil {
+    /**
+   * Tiene las propiedades
+  'display: inline-flex' Tiene inline-flex para que los elementos esten dentro el esten uno al lado del otro
+  */
     display: inline-flex;
 }
 
+
+/**
+ * Se selecciona el elemento 'h3' que esta dentro de 'section' que tiene como id 'section-perfil'
+ */
+
 section#section-perfil h3 {
+    /**
+   * Tienes las propiedades
+   * 
+   * 'margin-top: 20px' Tiene margen de la parte superior de 20 pixeles
+   * 'color: #fff' Tiene un color de letra blanco
+  */
     margin-top: 20px;
     color: #fff;
 }
 
+
+/**
+ * Se selecciona el elemento 'section' que tiene un id 'section-opc' 
+ */
+
 section#section-opc {
-    width: 130px;
+    /**
+   * Tiene las propiedades 
+   * 
+   * 'width: 130px' Tiene un ancho de 130 pixeles
+   * 'padding: 0 5px 0 10px' Tiene margen internas de 5px en al parte inferior y 10 pixeles en lado  izquierda
+   * 'margin: 10px 0 0 55px'Tiene una margen de 10 pixeles en el lado superior y 55 pixeles en el lado inferior
+   * 'display: none' Tiene un display none para que este oculto
+   * 'position: absolute' Tiene una posición absoluta
+   * 'background: #000' Tiene un fondo negro
+   * 'border-radius: 0 0 0 10px' Tiene un borde de 10 pixeles en el lado 
+   * 'z-index: 999' Tiene 999 para que este por encima de los demas elementos
+   */
+    width: 140px;
     padding: 0 5px 0 10px;
-    margin: 10px 0 0 55px;
+    margin: 10px 0 0 45px;
     display: none;
     position: absolute;
     background: #000;
@@ -90,12 +250,37 @@ section#section-opc {
     z-index: 999;
 }
 
+
+/**
+ * Se selecciona el elemento 'li' que esta dentro del elemento 'section'
+ */
+
 section#section-opc li {
+    /**
+   * Tienes las propiedades
+   * 
+   * 'list-style: none' La lista no tiene decoraciones (puntos,guiones..etc)
+   * 'padding: 10px 0 0 0' Tiene una margen interna de 10 pixeles en el lado superior y 0 en las demas
+   */
     list-style: none;
     padding: 10px 0 0 0;
 }
 
+
+/**
+ * Se selecciona el elemento 'a 'que esta dentro del elemento 'li'
+ */
+
 section#section-opc li a {
+    /**
+   * Tiene las propiedades
+   * 
+   * 'text-align: center' Tiene el texto alineado en el centro
+   * 'text-decoration: none' No tiene ningun tipo de decoración (underline)
+   * 'padding: 10px 0 0 0' Tiene margenenes internas. 10 pixeles en el lado superior y 0 en los demas 
+   * 'font-size: 18px' El tamaño de fuente es de 18 pixeles
+   * 'color: #fff' El color de la letra es blanco
+   */
     text-align: center;
     text-decoration: none;
     padding: 10px 0 0 0;
@@ -103,95 +288,155 @@ section#section-opc li a {
     color: #fff;
 }
 
-section#section-opc a:hover {
+
+/**
+ * Se selecciona el elemento 'a' que esta dentro del elemento 'li'. Se le agrega ':hover' para saber cuando ponen el 
+ * mouse sobre el elemento
+ */
+
+section#section-opc li a:hover {
+    /**
+   * Tiene las propiedades
+   * 'text-decoration: underline' Tiene una decaracion de underline (linea inferior)
+   */
     text-decoration: underline;
 }
 
-section#section-opc button {
-    background: #fd79a8;
-    width: 100%;
-    padding: 7px;
-    color: #fff;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    margin: 30px 0 10px 0;
-    font-size: 15px;
-    transition: 0.4s background;
-}
-div#div-categorias {
-    display: grid;
-    grid-template-columns: auto auto;
-    box-sizing: border-box;
-}
+
+/*Se selecciona el elemento 'table'*/
 
 table {
-    width: 100%;
+    /**
+  * Las tablas tienen las propiedades
+  * 'margin: 20px auto' Tiene una margen de 20 pixeles en el lado superior y en los demas automatico para que el elemento
+  * quede centrado
+  * 'font-size: 20px' Tiene un tamaño de fuente de 20 pixeles
+  * 'border-collapse: collapse' Tiene el border 'collapse' para que la tabla no quede con un espaciado interno
+  */
+    margin: 20px auto;
     font-size: 15px;
     border-collapse: collapse;
-    font-size: 15px;
 }
 
+
+/*
+* Se selecciona el elemento 'th' que esta dentro del elemento 'thead' y estos dos elementos estan dentro del 
+* elemento 'table'*/
+
 table thead th {
-    padding: 5px;
+    /**
+  * El header de la tabla (th) tiene las propiedades
+  * 'padding: 10px' Tiene margenes internas de 10 pixeles en todos sus lados (superior,derecho,inferior,izquierdo)
+  * 'text-align: center' El texto tiene una alineación centrado 
+  * 'background: #74b9ff' Tiene un fondo de color azul
+  * 'color: #fff' Tiene la letra de color azul
+  */
+    padding: 10px;
     text-align: center;
-}
-
-table thead th {
     background: #74b9ff;
     color: #fff;
 }
 
-table thead {
-    text-align: center;
-    background: #74b9ff;
-    color: #fff;
-}
 
-tfoot {
-    background: none;
-}
+/*
+* Se selecciona el elemento 'tr' que esta dentro del elemento 'table' y estos dos elementos estan dentro del 
+*/
 
 table tr {
+    /*
+  * Tiene las propiedades 
+  * 'text-align: center' El texto tiene una alineación centrado 
+  */
     text-align: center;
 }
 
+
+/*
+* Se selecciona el elemento 'td' que esta dentro del elemento 'table' y estos dos elementos estan dentro del 
+*/
+
 table td {
+    /*
+  * Tiene las propiedades
+  * 
+  * 'padding: 13px 10px' Tien margen interna de 13 pixeles en el lado superior y inferior
+  * y 10 pixeles en el lado derecho y izquierdo
+  */
     padding: 13px 10px;
 }
 
-input[type="submit"] {
-    width: 80px;
-    padding: 3px;
-    border-radius: 5px;
-    border: none;
-}
+
+/*
+* Se selecciona el elemento 'div' que tiene una clase lla
+*/
 
 div.tabla-pedido {
+    /*
+  * Tiene las propiedades
+  *
+  * 'display: flex' Tiene display flex para que los elementos que esten dentro del 'div' tengan ciertas propiedades
+  que se le seran definidas
+  * 'justify-content: center' Los elemento ques están dentro del 'div' estaran en el centro 
+  * 'padding: 50px' las margenes interna es de 50 pixeles en todo sus lados (superior,derecho,derecho,izquierdo)
+  */
     display: flex;
     justify-content: center;
     padding: 50px;
 }
 
+
+/*
+* Se selcciona el elemento 'div' que tiene una clase llamada 'pedido'
+*/
+
 div.pedido {
-    padding: 10px 10px;
-    width: 54%;
-    box-sizing: border-box;
+    /*
+  * Tiene las propiedades
+  *
+  * 'padding: 10px' las margenes interna es de 10 pixeles en todo sus lados (superior,derecho,derecho,izquierdo)
+  * 'width: 54%' Tiene un ancho del 54%
+  * 'border-radius: 5px' Tiene un borde redondeado de 5 pixeles en todas las esquinas
+  * 'border: 1px solid #ccc' Tiene un borde de un 1 pixel de grosor solido para que sea una linea alredor de del elemento 'div
+  y es de color gris
+  */
+    padding: 10px;
+    width: 60%;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
+
+/*
+* Se selecciona el elemento 'select' que esta dentro de un 'div' que tiene una clase llamada 'pedido'
+*/
+
 div.pedido select {
+    /*
+  * Tiene las propiedades
+  *
+  'width: 100px' Tiene un ancho de 100 pixeles 
+  'margin: 10px 0 10px 0' Tiene una margen externa de 10 pixeles en los lados superiores y inferiores y en los demas lados 
+  * (derecho y izquierdo) tiene 0 pixeles
+  */
     width: 100px;
     margin: 10px 0 10px 0;
 }
 
-div.pedido table {
-    font-size: 18px;
-}
+
+/*
+* Se selecciona el elemento 'a' que tiene un id llamado 'agregar-producto'
+*/
 
 a#agregar-producto {
-    text-decoration: none;
+    /*
+  * Tiene las propiedades
+  *
+  * 'background: rgba(46, 204, 113, 0.8)' Tiene un fondo de color verde con 0.8 de opacidad
+  * 'color: #fff' El color de la letra es de color blanco
+  * 'padding: 5px' Tiene una margen interna de 5 pixeles en todos sus lados (superior,derecho,inferior,izquierdo)
+  * 'border-radius: 5px' Tiene bordes redondeados en todas las esquinas de 5 pixeles 
+  * 'transition: 0.3s background' Tiene una transición de 0.3 segundo para cualquier cambio que pueda tener el elemento
+  */
     background: rgba(46, 204, 113, 0.8);
     color: #fff;
     padding: 5px;
@@ -199,54 +444,159 @@ a#agregar-producto {
     transition: 0.3s background;
 }
 
+
+/*
+* Se selecciona el elemento 'a' que tiene un id llamado 'agregar-producto' se le agrega ':hover' para saber cuando el usuario 
+* pone el mouse cobre el elemento
+*/
+
 a#agregar-producto:hover {
-    background: rgba(46, 204, 113, 1.0);
-}
-a#eliminar-prod{
-    background:rgba(231, 76, 60,0.6);
-    padding:5px;
-    color:#fff;
-    text-decoration:none;
-    border-radius:5px;
-    transition:0.3s background;
-    font-size:15px;
-}
-a#eliminar-prod:hover{
-    background:rgba(231, 76, 60,0.9);
-    cursor:pointer;
-}
-input[value="Enviar"]{
-    color: #fff;
-    transition: 0.3s background;
-    font-size: 15px;
-    margin: 0 10px 0 0px;
-    width: 120px;
-    padding:5px;
+    /*
+  * Tiene las propiedades
+  *
+  * 'background: rgba(46, 204, 113, 1.0)' Tiene un fondo de color verde con 1.0 de opacidad
+  */
+    background: #2ecc71;
 }
 
-input[value="Enviar"] {
-    background: rgba(52, 152, 219, 0.7);
+a#eliminar-prod {
+    /**
+  *
+  * Tiene las propiedades
+  * 'width: 100px' Tiene un ancho de 100 pixeles 
+  * 'margin: 5px 5px 5px 30px' Tiene un margen de 5 pixeles en los lado superior,derecho y lado inferior
+    - el primer valor es la margen superior
+    - El segundo valor es la margen de la derecha
+    - El tercer valor es la margen inferior
+    - El cuarto valor es la margin de la izquierda
+  * 'padding: 7px' Tiene una margen interna de en todos sus lados (superior,derecho,inferior,izquierdo)
+  * 'font-size: 15px' Tiene un tamaño de fuente de 15 pixeles
+  * 'border-radius: 5px' Tiene un border de 5 pixeles en todas las esquinas (superior,derecho,inferior,izquierdo)
+  * 'border: none' No tiene un borde
+  * 'color: #fff' El color de la letra es de color blanco
+  * 'transition: 0.3s opacity;'  Cuando el elemento tenga un cambio de opacidad el cambio sera de 0.3 segundos
+  * 'background: #e74c3c' Tiene un fondo de color rojo
+  * 'opacity: 0.8' Tiene una opacidad de 0.8 para que el elemento se tenga transparencia
+  */
+    width: 100px;
+    margin: 5px;
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    transition: 0.3s opacity;
+    background: #e74c3c;
+    opacity: 0.8;
 }
-input[value="Enviar"]:hover {
-    background: rgba(52, 152, 219, 1.0);
+
+a#eliminar-prod:hover {
+    /**
+  * Al pooner el mouse sobre el elemento tendra las propiedades
+  * 'opacity: 1' Tiene una opacidad de 1 para que el elemento no tenga nada de transparencia
+  * 'cursor: pointer' El cusor sera un puntero
+  */
+    opacity: 1;
     cursor: pointer;
 }
-#total{
-    padding:0 0 0 340px;
+
+input[value=Enviar] {
+    /*
+  * Tiene las propiedades 
+  * 'padding: 5px' Tiene una margen interna de 5 pixeles en todos sus lados (superior,derecho,inferior,izquierdo)
+  * 'border-radius: 5px' Tiene un borde de 5 pixeles en todos sus lados
+  * 'border: none' No tiene ningun borde
+  * 'color: #fff' Tiene la letra de color blanco
+  * 'font-size: 15px' Tiene un tamaño de letra de 5 pixeles
+  * 'transition: 0.1s background' Cuando el elemento tenga un cambio de fondo el cambio sera de 0.3 segundos 
+  * para que el cambio se lento.
+  * 'width: 150px' Tiene un ancho de 150 pixeles 
+  * 'margin:20px 50px' Tiene una margen de 20 pixeles en el lado superior e inferior y, tiene 50 pixeles el el lado
+  * derecho y izquierdo
+  * 'background: rgba(116, 185, 255, 0.8)' Tiene un fondo de color azul
+  * 'text-decoration: none' No tiene decoracion en la fuente (linea inferior)
+  */
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    transition: 0.1s background;
+    width: 130px;
+    margin: 20px 50px;
+    background: rgba(116, 185, 255, 0.8);
+    text-decoration: none;
 }
-a#Volver{
-    width:120px;
-    background:none;
-    color:rgba(46, 204, 113,1.0);
-    border:1px solid rgba(46, 204, 113,1.0);
-    font-size:13px;
-    padding:5px;
-    border-radius:5px;
-    transition:0.3s background, 0.3s color;
-    text-decoration:none;
+
+input[value=Enviar]:hover {
+    /*
+  * Tiene las propiedades
+  * 'background: rgba(116, 185, 255, 1.0)' Tiene un fondo azul 
+  * 'cursor: pointer' Tiene un cursor en forma de puntero
+  */
+    background: #74b9ff;
+    cursor: pointer;
 }
+
+
+/*
+* Se seleccion el elemento 'td' que tiene un id llamado 'total'
+*/
+
+td#total {
+    /*
+  * Tiene las propiedades
+  *
+  * 'padding:0 0 0 340px' Tien una magen interna de 340 pixeles en el lado izquierdo 7 0 en los demas (superio,derecho,inferior)
+  */
+    padding: 0 0 0 340px;
+}
+
+
+/*
+* se selecciona el elemento 'a' que tiene un id llamado 'Volver'
+*/
+
+a#Volver {
+    /*
+  * Tiene las propiedades
+  *
+  'width:120px' Tiene un ancho de 120 pixeles 
+  'background:none' No tiene un fondo para que solo la letra sea visible y el borde sea visible
+  'color:rgba(46, 204, 113,1.0)' El color de la letra es de color verde
+  'border:1px solid rgba(46, 204, 113,1.0)' El color del borde es de 1 pixeles de grosor el estilo es solido para que 
+  * se vea alrededor del boton y es de color verde
+  'font-size:13px' El tamño de la fuente es de 13 pixeles
+  'padding:5px' La margen interna es de 5 pixeles
+  'border-radius:5px' Tiene bordes redondeados en las esquinas de 5 pixeles
+  'transition:0.3s all' Tiene una transición de 0.3 segundos para que cuando tenga algun cambio de color,color de fondo, tamño de fuente etc
+  * esos cambios se vean suave y no se vena 'bruscos'
+  */
+    width: 120px;
+    background: none;
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.3s all;
+}
+
+
+/*
+* se selecciona el elemento 'a' que tiene un id llamado 'Volver' y se le agrega ':hover' para saber cuando el usuario pone el mouse
+* sobre el elemento
+*/
+
 a#Volver:hover {
-    background: rgba(46, 204, 113,1.0);
-    color:#fff;
+    /*
+  * Si el usuario pone el cursor sobre el elemento iene las propiedades
+  *
+  'background: rgba(46, 204, 113,1.0)' Tiene un fondo de color verde
+  'color:#fff' El ccolor de letra es de color blacno
+  'cursor: pointer' El cursor cambia a una forma de manito
+  */
+    background: #2ecc71;
+    color: #fff;
     cursor: pointer;
 }
